@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../styles/BigImpact.scss'
+import '../styles/bigImpact.scss'
 import Button from '../components/Button'
 
 class BigImpact extends Component{
