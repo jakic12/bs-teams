@@ -40,4 +40,20 @@ class BigImpact extends Component{
     }
 }
 
+/*example
+<BigImpact
+    title="Product Features"
+    subtitle="Nekaj funkcij, ki jih je X zmozen opravljati:"
+    content={[
+        {title:"Feature 1", desc:"Very short description lorem ipsum dor sit amet"},
+        {title:"Feature 2", desc:"Very short description lorem ipsum dor sit amet"},
+        {title:"Feature 3", desc:"Very short description lorem ipsum dor sit amet"},
+        {title:"Feature 4", desc:"Very short description lorem ipsum dor sit amet"},
+        {title:"Feature 5", desc:"Very short description lorem ipsum dor sit amet"},
+        {title:"Feature 6", desc:"Very short description lorem ipsum dor sit amet"}
+    ]}
+    image={coffeImage}
+    buttonText={"FREE TRIAL"}
+/>*/
+
 export default BigImpact;
