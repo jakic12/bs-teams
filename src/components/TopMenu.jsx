@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../styles/TopMenu.scss'
+import '../styles/topMenu.scss'
 import bslogo from '../res/img/bs_power_bel_croped.png'
 import { Link } from 'react-router-dom';
 
