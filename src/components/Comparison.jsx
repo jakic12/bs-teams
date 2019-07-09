@@ -1,41 +1,42 @@
-import React from "react";
+import React, {useState} from "react";
 import "../styles/comparison.scss"
-import { Stage, Layer, Rect, Text, Arrow } from 'react-konva';
+import posed, {PoseGroup} from 'react-pose';
 
-export default ({config, teamsLogo, height, leftIconsSize, rightIconsSize}) => {
-    const middleX = (leftIconsSize/2 + (config.length*(leftIconsSize+20)))/2;
+const Image = posed.img({
+    hoverable: true,
+    pressable: true,
+    hidden: {
+        opacity: 0,
+        transition: { duration: 800 }
+        },
+    visible: {
+        opacity: 1,
+        transition: { duration: 1000 }
+        },
+});
+
+export default ({config, teamsLogo, leftIconsSize, rightIconSize, showFirst, showSecond, move }) => {
     return (
-        <div id="main" style={{
-            height: height
-        }}>
-            <div id="left">
-                {config.map(ele => (
-                    <img
-                        src={ele.img}
-                        alt={ele.name}
-                        style={{width: leftIconsSize}}
-                    />
-                ))}
+        <div id="comparison">
+            <div id="top">
+                <PoseGroup>
+                    {config.map((ele, index) => (
+                        <Image
+                            key={index}
+                            src={ele.img}
+                            alt={ele.name}
+                            style={{height: leftIconsSize}}
+                            pose={showFirst ? "visible" : "hidden"}
+                        />
+                    ))}
+                </PoseGroup>
             </div>
-            <div id="middle">
-                <Stage width={window.innerWidth} height={window.innerHeight}>
-                    <Layer>
-                        {config.map((ele, i) => (
-                            <Arrow
-                                points={[0, leftIconsSize/2 + (i*(leftIconsSize+20)), 800, middleX]}
-                                fill="black"
-                                stroke="black"
-                            />
-                        ))}
-                        </Layer>
-                </Stage>
-                ))}
-            </div>
-            <div id="right">
-                <img
+            <div id="down">
+                <Image
                     src={teamsLogo}
                     alt={"teams"}
-                    style={{height: rightIconsSize}}
+                    pose={showSecond ? "visible" : "hidden"}
+                    style={{height: rightIconSize}}
                 />
             </div>
         </div>
