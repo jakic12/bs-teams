@@ -1,18 +1,56 @@
+$bar-height:70px;
+
 .topBar{
     background:#3a3a3a;
-    height:70px;
+    height:$bar-height;
     position:relative;
+
     .innerBarWrapper{
         position:relative;
         width:100%;
         height:100%;
+
         .innerBar{
             top:50%;
             position:absolute;
             transform:translate(0,-50%);
             padding-left:20px;
-            .bslogo{
-                width:100px;
+            padding-right:20px;
+            width:calc(100% - 40px);
+            display:flex;
+            flex-wrap:nowrap;
+            flex-direction: row;
+
+            .topBarBlock{
+                order:1;
+
+                .bslogo{
+                    width:100px;
+                }
+                
+                .topLinkWrapper{
+                    padding-left:20px;
+                    padding-top:10px;
+                    height:40px;
+                    display: flex;
+                    justify-content:center;
+                    align-content:center;
+                    flex-direction:column;
+                    
+                    .topLink{
+                        bottom:0;
+                        font-size:17px;
+                        text-decoration: none;
+                        color:#f6f7f9;
+                        line-height:20px;
+                    }
+                }
+            }
+            .linkLonger{
+                .topLinkWrapper{
+                    width:200px !important;
+                }
+                width:200px !important;
             }
         }
     }
