@@ -1,0 +1,52 @@
+@import "shared.scss";
+
+.leftRightContainer{
+    background: $LIGHT-GREY;
+    height:50%;
+    width:100%;
+    position:relative;
+    .containerWrapper{
+        position:relative;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        width:100%;
+        height:100%;
+        line-height:100%;
+    }
+    .half{
+        position:relative;
+        display: block;
+        width:50%;
+        height:100%;
+        padding: 30px 0px 30px 0px;
+        line-height:100%;
+        margin:0 auto;
+
+        .title{
+            margin:50px;
+            color: $RED;
+            line-height: 1.6;
+        }
+        .text{
+            margin:50px;
+            line-height: 1.6;
+        }
+        .TeamsImg{
+            width:90%;  
+            height:90%;
+            padding:0;
+            margin: 5% ;
+        }
+        @media screen and (max-width: $mobile-width) {
+            width:100%; 
+            padding: 5px 0px 5px 0px;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+  }

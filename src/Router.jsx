@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Dashboard from './screens/Dashboard.jsx';
-import Features from './screens/Features.jsx';
 import { BrowserRouter, Route } from 'react-router-dom';
+import TopMenu from './components/TopMenu'
 
+import Homepage from './screens/Homepage';
+import Features from './screens/Features';
 
 /**
  * hiest level - routes pages
@@ -11,8 +12,11 @@ class Router extends Component{
     render(){
         return <div>
             <BrowserRouter>
-                <Route exact={true} path="/" component={Dashboard}/>
-                <Route path="/features" component={Features}/>
+                <TopMenu />
+                <div className="main-content">
+                    <Route exact={true} path="/" component={Homepage}/>
+                    <Route path="/features" component={Features}/>
+                </div>
             </BrowserRouter>
         </div>
     }
