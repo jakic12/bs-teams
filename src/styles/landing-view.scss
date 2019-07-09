@@ -1,11 +1,14 @@
 @import "shared.scss";
 
 #landing {
+  height: 100vh;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  div {
-    width: 50%;
+  #left {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10%;
+    margin-right: 5%;
     align-items: center;
     justify-content: center;
     h1 {
@@ -19,10 +22,9 @@
       padding: 30px;
     }
   }
-  div {
+  #right {
     img {
-      padding: 30px;
-      width: 90%;
+      width: 100vh;
     }
   }
 }

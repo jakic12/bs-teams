@@ -5,7 +5,7 @@ import "../styles/landing-view.scss";
 export default ({img, btnTitle, onClick, title, description}) => {
     return (
         <div id="landing">
-            <div>
+            <div id="left">
                 <h1>{title}</h1>
                 <p>{description}</p>
                 <Button
@@ -13,7 +13,7 @@ export default ({img, btnTitle, onClick, title, description}) => {
                     title={btnTitle}
                     onClick={onClick}/>
             </div>
-            <div>
+            <div id="right">
                 <img src={img} alt={"screen"}/>
             </div>
         </div>
