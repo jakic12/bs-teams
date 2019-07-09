@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './styles/index.scss';
 import Router from './Router.jsx';
 import * as serviceWorker from './serviceWorker';
-//oj
 
 ReactDOM.render(<Router />, document.getElementById('root'));
 

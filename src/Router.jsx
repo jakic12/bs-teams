@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import TopMenu from './components/TopMenu'
 
-import Dashboard from './screens/Dashboard';
+import Homepage from './screens/Homepage';
 import Features from './screens/Features';
 
 /**
@@ -14,7 +14,7 @@ class Router extends Component{
             <BrowserRouter>
                 <TopMenu />
                 <div className="main-content">
-                    <Route exact={true} path="/" component={Dashboard}/>
+                    <Route exact={true} path="/" component={Homepage}/>
                     <Route path="/features" component={Features}/>
                 </div>
             </BrowserRouter>

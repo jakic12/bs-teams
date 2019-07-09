@@ -1,0 +1,8 @@
+@import "shared.scss";
+
+button {
+  width: 150px;
+  height: 40px;
+  border: $RED 2px solid;
+  border-radius: 20px;
+}
