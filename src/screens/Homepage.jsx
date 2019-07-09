@@ -9,8 +9,17 @@ import wordLogo from "../res/img/word-logo.png";
 import teamsLogo from "../res/img/teams-logo.png";
 import "../styles/home.scss";
 
+import mochFeature1 from '../res/img/moch-feature-1.png'
+import mochFeature1logo from '../res/img/moch-feature-1-logo.png'
+import mochFeature2 from '../res/img/moch-feature-2.png'
+import mochFeature2logo from '../res/img/moch-feature-2-logo.png'
+import coffeImage from '../res/img/camera-coffe.jpg'
+
 import Comparison from "../components/Comparison";
 import LandingView from "../components/LandingView";
+import FeatureScroll from "../components/FeatureScroll"
+import BigImpact from "../components/BigImpact"
+import LeftRightContainer from "../components/LeftRightContainer"
 
 export default class Homepage extends Component {
 
@@ -88,6 +97,39 @@ export default class Homepage extends Component {
                             name: "drive"
                         }
                     ]}/>
+                <FeatureScroll
+                    features={[
+                        {screenshot:mochFeature1, title:"Amazing callssdsd", icon:mochFeature1logo},
+                        {screenshot:mochFeature2, title:"Cool groups", icon:mochFeature2logo},
+                        {screenshot:mochFeature1, title:"I have no idea", icon:mochFeature1logo},
+                        {screenshot:mochFeature2, title:"Works like a charm and a half", icon:mochFeature2logo},
+                        {screenshot:mochFeature1, title:"I have no idea", icon:mochFeature1logo}
+                    ]}
+                    moreLinkText={
+                        "view more features"
+                    }
+                    morePath={
+                        `#`
+                    }
+                />
+                <BigImpact
+                    title="Product Features"
+                    subtitle="Nekaj funkcij, ki jih je X zmozen opravljati:"
+                    content={[
+                        {title:"Feature 1", desc:"Very short description lorem ipsum dor sit amet"},
+                        {title:"Feature 2", desc:"Very short description lorem ipsum dor sit amet"},
+                        {title:"Feature 3", desc:"Very short description lorem ipsum dor sit amet"},
+                        {title:"Feature 4", desc:"Very short description lorem ipsum dor sit amet"},
+                        {title:"Feature 5", desc:"Very short description lorem ipsum dor sit amet"},
+                        {title:"Feature 6", desc:"Very short description lorem ipsum dor sit amet"}
+                    ]}
+                    image={coffeImage}
+                    buttonText={"FREE TRIAL"}
+                />
+                <LeftRightContainer />
+                <LeftRightContainer />
+                <LeftRightContainer />
+
             </div>
         )
     }

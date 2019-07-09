@@ -9,11 +9,10 @@ class BigImpact extends Component{
         content:Array,
         image:Object,
         buttonText:String
-
     }
     render(){
         return (
-            <div className="bigImpact" style={{backgroundImage:`url(${this.props.image})`}}>
+            <div className="bigImpact" style={{backgroundImage:`url(${this.props.image})`, marginTop:`100px`, marginBottom:`100px`}}>
                 <div className="content">
                     <div className="header">
                         <div className="title">
