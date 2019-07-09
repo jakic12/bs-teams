@@ -1,0 +1,51 @@
+.bigImpact{
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:white;
+    padding:20px;
+
+    .content{
+        padding-top:10px;
+        padding-bottom: 30px;
+        padding-left:40px;
+        font-size: 20px;
+        .header{
+            .title{
+                font-size: 30px;
+                h1{
+                    margin:0;
+                }
+            }
+            .subtitle{
+                margin-top:30px;
+            }
+        }
+        .body{
+            padding-top:30px;
+            ul{
+                list-style-type: none;
+                li{
+                    font-weight: 500;
+                    padding:9px;
+                    div{
+                        display: inline;
+                    }
+
+                    .title{
+
+                    }
+
+                    .desc{
+                        padding-left:10px;
+                    }
+
+                }
+            }
+        }
+        .foot{
+            padding-top:40px;
+            padding-left:0px;
+        }
+    }
+}

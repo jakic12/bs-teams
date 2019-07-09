@@ -3,8 +3,8 @@ import "../styles/button.scss";
 
 export default ({title, onClick}) => (
     <button style={{
-    width: 150,
-        height: 40
+    width: 180,
+        height: 55
 }} onClick={onClick}>
     {title}
 </button>
