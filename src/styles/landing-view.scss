@@ -1,0 +1,28 @@
+@import "shared.scss";
+
+#landing {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  div {
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      color: $RED;
+      padding: 30px;
+    }
+    p {
+      padding: 30px;
+    }
+    #btn {
+      padding: 30px;
+    }
+  }
+  div {
+    img {
+      padding: 30px;
+      width: 90%;
+    }
+  }
+}

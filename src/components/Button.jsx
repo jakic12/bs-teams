@@ -1,9 +1,10 @@
 import React from 'react';
 import "../styles/button.scss";
 
-export default ({title, onClick}) => (
+export default ({title, onClick, margin}) => (
     <button style={{
-    width: 150,
+        margin: margin,
+        width: 150,
         height: 40
 }} onClick={onClick}>
     {title}
