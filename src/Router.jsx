@@ -35,7 +35,7 @@ class Router extends Component{
 
         return <div>
             <BrowserRouter>
-                <TopMenu />
+                <TopMenu isMobile={isMobile}/>
                 <div className="main-content">
                     <Route exact={true} path="/" render={props => <Homepage {...props} isMobile={isMobile} />} />
                     <Route path="/features" render={props => <Features {...props} isMobile={isMobile} />} />
