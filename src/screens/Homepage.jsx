@@ -117,6 +117,7 @@ export default class Homepage extends Component {
                     morePath={
                         `#`
                     }
+                    isMobile={this.props.isMobile}
                 />
                 <BigImpact
                     title="Product Features"
