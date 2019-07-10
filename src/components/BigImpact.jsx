@@ -3,13 +3,6 @@ import '../styles/bigImpact.scss'
 import Button from '../components/Button'
 
 class BigImpact extends Component{
-    static propTypes = {
-        title:String,
-        subtitle:String,
-        content:Array,
-        image:Object,
-        buttonText:String
-    }
     render(){
         return (
             <div className="bigImpact" style={{backgroundImage:`url(${this.props.image})`, marginTop:`100px`, marginBottom:`100px`}}>

@@ -20,12 +20,15 @@ import mochFeature1logo from '../res/img/moch-feature-1-logo.png'
 import mochFeature2 from '../res/img/moch-feature-2.png'
 import mochFeature2logo from '../res/img/moch-feature-2-logo.png'
 import coffeImage from '../res/img/camera-coffe.jpg'
+import teamsImg from '../res/img/test-moch-image.png'
 
 import Comparison from "../components/Comparison";
 import LandingView from "../components/LandingView";
 import FeatureScroll from "../components/FeatureScroll"
 import BigImpact from "../components/BigImpact"
 import LeftRightContainer from "../components/LeftRightContainer"
+import FirstRow from "../components/FirstRow"
+
 
 export default class Homepage extends Component {
 
@@ -68,15 +71,16 @@ export default class Homepage extends Component {
 
     render(){
         return (
-            <div>
-                <LandingView
-                    title={"Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
+            <div style={{overflowX: "hidden"}}>
+                <FirstRow
+                    title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                     description={"Nunc ac sapien vulputate odio convallis posuere nec vitae magna." +
                     "In a efficitur ex, eget dictum elit. Nullam ac elit blandit, pharetra augue id, pulvinar ipsum." +
                     "Maecenas vel libero odio. Mauris vehicula neque ex, in malesuada purus luctus sit amet."}
-                    btnTitle={"Klikni vec"}
-                    img={screenImg}
-                />
+                    btnTitle="Klikni vec"
+                    onClick="nekej"
+                    bigLogo={TelefonLaptop}
+                    smallLogo={Telefon}/>
                 <Comparison
                     isMobile={this.props.isMobile}
                     title={"Vsa orodja v enem"}
@@ -114,6 +118,7 @@ export default class Homepage extends Component {
                     morePath={
                         `#`
                     }
+                    isMobile={this.props.isMobile}
                 />
                 <BigImpact
                     title="Product Features"
@@ -129,10 +134,16 @@ export default class Homepage extends Component {
                     image={coffeImage}
                     buttonText={"FREE TRIAL"}
                 />
-                <LeftRightContainer />
-                <LeftRightContainer />
-                <LeftRightContainer />
-
+                <LeftRightContainer
+                    title={"What is Lorem Ipsum?"}
+                    description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."}
+                    image={teamsImg}
+                    flip={true}/>
+                <LeftRightContainer
+                    title={"What is Lorem Ipsum?"}
+                    description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."}
+                    image={teamsImg}
+                    flip={false}/>
             </div>
         )
     }

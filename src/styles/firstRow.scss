@@ -1,0 +1,86 @@
+@import "shared.scss";
+
+body{
+    height: 100%;
+}
+
+.firstRow{
+    flex-basis: 90%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.left {
+    flex-basis: 40%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10%;
+    margin-right: 5%;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      color: $RED;
+      padding: 30px;
+    }
+    p {
+      padding: 30px;
+    }
+  }
+
+.right{
+    flex-basis: 55%;
+    align-items: center;
+    justify-content: center;
+
+    .telefonLaptop{
+        position: relative;
+        top:50%;
+        transform: translate(0,-50%);
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+@media screen and (max-width: $mobile-width){
+    .firstRow{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+        margin: 0 auto;
+    }
+    
+    .left{
+        width: 100%;
+    }
+
+    .right{
+        margin-top: 30px;
+        width: 50%;
+        justify-content: space-around;
+    }
+
+    .telefonLaptop{
+        display: none;
+    }
+
+    .telefon{
+        width: 100%;
+        height: auto;
+    }
+    .btnWraper {
+        width: 170px;
+        height: 40px;
+        margin: 0 auto;
+      }
+}
+
+@media screen and (min-width: $mobile-width+1){
+    .telefon{
+        display: none;
+    }
+}
