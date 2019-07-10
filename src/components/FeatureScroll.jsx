@@ -58,15 +58,15 @@ class FeatureScroll extends Component{
                             }else{
                                 return<div className="mobileFeatures">
                                     {this.props.features.map((f,i) => 
-                                            <div className="mobileFeature" key={i}>
-                                                <div className="title" style={i == 0? {marginTop:0}:{}}>
-                                                    <div className="icon"><img src={f.icon} alt="feature-icon"/></div>
-                                                    <div className="text">{f.title}</div>
-                                                </div>
-                                                <div className="mobileScreenshot" key={`${i}_s`}>
-                                                    <img src={f.screenshot} alt="feature-screenshot"/>
-                                                </div>
+                                        <div className="mobileFeature" key={i}>
+                                            <div className="title" style={i == 0? {marginTop:0}:{}}>
+                                                <div className="icon"><img src={f.icon} alt="feature-icon"/></div>
+                                                <div className="text">{f.title}</div>
                                             </div>
+                                            <div className="mobileScreenshot" key={`${i}_s`}>
+                                                <img src={f.screenshot} alt="feature-screenshot"/>
+                                            </div>
+                                        </div>
                                     )}
                                 </div>
                             }
@@ -77,14 +77,6 @@ class FeatureScroll extends Component{
         )
     }
 }
-
-/*
- this.props.features.map((f,i) => 
-                                    <button className={`featureCard ${i===this.state.featured? "featured" : ""}`} key={i} onClick={() => {this.setState({featured:i})}}>
-                                        <div className="icon"><img src={f.icon} alt="feature-icon"/></div>
-                                        <div className="text">{f.title}</div>
-                                    </button>);
-                                    */
 
 /*example
 
