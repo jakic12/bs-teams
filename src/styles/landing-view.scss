@@ -1,0 +1,30 @@
+@import "shared.scss";
+
+#landing {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  #left {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10%;
+    margin-right: 5%;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      color: $RED;
+      padding: 30px;
+    }
+    p {
+      padding: 30px;
+    }
+    #btn {
+      padding: 30px;
+    }
+  }
+  #right {
+    img {
+      width: 100vh;
+    }
+  }
+}
