@@ -7,7 +7,7 @@ class FeatureScroll extends Component{
         super(props)
 
         this.state = {
-            featured:0
+            featured:0,
         }
 
         this.updateFeatured = this.updateFeatured.bind(this)
@@ -41,12 +41,17 @@ class FeatureScroll extends Component{
                     </div>
                     <div className="featureList">
                         <div className="features">
-                            {this.props.features.map((f,i) => 
-                                <button className={`featureCard ${i===this.state.featured? "featured" : ""}`} key={i} onClick={() => {this.setState({featured:i})}}>
-                                    <div className="icon"><img src={f.icon} alt="feature-icon"/></div>
-                                    <div className="text">{f.title}</div>
-                                </button>
-                            )}
+                            {(() => {
+                                if(!this.props.isMobile){
+                                    return this.props.features.map((f,i) => 
+                                    <button className={`featureCard ${i===this.state.featured? "featured" : ""}`} key={i} onClick={() => {this.setState({featured:i})}}>
+                                        <div className="icon"><img src={f.icon} alt="feature-icon"/></div>
+                                        <div className="text">{f.title}</div>
+                                    </button>);
+                            }else{
+                                return <div>test</div>
+                            }
+                            })()}
                         </div>
                         <div className="more">
                             <Link to={this.props.morePath}>{this.props.moreLinkText}</Link>
@@ -79,6 +84,8 @@ import mochFeature2logo from '../res/img/moch-feature-2-logo.png'
     morePath={
         `#`
     }
+
+    isMobile={this.props.isMobile}
 />
 */
 

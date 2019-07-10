@@ -9,13 +9,36 @@ import Features from './screens/Features';
  * hiest level - routes pages
  */
 class Router extends Component{
+    constructor(props){
+        super(props)
+        
+        this.state = {
+            width:window.innerWidth
+        }
+    }
+
+    componentWillMount(){
+        window.addEventListener('resize', this.handleWindowSizeChange);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowSizeChange);
+    }
+
+    handleWindowSizeChange = () => {
+        this.setState({ width: window.innerWidth });
+    };
+
     render(){
+        const { width } = this.state;
+        const isMobile = width <= 765;
+
         return <div>
             <BrowserRouter>
                 <TopMenu />
                 <div className="main-content">
-                    <Route exact={true} path="/" component={Homepage}/>
-                    <Route path="/features" component={Features}/>
+                    <Route exact={true} path="/" render={props => <Homepage {...props} isMobile={isMobile} />} />
+                    <Route path="/features" render={props => <Features {...props} isMobile={isMobile} />} />
                 </div>
             </BrowserRouter>
         </div>
