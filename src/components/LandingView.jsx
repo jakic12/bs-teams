@@ -4,7 +4,7 @@ import "../styles/landing-view.scss";
 
 export default ({img, btnTitle, onClick, title, description}) => {
     return (
-        <div id="landing">
+        <div id="landing" style={this.props.style}>
             <div id="left">
                 <h1>{title}</h1>
                 <p>{description}</p>

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 class TopMenu extends Component{
     render(){
         return (
-            <div className="topBar">
+            <div className="topBar" style={this.props.style}>
                 <div className="innerBarWrapper">
                     <div className="innerBar">
                         <div className="topBarBlock">

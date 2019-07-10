@@ -34,7 +34,7 @@ class FeatureScroll extends Component{
 
     render(){
         return (
-            <div className="featureScroll">
+            <div className="featureScroll" style={this.props.style}>
                 <div className={this.props.isMobile?"mobileFeatureWrapper":"featureWrapper"}>
                         {(() => {
                             if(!this.props.isMobile){
