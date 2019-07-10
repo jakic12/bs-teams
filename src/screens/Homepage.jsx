@@ -20,12 +20,16 @@ import mochFeature1logo from '../res/img/moch-feature-1-logo.png'
 import mochFeature2 from '../res/img/moch-feature-2.png'
 import mochFeature2logo from '../res/img/moch-feature-2-logo.png'
 import coffeImage from '../res/img/camera-coffe.jpg'
+import TelefonLaptop from "../res/img/telefon_laptop.png"
+import Telefon from "../res/img/telefon.png"
 
 import Comparison from "../components/Comparison";
 import LandingView from "../components/LandingView";
 import FeatureScroll from "../components/FeatureScroll"
 import BigImpact from "../components/BigImpact"
 import LeftRightContainer from "../components/LeftRightContainer"
+import FirstRow from "../components/FirstRow"
+
 
 export default class Homepage extends Component {
 
