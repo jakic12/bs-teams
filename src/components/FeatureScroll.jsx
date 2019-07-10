@@ -7,7 +7,7 @@ class FeatureScroll extends Component{
         super(props)
 
         this.state = {
-            featured:0
+            featured:0,
         }
 
         this.updateFeatured = this.updateFeatured.bind(this)
@@ -35,28 +35,56 @@ class FeatureScroll extends Component{
     render(){
         return (
             <div className="featureScroll">
-                <div className="featureWrapper">
-                    <div className="screenshot">
-                        <img src={this.props.features[this.state.featured].screenshot} alt="feature-screenshot"/>
-                    </div>
-                    <div className="featureList">
-                        <div className="features">
-                            {this.props.features.map((f,i) => 
-                                <button className={`featureCard ${i===this.state.featured? "featured" : ""}`} key={i} onClick={() => {this.setState({featured:i})}}>
-                                    <div className="icon"><img src={f.icon} alt="feature-icon"/></div>
-                                    <div className="text">{f.title}</div>
-                                </button>
-                            )}
-                        </div>
-                        <div className="more">
-                            <Link to={this.props.morePath}>{this.props.moreLinkText}</Link>
-                        </div>
-                    </div>
+                <div className={this.props.isMobile?"mobileFeatureWrapper":"featureWrapper"}>
+                        {(() => {
+                            if(!this.props.isMobile){
+                                return <React.Fragment>
+                                    <div className="screenshot">
+                                        <img src={this.props.features[this.state.featured].screenshot} alt="feature-screenshot"/>
+                                    </div>
+                                    <div className="featureList">
+                                        <div className="features">
+                                            {this.props.features.map((f,i) => 
+                                            <button className={`featureCard ${i===this.state.featured? "featured" : ""}`} key={i} onClick={() => {this.setState({featured:i})}}>
+                                                <div className="icon"><img src={f.icon} alt="feature-icon"/></div>
+                                                <div className="text">{f.title}</div>
+                                            </button>)}
+                                        </div>
+                                        <div className="more">
+                                            <Link to={this.props.morePath}>{this.props.moreLinkText}</Link>
+                                        </div>
+                                    </div>
+                                </React.Fragment>
+                            }else{
+                                return<div className="mobileFeatures">
+                                    {this.props.features.map((f,i) => 
+                                            <div className="mobileFeature" key={i}>
+                                                <div className="title" style={i == 0? {marginTop:0}:{}}>
+                                                    <div className="icon"><img src={f.icon} alt="feature-icon"/></div>
+                                                    <div className="text">{f.title}</div>
+                                                </div>
+                                                <div className="mobileScreenshot" key={`${i}_s`}>
+                                                    <img src={f.screenshot} alt="feature-screenshot"/>
+                                                </div>
+                                            </div>
+                                    )}
+                                </div>
+                            }
+                        })()}
+                    
                 </div>
             </div>
         )
     }
 }
+
+/*
+ this.props.features.map((f,i) => 
+                                    <button className={`featureCard ${i===this.state.featured? "featured" : ""}`} key={i} onClick={() => {this.setState({featured:i})}}>
+                                        <div className="icon"><img src={f.icon} alt="feature-icon"/></div>
+                                        <div className="text">{f.title}</div>
+                                    </button>);
+                                    */
 
 /*example
 
@@ -79,6 +107,8 @@ import mochFeature2logo from '../res/img/moch-feature-2-logo.png'
     morePath={
         `#`
     }
+
+    isMobile={this.props.isMobile}
 />
 */
 

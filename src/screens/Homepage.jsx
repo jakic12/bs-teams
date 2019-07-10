@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import Button from '../components/Button';
+//import Button from '../components/Button';
+import Sponzors from '../components/Sponzors'
+import MsLogo from '../res/img/gold_microsoft_logo.png' 
+import Kepion from '../res/img/kepion_logo.png' 
+import MagentoLogo from '../res/img/magento_logo.png' 
+import UmbracoLogo from '../res/img/umbraco_logo.png' 
+import AdvContainer from '../components/AdvContainer'
 
 import screenImg from "../res/img/telefon_laptop_teams_mockup.png";
 import storageLogo from "../res/img/drive-logo.png";

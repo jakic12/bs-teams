@@ -17,7 +17,7 @@ class TopMenu extends Component{
                                 <Link className="topLink" to="/">Domov</Link>
                             </div>
                         </div>
-                        <div className="topBarBlock linkLonger">
+                        <div className={`topBarBlock ${this.props.isMobile? "" : "linkLonger"}`}>
                             <div className="topLinkWrapper">
                                 <Link className="topLink" to="/features">Opis produkta</Link>
                             </div>
