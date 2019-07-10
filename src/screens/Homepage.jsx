@@ -72,15 +72,16 @@ export default class Homepage extends Component {
 
     render(){
         return (
-            <div>
-                <LandingView
-                    title={"Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
+            <div style={{overflowX: "hidden"}}>
+                <FirstRow
+                    title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                     description={"Nunc ac sapien vulputate odio convallis posuere nec vitae magna." +
                     "In a efficitur ex, eget dictum elit. Nullam ac elit blandit, pharetra augue id, pulvinar ipsum." +
                     "Maecenas vel libero odio. Mauris vehicula neque ex, in malesuada purus luctus sit amet."}
-                    btnTitle={"Klikni vec"}
-                    img={screenImg}
-                />
+                    btnTitle="Klikni vec"
+                    onClick="nekej"
+                    bigLogo={TelefonLaptop}
+                    smallLogo={Telefon}/>
                 <Comparison
                     move={this.state.move}
                     showFirst={this.state.showFirst}
