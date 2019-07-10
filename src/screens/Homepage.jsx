@@ -26,9 +26,7 @@ export default class Homepage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showFirst: false,
-            showSecond: false,
-            move: false
+            comparison: 0,
         };
         this.track = null;
     }
@@ -46,21 +44,19 @@ export default class Homepage extends Component {
     };
 
     isMiddle = (el) => {
-        return el.getBoundingClientRect().top <= window.innerHeight / 2;
+        return el.getBoundingClientRect().top <= window.innerHeight / 2.5;
     };
 
     trackScrolling = () => {
         const wrappedElement = document.getElementById('comparison');
         if (this.isTop(wrappedElement)) {
-            this.setState({showFirst: true});
+            this.setState({comparison: 1});
         }
         if (this.isMiddle(wrappedElement)) {
-            this.setState({showFirst: false});
-            this.setState({showSecond: true});
+            this.setState({comparison: 2});
         }
         if (this.isBottom(wrappedElement)) {
-            this.setState({move: true});
-            document.removeEventListener('scroll', this.track);
+            this.setState({comparison: 3});
         }
     };
 
@@ -76,9 +72,10 @@ export default class Homepage extends Component {
                     img={screenImg}
                 />
                 <Comparison
-                    move={this.state.move}
-                    showFirst={this.state.showFirst}
-                    showSecond={this.state.showSecond}
+                    isMobile={this.props.isMobile}
+                    title={"Vsa orodja v enem"}
+                    description={"Microsoft teams zdruzuje vsa Microsoftova orodja za komunikacijo, shranjevanje in management v novo orodje ki vkljucuje vse v enem bla bla..."}
+                    animationState={this.state.comparison}
                     leftIconsSize={100}
                     rightIconsSize={200}
                     teamsLogo={teamsLogo}

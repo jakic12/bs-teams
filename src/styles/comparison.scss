@@ -1,20 +1,35 @@
 @import "shared.scss";
 
 #comparison {
-  display: flex;
-  flex-direction: column;
-  #top {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    img {
-      margin: 60px
+  margin-top: 30%;
+  margin-bottom: 30%;
+  #left {
+    p {
+
+    }
+    h2 {
+
     }
   }
-  #down {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  #right {
+    #top {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    .image {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #down {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    div {
+      margin-right: auto;
+      margin-left: auto;
+    }
   }
 }
