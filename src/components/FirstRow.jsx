@@ -3,9 +3,9 @@ import '../styles/firstRow.scss'
 import Button from '../components/Button'
 
 
-export default ({title, description, btnTitle, onClick, bigLogo, smallLogo}) => {
+export default ({title, description, btnTitle, onClick, bigLogo, smallLogo, style}) => {
     return (
-        <div className="firstRow">
+        <div className="firstRow" style={style}>
             <div className="left">
                 <h1>{title}</h1>
                 <p>{description}</p>

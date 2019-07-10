@@ -5,7 +5,7 @@ class LeftRightContainer extends Component{
     render(){
         if (this.props.flip) {
             return (
-                <div className="leftRightContainer">
+                <div className="leftRightContainer" style={this.props.style}>
                     <div className="containerWrapper">
                         <div className="half">
                             <img className="TeamsImg" src={this.props.image} alt="TeamsImg" />
@@ -19,7 +19,7 @@ class LeftRightContainer extends Component{
             )
         } else {
             return (
-                <div className="leftRightContainer">
+                <div className="leftRightContainer" style={this.props.style}>
                     <div className="containerWrapper">
                         <div className="half">
                             <h1 className="title">{this.props.title}</h1>
