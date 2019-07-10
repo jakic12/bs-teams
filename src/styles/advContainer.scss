@@ -1,0 +1,45 @@
+@import "shared.scss";
+
+.advContainer{
+    position: relative;
+    width:100%;
+    height: 50%;
+    background: $LIGHT-GREY;
+    .containerWrapper{
+        position:relative;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-items: center;
+        width:100%;
+        height:100%;
+        line-height:100%;
+        .content{
+            position:relative;
+            display: block;
+            width:33%;
+            height:100%;
+            line-height:100%;
+            padding: 30px 0px 30px 0px;
+            margin:0 auto;
+            text-align: center;
+
+            .title{
+                margin:50px;
+                color: $RED;
+                line-height: 1.6;
+            }
+            .text{
+                margin:50px;
+                line-height: 1.6;
+            }
+            @media screen and (max-width: $mobile-width) {
+                width:100%; 
+                padding: 5px 0px 5px 0px;
+              
+                
+            }
+        }
+    }
+}
