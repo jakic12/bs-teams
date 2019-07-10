@@ -22,6 +22,7 @@ import mochFeature2logo from '../res/img/moch-feature-2-logo.png'
 import coffeImage from '../res/img/camera-coffe.jpg'
 import TelefonLaptop from "../res/img/telefon_laptop.png"
 import Telefon from "../res/img/telefon.png"
+import teamsImg from '../res/img/test-moch-image.png'
 
 import Comparison from "../components/Comparison";
 import LandingView from "../components/LandingView";
@@ -138,10 +139,16 @@ export default class Homepage extends Component {
                     image={coffeImage}
                     buttonText={"FREE TRIAL"}
                 />
-                <LeftRightContainer />
-                <LeftRightContainer />
-                <LeftRightContainer />
-
+                <LeftRightContainer
+                    title={"What is Lorem Ipsum?"}
+                    description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."}
+                    image={teamsImg}
+                    flip={true}/>
+                <LeftRightContainer
+                    title={"What is Lorem Ipsum?"}
+                    description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."}
+                    image={teamsImg}
+                    flip={false}/>
             </div>
         )
     }
