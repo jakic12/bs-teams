@@ -1,11 +1,10 @@
 @import "shared.scss";
 
-.leftRightContainer{
-    /*background: $LIGHT-GREY;*/
+.leftRightContainer {
     height:50%;
     width:100%;
     position:relative;
-    .containerWrapper{
+    .containerWrapper {
         position:relative;
         display: flex;
         justify-content: space-evenly;
@@ -15,7 +14,7 @@
         height:100%;
         line-height:100%;
     }
-    .half{
+    .half {
         position:relative;
         display: block;
         width:50%;
@@ -24,16 +23,16 @@
         line-height:100%;
         margin:0 auto;
 
-        .title{
+        .title {
             margin:50px;
             color: $RED;
             line-height: 1.6;
         }
-        .text{
+        .text {
             margin:50px;
             line-height: 1.6;
         }
-        .TeamsImg{
+        .video {
             width:90%;  
             height:90%;
             padding:0;

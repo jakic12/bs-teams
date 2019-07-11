@@ -91,7 +91,7 @@ export default class Homepage extends Component {
                         onClick={() => alert("You pressed a button!")}
                         bigLogo={TelefonLaptop}
                         smallLogo={Telefon}/>
-                    <div> 
+                    <div>
                         <Comparison
                             id={"comparisonView"}
                             style={{margin: 20}}
