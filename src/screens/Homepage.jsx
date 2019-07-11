@@ -30,6 +30,8 @@ import FeatureScroll from "../components/FeatureScroll"
 import BigImpact from "../components/BigImpact"
 import FirstRow from "../components/FirstRow"
 import Parallax from "../components/Parallax"
+import Footer from "../components/Footer"
+import Contacts from "../components/Contacts"
 
 
 export default class Homepage extends Component {
@@ -142,6 +144,8 @@ export default class Homepage extends Component {
                             image={coffeImage}
                             buttonText={"FREE TRIAL"}
                         />
+                        <Contacts />
+                        <Footer />
                     </div>
                 </Parallax>
             </div>
