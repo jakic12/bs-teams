@@ -47,16 +47,56 @@ class Parallax extends Component{
         let waveRect = wave.getBoundingClientRect()
 
         if(topRect.bottom > 0){
-            if(waveRect.top < topRect.top+waveRect.height/2){
+            if((waveRect.bottom+waveRect.top)/2 < window.innerHeight/3){
                 
-                //if(!this.state.ignoreAnim)
-                    console.log(waveRect.top, topRect.top+waveRect.height/2)
-                    //this.setState(() => ({ignoreAnim:true, sizeCoeficient:0}))
+                if(!this.state.ignoreAnim){
+                    this.setState(() => ({ignoreAnim:true}))
+                    const progressive = () => {
+                        if(this.state.sizeCoeficient > 0){
+                            this.setState(({sizeCoeficient})=>({
+                                sizeCoeficient:sizeCoeficient-0.1
+                            }), ()=>{
+                                if(this.state.sizeCoeficient > 0){
+                                    window.requestAnimationFrame(progressive)
+                                }else{
+                                    this.setState({ sizeCoeficient:0 })
+                                }
+                            })
+                        }
+                    }
+
+                    window.requestAnimationFrame(progressive)
+                    console.log("stop")
+                }
             }else{
                 this.sizeCoeficient = (start-end)*(topRect.bottom/(topRect.height+70))*start + end
-                window.requestAnimationFrame(() =>{
-                    this.setState(() => ({ignoreAnim:false,sizeCoeficient:this.sizeCoeficient}))
-                });
+                console.log(this.state.ignoreAnim, this.ignoreRetractAnimation)
+                if(this.state.ignoreAnim == true){
+                    if(!this.ignoreRetractAnimation){
+                        console.log("start")
+                        this.ignoreRetractAnimation = true;
+                        const progressive = () => {
+                            if(this.state.sizeCoeficient < this.sizeCoeficient){
+                                this.setState(({sizeCoeficient})=>({
+                                    sizeCoeficient:sizeCoeficient+0.1
+                                }), ()=>{
+                                    if(this.state.sizeCoeficient < this.sizeCoeficient){
+                                        window.requestAnimationFrame(progressive)
+                                    }else{
+                                        this.setState({ ignoreAnim:false, sizeCoeficient:this.state.sizeCoeficient })
+                                    }
+                                })
+                            }
+                        }
+
+                        window.requestAnimationFrame(progressive)
+                    }
+                }else{
+                    this.ignoreRetractAnimation = false;
+                    window.requestAnimationFrame(() =>{
+                        this.setState(() => ({ignoreAnim:false,sizeCoeficient:this.sizeCoeficient}))
+                    });
+                }
             }
         }
     }
@@ -66,11 +106,10 @@ class Parallax extends Component{
     }
 
     render(){
-        console.log(this.state.sizeCoeficient);
         return (
             <React.Fragment>
                 <div id="topParallax" style={this.state.parallaxEffect?{}:{position:`relative`, background:`#3c3c3b`, height:`calc(100vh - 70px)`}}>
-                    <div className="innerParallax" style={this.state.parallaxEffect?{transform:`scale(${this.state.sizeCoeficient}) translate(0,${(1-this.state.sizeCoeficient)*-500}px)`}:{}}>
+                    <div className="innerParallax" style={this.state.parallaxEffect?{transform:`scale(${this.state.sizeCoeficient}) translate(0,${(1-this.state.sizeCoeficient)*-1000}px)`}:{}}>
                         {this.props.children[0]}
                     </div>
                     <ReactSVG 

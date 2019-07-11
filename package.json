@@ -12,8 +12,8 @@
     "react-pose": "^4.0.8",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1"
-    "react-svg": "^10.0.10"
+    "react-scripts": "3.0.1",
+    "react-svg": "^10.0.11"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -8,6 +8,7 @@
         transition: scale 0.01s;
         height:calc(100vh - 70px);
         position:fixed;
+        max-width:100vw;
     }
     #waveCover{
         width:100%;
