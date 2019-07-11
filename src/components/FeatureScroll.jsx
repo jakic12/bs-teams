@@ -1,15 +1,40 @@
 import React, { Component } from 'react';
 import '../styles/featureScroll.scss'
 import { Link } from 'react-router-dom';
+import pose from "react-pose";
+
+const ImageWrapper = pose.div({
+    closed: {
+        x: -100,
+        opacity: 0,
+        transition: { duration: 1000 }
+    },
+    open: {
+        x: 0,
+        opacity: 1,
+        transition: { duration: 1000 }
+    }
+});
+
+const SelectionBar = pose.div({
+    closed: {
+        x: 100,
+        opacity: 0,
+        transition: { duration: 1000 }
+    },
+    open: {
+        x: 0,
+        opacity: 1,
+        transition: { duration: 1000 }
+    }
+});
 
 class FeatureScroll extends Component{
     constructor(props){
-        super(props)
-
+        super(props);
         this.state = {
             featured:0,
-        }
-
+        };
         this.updateFeatured = this.updateFeatured.bind(this)
     }
 
@@ -18,6 +43,7 @@ class FeatureScroll extends Component{
     }
     
     componentDidUpdate(){
+        console.log(this.props.animationState)
         this.updateFeatured()
     }
     
@@ -34,15 +60,15 @@ class FeatureScroll extends Component{
 
     render(){
         return (
-            <div className="featureScroll">
+            <div id={this.props.id} className="featureScroll" style={this.props.style}>
                 <div className={this.props.isMobile?"mobileFeatureWrapper":"featureWrapper"}>
                         {(() => {
                             if(!this.props.isMobile){
                                 return <React.Fragment>
-                                    <div className="screenshot">
+                                    <ImageWrapper pose={this.props.animationState > 1 ? "open" : "closed"} className="screenshot">
                                         <img src={this.props.features[this.state.featured].screenshot} alt="feature-screenshot"/>
-                                    </div>
-                                    <div className="featureList">
+                                    </ImageWrapper>
+                                    <SelectionBar pose={this.props.animationState > 1 ? "open" : "closed"} className="featureList">
                                         <div className="features">
                                             {this.props.features.map((f,i) => 
                                             <button className={`featureCard ${i===this.state.featured? "featured" : ""}`} key={i} onClick={() => {this.setState({featured:i})}}>
@@ -53,7 +79,7 @@ class FeatureScroll extends Component{
                                         <div className="more">
                                             <Link to={this.props.morePath}>{this.props.moreLinkText}</Link>
                                         </div>
-                                    </div>
+                                    </SelectionBar>
                                 </React.Fragment>
                             }else{
                                 return<div className="mobileFeatures">

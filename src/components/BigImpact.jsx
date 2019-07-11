@@ -5,7 +5,7 @@ import Button from '../components/Button'
 class BigImpact extends Component{
     render(){
         return (
-            <div className="bigImpact" style={{backgroundImage:`url(${this.props.image})`, marginTop:`100px`, marginBottom:`100px`}}>
+            <div id={this.props.id} className="bigImpact" style={{backgroundImage:`url(${this.props.image})`, marginTop:`100px`, marginBottom:`100px`, ...this.props.style}}>
                 <div className="content">
                     <div className="header">
                         <div className="title">

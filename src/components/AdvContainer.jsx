@@ -5,7 +5,7 @@ import '../styles/advContainer.scss'
 class AdvContainer extends Component{
     render(){
         return (
-            <div className="advContainer">
+            <div className="advContainer" style={this.props.style}>
                 <div className="containerWrapper">
                     <div className="content">
                         <h1 className="title">1</h1>  

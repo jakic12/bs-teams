@@ -8,9 +8,10 @@ import UmbracoLogo from '../res/img/umbraco_logo.png'
 import AdvContainer from '../components/AdvContainer'
 
 import screenImg from "../res/img/telefon_laptop_teams_mockup.png";
-import storageLogo from "../res/img/drive-logo.png";
-import mailLogo from "../res/img/gmail-logo.png";
-import calendarLogo from "../res/img/caledar-logo.png";
+import storageLogo from "../res/img/onedrive-logo.png";
+import mailLogo from "../res/img/mail-logo.png";
+import excelLogo from "../res/img/excel-logo.png";
+import powerpointLogo from "../res/img/powerpoint-logo.png";
 import wordLogo from "../res/img/word-logo.png";
 import teamsLogo from "../res/img/teams-logo.png";
 import "../styles/home.scss";
@@ -25,11 +26,12 @@ import TelefonLaptop from "../res/img/telefon_laptop.png"
 import Telefon from "../res/img/telefon.png"
 
 import Comparison from "../components/Comparison";
-import LandingView from "../components/LandingView";
 import FeatureScroll from "../components/FeatureScroll"
 import BigImpact from "../components/BigImpact"
-import LeftRightContainer from "../components/LeftRightContainer"
 import FirstRow from "../components/FirstRow"
+import Parallax from "../components/Parallax"
+import Footer from "../components/Footer"
+import Contacts from "../components/Contacts"
 
 
 export default class Homepage extends Component {
@@ -38,8 +40,14 @@ export default class Homepage extends Component {
         super(props);
         this.state = {
             comparison: 0,
+            featureScroll: 0,
+            featuresList: 0,
         };
         this.track = null;
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("scroll", this.trackScrolling);
     }
 
     componentDidMount() {
@@ -59,93 +67,87 @@ export default class Homepage extends Component {
     };
 
     trackScrolling = () => {
-        const wrappedElement = document.getElementById('comparison');
-        if (this.isTop(wrappedElement)) {
-            this.setState({comparison: 1});
-        }
-        if (this.isMiddle(wrappedElement)) {
-            this.setState({comparison: 2});
-        }
-        if (this.isBottom(wrappedElement)) {
-            this.setState({comparison: 3});
-        }
+        const comparisonView = document.getElementById('comparisonView');
+        const featureScroll = document.getElementById('featureScroll');
+        const bigImpact = document.getElementById('bigImpact');
+        this.getAnimationState(comparisonView, state => this.setState({comparison: state}));
+        this.getAnimationState(featureScroll, state => this.setState({featureScroll: state}));
+        this.getAnimationState(bigImpact, state => this.setState({featuresList: state}))
     };
 
+    getAnimationState = (element, callback) => {
+        if (this.isTop(element)) callback(1);
+        if (this.isMiddle(element)) callback(2);
+        if (this.isBottom(element)) callback(3);
+    };
     render(){
         return (
             <div style={{overflowX: "hidden"}}>
-                <FirstRow
-                    title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                    description={"Nunc ac sapien vulputate odio convallis posuere nec vitae magna." +
-                    "In a efficitur ex, eget dictum elit. Nullam ac elit blandit, pharetra augue id, pulvinar ipsum." +
-                    "Maecenas vel libero odio. Mauris vehicula neque ex, in malesuada purus luctus sit amet."}
-                    btnTitle="Klikni vec"
-                    onClick="nekej"
-                    bigLogo={TelefonLaptop}
-                    smallLogo={Telefon}/>
-                <Comparison
-                    isMobile={this.props.isMobile}
-                    title={"Vsa orodja v enem"}
-                    description={"Microsoft teams zdruzuje vsa Microsoftova orodja za komunikacijo, shranjevanje in management v novo orodje ki vkljucuje vse v enem bla bla..."}
-                    animationState={this.state.comparison}
-                    leftIconsSize={100}
-                    rightIconsSize={200}
-                    teamsLogo={teamsLogo}
-                    config={[
-                        {
-                            img: mailLogo,
-                            name: "drive"
-                        },{
-                            img: wordLogo,
-                            name: "word"
-                        },{
-                            img: calendarLogo,
-                            name: "calendar"
-                        },{
-                            img: storageLogo,
-                            name: "drive"
-                        }
-                    ]}/>
-                <FeatureScroll
-                    features={[
-                        {screenshot:mochFeature1, title:"Amazing callssdsd", icon:mochFeature1logo},
-                        {screenshot:mochFeature2, title:"Cool groups", icon:mochFeature2logo},
-                        {screenshot:mochFeature1, title:"I have no idea", icon:mochFeature1logo},
-                        {screenshot:mochFeature2, title:"Works like a charm and a half", icon:mochFeature2logo},
-                        {screenshot:mochFeature1, title:"I have no idea", icon:mochFeature1logo}
-                    ]}
-                    moreLinkText={
-                        "view more features"
-                    }
-                    morePath={
-                        `#`
-                    }
-                    isMobile={this.props.isMobile}
-                />
-                <BigImpact
-                    title="Product Features"
-                    subtitle="Nekaj funkcij, ki jih je X zmozen opravljati:"
-                    content={[
-                        {title:"Feature 1", desc:"Very short description lorem ipsum dor sit amet"},
-                        {title:"Feature 2", desc:"Very short description lorem ipsum dor sit amet"},
-                        {title:"Feature 3", desc:"Very short description lorem ipsum dor sit amet"},
-                        {title:"Feature 4", desc:"Very short description lorem ipsum dor sit amet"},
-                        {title:"Feature 5", desc:"Very short description lorem ipsum dor sit amet"},
-                        {title:"Feature 6", desc:"Very short description lorem ipsum dor sit amet"}
-                    ]}
-                    image={coffeImage}
-                    buttonText={"FREE TRIAL"}
-                />
-                <LeftRightContainer
-                    title={"What is Lorem Ipsum?"}
-                    description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."}
-                    image={teamsImg}
-                    flip={true}/>
-                <LeftRightContainer
-                    title={"What is Lorem Ipsum?"}
-                    description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."}
-                    image={teamsImg}
-                    flip={false}/>
+                <Parallax>
+                    <FirstRow
+                        title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                        description={"Nunc ac sapien vulputate odio convallis posuere nec vitae magna." +
+                        "In a efficitur ex, eget dictum elit. Nullam ac elit blandit, pharetra augue id, pulvinar ipsum." +
+                        "Maecenas vel libero odio. Mauris vehicula neque ex, in malesuada purus luctus sit amet."}
+                        btnTitle="Klikni vec"
+                        onClick={() => alert("You pressed a button!")}
+                        bigLogo={TelefonLaptop}
+                        smallLogo={Telefon}/>
+                    <div> 
+                        <Comparison
+                            id={"comparisonView"}
+                            style={{padding: 20}}
+                            isMobile={this.props.isMobile}
+                            title={"Vsa orodja v enem"}
+                            description={"Microsoft teams zdruzuje vsa Microsoftova orodja za komunikacijo, shranjevanje in management v novo orodje ki vkljucuje vse v enem bla bla..."}
+                            animationState={this.state.comparison}
+                            leftIconsSize={100}
+                            rightIconsSize={200}
+                            teamsLogo={teamsLogo}
+                            config={[
+                                {img: mailLogo, name: "drive"},
+                                {img: wordLogo, name: "word"},
+                                {img: excelLogo, name: "calendar"},
+                                {img: powerpointLogo, name: "power points"},
+                                {img: storageLogo, name: "drive"}
+                            ]}/>
+                        <FeatureScroll
+                            id={"featureScroll"}
+                            animationState={this.state.featureScroll}
+                            features={[
+                                {screenshot:mochFeature1, title:"Amazing callssdsd", icon:mochFeature1logo},
+                                {screenshot:mochFeature2, title:"Cool groups", icon:mochFeature2logo},
+                                {screenshot:mochFeature1, title:"I have no idea", icon:mochFeature1logo},
+                                {screenshot:mochFeature2, title:"Works like a charm and a half", icon:mochFeature2logo},
+                                {screenshot:mochFeature1, title:"I have no idea", icon:mochFeature1logo}
+                            ]}
+                            moreLinkText={
+                                "view more features"
+                            }
+                            morePath={
+                                `#`
+                            }
+                            isMobile={this.props.isMobile}
+                        />
+                        <BigImpact
+                            id={"bigImpact"}
+                            title="Product Features"
+                            subtitle="Nekaj funkcij, ki jih je X zmozen opravljati:"
+                            content={[
+                                {title:"Feature 1", desc:"Very short description lorem ipsum dor sit amet"},
+                                {title:"Feature 2", desc:"Very short description lorem ipsum dor sit amet"},
+                                {title:"Feature 3", desc:"Very short description lorem ipsum dor sit amet"},
+                                {title:"Feature 4", desc:"Very short description lorem ipsum dor sit amet"},
+                                {title:"Feature 5", desc:"Very short description lorem ipsum dor sit amet"},
+                                {title:"Feature 6", desc:"Very short description lorem ipsum dor sit amet"}
+                            ]}
+                            image={coffeImage}
+                            buttonText={"FREE TRIAL"}
+                        />
+                        <Contacts />
+                        <Footer />
+                    </div>
+                </Parallax>
             </div>
         )
     }
