@@ -94,7 +94,7 @@ export default class Homepage extends Component {
                     <div> 
                         <Comparison
                             id={"comparisonView"}
-                            style={{margin: 20}}
+                            style={{padding: 20}}
                             isMobile={this.props.isMobile}
                             title={"Vsa orodja v enem"}
                             description={"Microsoft teams zdruzuje vsa Microsoftova orodja za komunikacijo, shranjevanje in management v novo orodje ki vkljucuje vse v enem bla bla..."}

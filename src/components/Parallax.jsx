@@ -69,9 +69,11 @@ class Parallax extends Component{
         console.log(this.state.sizeCoeficient);
         return (
             <React.Fragment>
-                <div id="topParallax" style={this.state.parallaxEffect?{}:{position:`relative`, background:`#3c3c3b`, height:`calc(100vh - 70px)`}}>
-                    <div className="innerParallax" style={this.state.parallaxEffect?{transform:`scale(${this.state.sizeCoeficient}) translate(0,${(1-this.state.sizeCoeficient)*-500}px)`}:{}}>
-                        {this.props.children[0]}
+                <div className="topWrapper">
+                    <div id="topParallax" style={this.state.parallaxEffect?{}:{position:`relative`, background:`#3c3c3b`, height:`calc(100vh-70px)`}}>
+                        <div className="innerParallax" style={this.state.parallaxEffect?{transform:`scale(${this.state.sizeCoeficient}) translate(0,${(1-this.state.sizeCoeficient)*-500}px)`}:{}}>
+                            {this.props.children[0]}
+                        </div>
                     </div>
                     <ReactSVG 
                         id="waveCover"
@@ -79,6 +81,13 @@ class Parallax extends Component{
                         beforeInjection={svg => {
                           svg.classList.add('svg-wave')
                           svg.setAttribute('preserveAspectRatio', 'none')
+                          if(svg.parentElement){
+                            let prect = svg.parentElement.getBoundingClientRect();
+                            svg.height = prect.height
+                            svg.width = prect.width
+                          }else{
+                              console.log(svg);
+                          }
                         }}
                         
                         afterInjection={(err, svg)=>{
