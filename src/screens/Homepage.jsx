@@ -43,6 +43,7 @@ import Parallax from "../components/Parallax"
 import FeatureList from "../components/FeatureList"
 import Footer from "../components/Footer"
 import Contacts from "../components/Contacts"
+import TopBottomWave from "../components/TopBottomWave"
 import Planets from "../components/Planets"
 
 import iconCall from "../res/img/feature_icons/icon_call.svg"
@@ -147,24 +148,6 @@ export default class Homepage extends Component {
                                 buttonText={"FREE TRIAL"}
                             />
                         </div>
-                        <Comparison
-                            id={"comparisonView"}
-                            style={{paddingBottom: 200}}
-                            animationTriggerState={1}
-                            isMobile={this.props.isMobile}
-                            title={"Vsa orodja v enem"}
-                            description={"Microsoft teams zdruzuje vsa Microsoftova orodja za komunikacijo, shranjevanje in management v novo orodje ki vkljucuje vse v enem bla bla..."}
-                            animationState={this.state.comparison}
-                            leftIconsSize={100}
-                            rightIconsSize={200}
-                            teamsLogo={teamsLogo}
-                            config={[
-                                {img: mailLogo, name: "drive"},
-                                {img: wordLogo, name: "word"},
-                                {img: excelLogo, name: "calendar"},
-                                {img: powerpointLogo, name: "power points"},
-                                {img: storageLogo, name: "drive"}
-                            ]}/>
                         <FeatureScroll
                             id={"featureScroll"}
                             style={{paddingBottom: 200}}
@@ -181,8 +164,31 @@ export default class Homepage extends Component {
                             morePath={`#`}
                             isMobile={this.props.isMobile}
                         />
-                        <Sponzors sponzors={[Ebs, insTech, pronega]}/>
-                        <Contacts />
+                        <Comparison
+                            id={"comparisonView"}
+                            style={{padding: 20}}
+                            isMobile={this.props.isMobile}
+                            title={"Vsa orodja v enem"}
+                            description={"Microsoft teams zdruzuje vsa Microsoftova orodja za komunikacijo, shranjevanje in management v novo orodje ki vkljucuje vse v enem bla bla..."}
+                            animationState={this.state.comparison}
+                            leftIconsSize={100}
+                            rightIconsSize={200}
+                            teamsLogo={teamsLogo}
+                            config={[
+                                {img: mailLogo, name: "drive"},
+                                {img: wordLogo, name: "word"},
+                                {img: excelLogo, name: "calendar"},
+                                {img: powerpointLogo, name: "power points"},
+                                {img: storageLogo, name: "drive"}
+                            ]}/>
+                        <TopBottomWave>
+                            <Sponzors sponzors={[
+                                Ebs,
+                                insTech,
+                                pronega
+                            ]}/>
+                            <Contacts />
+                        </TopBottomWave>
                         <Footer />
                     </div>
                 </Parallax>
