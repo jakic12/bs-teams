@@ -30,6 +30,8 @@ import FeatureScroll from "../components/FeatureScroll"
 import BigImpact from "../components/BigImpact"
 import FirstRow from "../components/FirstRow"
 import Parallax from "../components/Parallax"
+import Footer from "../components/Footer"
+import Contacts from "../components/Contacts"
 
 
 export default class Homepage extends Component {
@@ -94,7 +96,7 @@ export default class Homepage extends Component {
                     <div>
                         <Comparison
                             id={"comparisonView"}
-                            style={{margin: 20}}
+                            style={{padding: 20}}
                             isMobile={this.props.isMobile}
                             title={"Vsa orodja v enem"}
                             description={"Microsoft teams zdruzuje vsa Microsoftova orodja za komunikacijo, shranjevanje in management v novo orodje ki vkljucuje vse v enem bla bla..."}
@@ -142,6 +144,8 @@ export default class Homepage extends Component {
                             image={coffeImage}
                             buttonText={"FREE TRIAL"}
                         />
+                        <Contacts />
+                        <Footer />
                     </div>
                 </Parallax>
             </div>
