@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 //import Button from '../components/Button';
 import Sponzors from '../components/Sponzors'
@@ -30,6 +31,13 @@ import FeatureScroll from "../components/FeatureScroll"
 import BigImpact from "../components/BigImpact"
 import FirstRow from "../components/FirstRow"
 import Parallax from "../components/Parallax"
+import FeatureList from "../components/FeatureList"
+
+import iconCall from "../res/img/feature_icons/icon_call.svg"
+import iconApp from "../res/img/feature_icons/icon_app.svg"
+import iconChat from "../res/img/feature_icons/icon_chat.svg"
+import iconCloud from "../res/img/feature_icons/icon_cloud.svg"
+import iconPlanner from "../res/img/feature_icons/icon_planner.svg"
 
 
 export default class Homepage extends Component {
@@ -92,6 +100,20 @@ export default class Homepage extends Component {
                         bigLogo={TelefonLaptop}
                         smallLogo={Telefon}/>
                     <div> 
+                        <FeatureList 
+                            id={"bigImpact"}
+                            title="Funkcije"
+                            subtitle="Hiter pregled nekaterih osnovnih funkcij:"
+                            content={[
+                                {icon: iconCall,    title:"Chat", desc:"Instantno posiljanje"},
+                                {icon: iconApp,     title:"Aplikacije", desc:"več kot xxx aplikacij na voljo"},
+                                {icon: iconChat,    title:"Cloud", desc:"dosegljivost datotek"},
+                                {icon: iconCloud,   title:"Feature 4", desc:"test"},
+                                {icon: iconPlanner, title:"Feature 5", desc:"Very short descri sit amet"},
+                            ]}
+                            image={coffeImage}
+                            buttonText={"FREE TRIAL"}
+                        />
                         <Comparison
                             id={"comparisonView"}
                             style={{margin: 20}}
@@ -126,21 +148,6 @@ export default class Homepage extends Component {
                                 `#`
                             }
                             isMobile={this.props.isMobile}
-                        />
-                        <BigImpact
-                            id={"bigImpact"}
-                            title="Product Features"
-                            subtitle="Nekaj funkcij, ki jih je X zmozen opravljati:"
-                            content={[
-                                {title:"Feature 1", desc:"Very short description lorem ipsum dor sit amet"},
-                                {title:"Feature 2", desc:"Very short description lorem ipsum dor sit amet"},
-                                {title:"Feature 3", desc:"Very short description lorem ipsum dor sit amet"},
-                                {title:"Feature 4", desc:"Very short description lorem ipsum dor sit amet"},
-                                {title:"Feature 5", desc:"Very short description lorem ipsum dor sit amet"},
-                                {title:"Feature 6", desc:"Very short description lorem ipsum dor sit amet"}
-                            ]}
-                            image={coffeImage}
-                            buttonText={"FREE TRIAL"}
                         />
                     </div>
                 </Parallax>
