@@ -66,7 +66,6 @@ class Parallax extends Component{
     }
 
     render(){
-        console.log(this.state.sizeCoeficient);
         return (
             <React.Fragment>
                 <div className="topWrapper">
