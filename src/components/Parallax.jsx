@@ -3,6 +3,7 @@ import '../styles/parallax.scss'
 import waveCover from '../res/img/space_cloud.svg';
 import ReactSVG from 'react-svg'
 import { relative } from 'path';
+import { Parallax as Px } from 'react-scroll-parallax';
 
 class Parallax extends Component{
     constructor(props){
@@ -12,7 +13,6 @@ class Parallax extends Component{
 
         this.state = {
             sizeCoeficient:this.sizeCoeficient,
-            parallaxEffect:true,
             ignoreAnim:false
         }
     }
@@ -25,16 +25,10 @@ class Parallax extends Component{
         } catch(err) {}
 
         window.addEventListener('scroll', this.handleScroll, passiveIfSupported );
-        window.addEventListener('resize', this.handleResize)
     }
     
     componentWillUnmount(){
         window.removeEventListener('scroll', this.handleScroll)
-        window.removeEventListener('resize', this.handleResize)
-    }
-
-    handleResize = () => {
-        //document.getElementById()
     }
     
     handleScroll = () =>{
@@ -71,10 +65,17 @@ class Parallax extends Component{
                 <div className="topWrapper">
                     <div className="topParallaxWrapper" style={{ opacity: 1-this.state.sizeCoeficient }}>
                     </div>
-                    <div id="topParallax" style={this.state.parallaxEffect?{}:{position:`relative`, background:`#3c3c3b`, height:`calc(100vh-70px)`}}>
-                        <div className="innerParallax" style={this.state.parallaxEffect?{transform:`translate3d(0,${(1-this.state.sizeCoeficient)*(window.innerHeight/1.1)}px,0)`}:{}}>
-                            {this.props.children[0]}
-                        </div>
+                    <div id="topParallax">
+                        {!this.props.isMobile &&
+                            <Px y={[-70, 100]} className="innerParallax" /*style={{transform:`translate3d(0,${(1-this.state.sizeCoeficient)*(window.innerHeight/1.1)}px,0)`}}*/>
+                                {this.props.children[0]}
+                            </Px>
+                        }
+                        {this.props.isMobile &&
+                            <div className="innerParallax">
+                                {this.props.children[0]}
+                            </div>
+                        }
                     </div>
                     <ReactSVG 
                         id="waveCover"

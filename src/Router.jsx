@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { ParallaxProvider } from 'react-scroll-parallax';
 import TopMenu from './components/TopMenu'
 
 import Homepage from './screens/Homepage';
@@ -34,13 +35,15 @@ class Router extends Component{
         const isMobile = width <= 765;
 
         return <div>
-            <BrowserRouter>
-                <TopMenu isMobile={isMobile}/>
-                <div className="main-content">
-                    <Route exact={true} path="/" render={props => <Homepage {...props} isMobile={isMobile} />} />
-                    <Route path="/features" render={props => <Features {...props} isMobile={isMobile} />} />
-                </div>
-            </BrowserRouter>
+            <ParallaxProvider>
+                <BrowserRouter>
+                    <TopMenu isMobile={isMobile}/>
+                    <div className="main-content">
+                        <Route exact={true} path="/" render={props => <Homepage {...props} isMobile={isMobile} />} />
+                        <Route path="/features" render={props => <Features {...props} isMobile={isMobile} />} />
+                    </div>
+                </BrowserRouter>
+            </ParallaxProvider>
         </div>
     }
 }
