@@ -42,6 +42,7 @@ import Parallax from "../components/Parallax"
 import FeatureList from "../components/FeatureList"
 import Footer from "../components/Footer"
 import Contacts from "../components/Contacts"
+import Planets from "../components/Planets"
 
 import iconCall from "../res/img/feature_icons/icon_call.svg"
 import iconApp from "../res/img/feature_icons/icon_app.svg"
@@ -109,21 +110,24 @@ export default class Homepage extends Component {
                         onClick={() => alert("You pressed a button!")}
                         bigLogo={TelefonLaptop}
                         smallLogo={Telefon}/>
-                    <div> 
-                        <FeatureList 
-                            id={"bigImpact"}
-                            title="Funkcije"
-                            subtitle="Hiter pregled nekaterih osnovnih funkcij:"
-                            content={[
-                                {icon: iconCall,    title:"Chat", desc:"Instantno posiljanje"},
-                                {icon: iconApp,     title:"Aplikacije", desc:"več kot xxx aplikacij na voljo"},
-                                {icon: iconChat,    title:"Cloud", desc:"dosegljivost datotek"},
-                                {icon: iconCloud,   title:"Feature 4", desc:"test"},
-                                {icon: iconPlanner, title:"Feature 5", desc:"Very short descri sit amet"},
-                            ]}
-                            image={coffeImage}
-                            buttonText={"FREE TRIAL"}
-                        />
+                    <div>
+                        <div style={{position:`relative`}}>
+                            <Planets />
+                            <FeatureList 
+                                id={"bigImpact"}
+                                title="Funkcije"
+                                subtitle="Hiter pregled nekaterih osnovnih funkcij:"
+                                content={[
+                                    {icon: iconCall,    title:"Chat", desc:"Instantno posiljanje"},
+                                    {icon: iconApp,     title:"Aplikacije", desc:"več kot xxx aplikacij na voljo"},
+                                    {icon: iconChat,    title:"Cloud", desc:"dosegljivost datotek"},
+                                    {icon: iconCloud,   title:"Feature 4", desc:"test"},
+                                    {icon: iconPlanner, title:"Feature 5", desc:"Very short descri sit amet"},
+                                ]}
+                                image={coffeImage}
+                                buttonText={"FREE TRIAL"}
+                            />
+                        </div>
                         <Comparison
                             id={"comparisonView"}
                             style={{padding: 20}}

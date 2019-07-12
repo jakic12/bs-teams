@@ -2,6 +2,7 @@
     position:relative;
     background:#3c3c3b;
     overflow:hidden;
+    z-index:-1;
     .topParallaxWrapper{
         background-color:rgba(0, 0, 0, 0.664);
         position:absolute;
@@ -9,7 +10,7 @@
         left:0;
         right:0;
         bottom:20px;
-        z-index:3000;
+        
     }
     #topParallax{
         height:calc(100vh - 70px);
@@ -26,11 +27,11 @@
         /*position:absolute;
         bottom:-10px;*/
         position:relative;
-        z-index: 2000;
         width:100vw;
-        z-index:4000;
+        z-index:3000;
         padding-bottom:-20px;
         overflow: hidden;
+     
         .svg-wave{
             width:100vw;
         }
