@@ -32,6 +32,8 @@ import BigImpact from "../components/BigImpact"
 import FirstRow from "../components/FirstRow"
 import Parallax from "../components/Parallax"
 import FeatureList from "../components/FeatureList"
+import Footer from "../components/Footer"
+import Contacts from "../components/Contacts"
 
 import iconCall from "../res/img/feature_icons/icon_call.svg"
 import iconApp from "../res/img/feature_icons/icon_app.svg"
@@ -116,7 +118,7 @@ export default class Homepage extends Component {
                         />
                         <Comparison
                             id={"comparisonView"}
-                            style={{margin: 20}}
+                            style={{padding: 20}}
                             isMobile={this.props.isMobile}
                             title={"Vsa orodja v enem"}
                             description={"Microsoft teams zdruzuje vsa Microsoftova orodja za komunikacijo, shranjevanje in management v novo orodje ki vkljucuje vse v enem bla bla..."}

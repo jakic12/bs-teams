@@ -2,7 +2,7 @@ import React from 'react';
 import "../styles/button.scss";
 
 export default ({title, onClick, margin, style}) => (
-    <button style={{
+    <button className="roundButton" style={{
         margin: margin,
         width: 150,
         height: 40,
