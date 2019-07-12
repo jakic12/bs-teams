@@ -20,12 +20,12 @@ const ImageWrapper = pose.div({
     closed: {
         x: -100,
         opacity: 0,
-        transition: { duration: 1000 }
+        transition: { duration: 1500 }
     },
     open: {
         x: 0,
         opacity: 1,
-        transition: { duration: 1000 }
+        transition: { duration: 1500 }
     }
 });
 
@@ -80,19 +80,21 @@ class FeatureScroll extends Component{
     };
 
     render(){
+        let {animationTriggerState, animationState, isMobile} = this.props;
         return (
             <div id={this.props.id} className="featureScroll" style={this.props.style}>
-                <div className={this.props.isMobile?"mobileFeatureWrapper":"featureWrapper"}>
+                <div className={isMobile?"mobileFeatureWrapper":"featureWrapper"}>
                         {(() => {
-                            if(!this.props.isMobile){
+                            if(!isMobile){
                                 return <React.Fragment>
-                                    <ImageWrapper pose={this.props.animationState > 1 ? "open" : "closed"} className="screenshot">
+                                    <ImageWrapper
+                                        pose={animationState > animationTriggerState ? "open" : "closed"} className="screenshot">
                                         <Image
                                             pose={this.state.switching ? 'closed' : 'open'}
                                             src={this.props.features[this.state.featured].screenshot}
                                             alt="feature-screenshot"/>
                                     </ImageWrapper>
-                                    <SelectionBar pose={this.props.animationState > 1 ? "open" : "closed"} className="featureList">
+                                    <SelectionBar pose={animationState > animationTriggerState ? "open" : "closed"} className="featureList">
                                         <div className="features">
                                             {this.props.features.map((f,i) => 
                                             <button

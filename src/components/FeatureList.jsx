@@ -1,20 +1,35 @@
 import React, { Component } from 'react'
 import '../styles/topMenu.scss'
-import Button from '../components/Button'
-import reactSvg from 'react-svg';
+import pose from 'react-pose';
 import '../styles/shared.scss';
 import '../styles/featureList.scss';
 
-export default ({content, title, style, id, buttonText, subtitle}) => {
+const Div = pose.div({
+   show: {
+       x: 0,
+       opacity: 1,
+       transition: {
+           duration: 1000
+       }
+   },
+    hidden: {
+        x: -100,
+        opacity: 0,
+        transition: {
+            duration: 1000
+        }
+    }
+});
+
+export default ({content, title, style, id, animationState, animationTriggerState}) => {
     return (
-        <div id={id} style={style} className="featureList" style={style}>
+        <Div
+            pose={animationState > animationTriggerState ? 'show' : 'hidden'}
+            id={id} className="featureList" style={style}>
             <div className="content">
                 <div className="header">
                     <div className="title">
-                        <h1 className={'mediumDarkTitle'}>{title}</h1>
-                    </div>
-                    <div className="subtitle">
-                        {subtitle}
+                        <h1 className={'bigDarkTitle'}>{title}</h1>
                     </div>
                 </div>
                 <div className="body">
@@ -30,12 +45,7 @@ export default ({content, title, style, id, buttonText, subtitle}) => {
                         )}
                     </ul>
                 </div>
-                <div className="foot">
-                    <div className="buttonWrapper">
-                        <Button title={buttonText} style={{backgroundColor:`#c51e2b`, color:`white`}}/>
-                    </div>
-                </div>
             </div>
-        </div>
+        </Div>
     )
 };

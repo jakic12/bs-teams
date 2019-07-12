@@ -4,10 +4,12 @@ import FeaturesLandingView from '../components/FeaturesLandingView';
 import teamsImg from "../res/img/test-moch-image.png";
 import demoVideo from "../res/video/CHAT_DEMO_FINAL.mov";
 import Telefon from "../res/img/telefon - Copy.png"
+import redPlanet from '../res/img/planets/planet_small_red.svg'
 
 import checkboxIcon from "../res/img/checkbox-icon.png";
 import Parallax from "../components/Parallax";
 import FirstRow from "../components/FirstRow";
+import Planets from "../components/Planets";
 
 class Features extends Component{
 
@@ -17,7 +19,8 @@ class Features extends Component{
         this.state = {
             featureViewFirst: 0,
             featureViewSecond: 0,
-            featureViewThird: 0
+            featureViewThird: 0,
+            planetView: 0
         }
     }
 
@@ -30,7 +33,7 @@ class Features extends Component{
     }
 
     isTop = (el) => {
-        return el.getBoundingClientRect().top <= window.innerHeight / 6;
+        return el.getBoundingClientRect().top <= window.innerHeight / 1.3;
     };
 
     isBottom = (el) => {
@@ -42,9 +45,12 @@ class Features extends Component{
     };
 
     trackScrolling = () => {
+        const planetView = document.getElementById('planetView');
         const featureView = document.getElementById('featureViewFirst');
         const lefRightFirst = document.getElementById('featureViewSecond');
         const leftRightSecond = document.getElementById('featureViewThird');
+
+        this.getAnimationState(planetView, state => this.setState({planetView: state}));
         this.getAnimationState(featureView, state => this.setState({featureViewFirst: state}));
         this.getAnimationState(lefRightFirst, state => this.setState({featureViewSecond: state}));
         this.getAnimationState(leftRightSecond, state => this.setState({featureViewThird: state}))
@@ -59,14 +65,20 @@ class Features extends Component{
     render(){
         return (
             <div>
-                <Parallax resizeHeightBy={'50vh'}>
+                <Parallax resizeHeightBy={'70vh'}>
                     <FeaturesLandingView
                         logo={Telefon}
                         title="Get all the tools you need to make teamwork a breeze"/>
                         <div>
+                            <Planets
+                                id={'planetView'}
+                                style={{padding: 60, width: '10%'}}
+                                firstImage={redPlanet}
+                                animationTriggerState={-1}
+                                animationState={this.state.planetView}/>
                             <FeatureView
                                 id={"featureViewFirst"}
-                                triggerValue={-1}
+                                animationTriggerState={1}
                                 title={"What is Lorem Ipsum?"}
                                 icon={checkboxIcon}
                                 video={demoVideo}
@@ -81,7 +93,7 @@ class Features extends Component{
                             />
                             <FeatureView
                                 id={"featureViewSecond"}
-                                triggerValue={1}
+                                animationTriggerState={1}
                                 title={"What is Lorem Ipsum?"}
                                 style={{backgroundColor: '#f6f7f9'}}
                                 icon={checkboxIcon}
@@ -97,7 +109,7 @@ class Features extends Component{
                             />
                             <FeatureView
                                 id={"featureViewThird"}
-                                triggerValue={1}
+                                animationTriggerState={1}
                                 title={"What is Lorem Ipsum?"}
                                 icon={checkboxIcon}
                                 video={demoVideo}

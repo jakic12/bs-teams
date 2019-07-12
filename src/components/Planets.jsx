@@ -1,20 +1,45 @@
 import React, { Component } from 'react'
-import ReactSvg from 'react-svg'
-
+import pose from 'react-pose';
 import '../styles/planets.scss'
 
-import redPlanet from '../res/img/planets/planet_big_red.svg'
-import moon from '../res/img/planets/planet_small_gray.svg'
 
-export default ({style}) => {
+const Image = pose.img({
+    move: {
+        transition: ({ i }) => ({ x: i * 50 })
+    },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 1000
+        }
+    },
+    hidden: {
+        opacity: 1,
+        x: 1000,
+        transition: {
+            duration: 1000
+        }
+    },
+    props: { i: 0 }
+});
+
+export default ({id, style, animationProgress, animationState, animationTriggerState, firstImage, secondImage}) => {
+    console.log('animation state ', animationState);
     return (
-        <div className="planets"  style={style}>
-            <div className={"redPlanet"}>
-                <img src={redPlanet} alt={"red planet"} />
-            </div>
-            <div className={"moon"}>
-            <img src={moon} alt={"red planet"} />
-            </div>
+        <div id={id} className="planets"  style={style}>
+            {firstImage && <div className={"redPlanet"}>
+                <Image
+                    i={animationProgress}
+                    pose={animationState > animationTriggerState ? 'visible' : 'hidden'}
+                    src={firstImage} alt={"red planet"} />
+            </div>}
+            {secondImage && <div className={"moon"}>
+                <Image
+                    i={animationProgress}
+                    pose={animationState > animationTriggerState ? 'visible' : 'hidden'}
+                    src={secondImage} alt={"red planet"} />
+            </div>}
         </div>
     )
 };

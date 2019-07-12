@@ -32,6 +32,8 @@ import coffeImage from '../res/img/camera-coffe.jpg'
 import teamsImg from '../res/img/test-moch-image.png'
 import TelefonLaptop from "../res/img/telefon_laptop.png"
 import Telefon from "../res/img/telefon.png"
+import redPlanet from '../res/img/planets/planet_big_red.svg'
+import moon from '../res/img/planets/planet_small_gray.svg'
 
 import Comparison from "../components/Comparison";
 import FeatureScroll from "../components/FeatureScroll"
@@ -58,6 +60,8 @@ export default class Homepage extends Component {
             comparison: 0,
             featureScroll: 0,
             featuresList: 0,
+            functionsView: 0,
+            planetsView: 0
         };
         this.track = null;
     }
@@ -79,16 +83,24 @@ export default class Homepage extends Component {
     };
 
     isMiddle = (el) => {
-        return el.getBoundingClientRect().top <= window.innerHeight / 2.5;
+        return el.getBoundingClientRect().top <= window.innerHeight / 1.3;
     };
 
     trackScrolling = () => {
+        const planetsView = document.getElementById('planetsView');
+        const functionsView = document.getElementById('functionsView');
         const comparisonView = document.getElementById('comparisonView');
         const featureScroll = document.getElementById('featureScroll');
-        const bigImpact = document.getElementById('bigImpact');
+
+        this.getAnimationState(planetsView, state => this.setState({planetsView: state}));
+        this.getAnimationState(functionsView, state => this.setState({functionsView: state}));
         this.getAnimationState(comparisonView, state => this.setState({comparison: state}));
         this.getAnimationState(featureScroll, state => this.setState({featureScroll: state}));
-        this.getAnimationState(bigImpact, state => this.setState({featuresList: state}))
+
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrolled = (winScroll / height) * 100;
+        console.log(scrolled);
     };
 
     getAnimationState = (element, callback) => {
@@ -96,6 +108,7 @@ export default class Homepage extends Component {
         if (this.isMiddle(element)) callback(2);
         if (this.isBottom(element)) callback(3);
     };
+
     render(){
         return (
             <div style={{overflowX: "hidden"}}>
@@ -110,10 +123,18 @@ export default class Homepage extends Component {
                         smallLogo={Telefon}/>
                     <div>
                         <div style={{position:`relative`}}>
-                            <Planets />
-                            <FeatureList 
-                                id={"bigImpact"}
+                            <Planets
+                                id={'planetsView'}
+                                firstImage={redPlanet}
+                                secondImage={moon}
+                                animationTriggerState={1}
+                                animationState={this.state.planetsView}/>
+                            <FeatureList
+                                id={"functionsView"}
+                                animationTriggerState={1}
+                                animationState={this.state.functionsView}
                                 title="Funkcije"
+                                style={{paddingBottom: 200}}
                                 subtitle="Hiter pregled nekaterih osnovnih funkcij:"
                                 content={[
                                     {icon: iconCall,    title:"Chat", desc:"Instantno posiljanje"},
@@ -128,7 +149,8 @@ export default class Homepage extends Component {
                         </div>
                         <Comparison
                             id={"comparisonView"}
-                            style={{padding: 20}}
+                            style={{paddingBottom: 200}}
+                            animationTriggerState={1}
                             isMobile={this.props.isMobile}
                             title={"Vsa orodja v enem"}
                             description={"Microsoft teams zdruzuje vsa Microsoftova orodja za komunikacijo, shranjevanje in management v novo orodje ki vkljucuje vse v enem bla bla..."}
@@ -145,6 +167,8 @@ export default class Homepage extends Component {
                             ]}/>
                         <FeatureScroll
                             id={"featureScroll"}
+                            style={{paddingBottom: 200}}
+                            animationTriggerState={1}
                             animationState={this.state.featureScroll}
                             features={[
                                 {screenshot:mochFeature1, title:"chat", icon:mochFeature1logo},
@@ -153,19 +177,11 @@ export default class Homepage extends Component {
                                 {screenshot:mochFeature4, title:"aktivnosti", icon:mochFeature4logo},
                                 {screenshot:mochFeature5, title:"datoteke", icon:mochFeature5logo}
                             ]}
-                            moreLinkText={
-                                "view more features"
-                            }
-                            morePath={
-                                `#`
-                            }
+                            moreLinkText={"view more features"}
+                            morePath={`#`}
                             isMobile={this.props.isMobile}
                         />
-                        <Sponzors sponzors={[
-                            Ebs,
-                            insTech,
-                            pronega
-                        ]}/>
+                        <Sponzors sponzors={[Ebs, insTech, pronega]}/>
                         <Contacts />
                         <Footer />
                     </div>
