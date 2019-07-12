@@ -61,12 +61,7 @@ class Parallax extends Component{
         }
     }
 
-    triggerAnimation = () =>{
-
-    }
-
     render(){
-        console.log(this.state.sizeCoeficient);
         return (
             <React.Fragment>
                 <div className="topWrapper">

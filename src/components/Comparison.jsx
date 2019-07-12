@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "../styles/comparison.scss"
+import '../styles/shared.scss'
 import posed, {PoseGroup} from 'react-pose';
 
 const Image = posed.img({
@@ -40,8 +41,8 @@ export default ({id, config, teamsLogo, leftIconsSize, rightIconSize, animationS
                     {width: "30%", marginLeft: 80}
                 }>
                 <div>
-                    <h2>{title}</h2>
-                    <p>{description}</p>
+                    <h2 className={'mediumDarkTitle'}>{title}</h2>
+                    <p className={'darkParagraph'}>{description}</p>
                 </div>
             </div>
             <div

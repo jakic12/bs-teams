@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../styles/firstRow.scss'
+import '../styles/shared.scss'
 import Button from '../components/Button'
 
 
@@ -7,8 +8,8 @@ export default ({title, description, btnTitle, onClick, bigLogo, smallLogo, styl
     return (
         <div className="firstRow" style={style}>
             <div className="left">
-                <h1>{title}</h1>
-                <p>{description}</p>
+                <h1 className={'bigLightTitle'}>{title}</h1>
+                <p className={'lightParagraph'}>{description}</p>
                 <div className="btnWraper">
                     <Button
                         title={btnTitle}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/featureScroll.scss'
+import '../styles/shared.scss'
 import { Link } from 'react-router-dom';
 import pose from "react-pose";
 
@@ -43,7 +44,6 @@ class FeatureScroll extends Component{
     }
     
     componentDidUpdate(){
-        console.log(this.props.animationState)
         this.updateFeatured()
     }
     

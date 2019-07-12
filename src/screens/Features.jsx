@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import LeftRightContainer from "../components/LeftRightContainer";
-import teamsImg from "../res/img/test-moch-image.png";
-import demoVideo from "../res/video/CHAT_DEMO_Take3.mp4";
-import demoVideoMov from "../res/video/CHAT_DEMO_Take2 (1).mov";
 import FeatureView from "../components/FeatureView";
+import teamsImg from "../res/img/test-moch-image.png";
+import demoVideo from "../res/video/CHAT_DEMO_FINAL.mov";
 
 import checkboxIcon from "../res/img/checkbox-icon.png";
 
@@ -40,9 +38,9 @@ class Features extends Component{
     };
 
     trackScrolling = () => {
-        const featureView = document.getElementById('featureView');
-        const lefRightFirst = document.getElementById('leftRightFirst');
-        const leftRightSecond = document.getElementById('leftRightSecond');
+        const featureView = document.getElementById('featureViewFirst');
+        const lefRightFirst = document.getElementById('featureViewSecond');
+        const leftRightSecond = document.getElementById('featureViewThird');
         this.getAnimationState(featureView, state => this.setState({featureView: state}));
         this.getAnimationState(lefRightFirst, state => this.setState({leftRightFirst: state}));
         this.getAnimationState(leftRightSecond, state => this.setState({leftRightSecond: state}))
@@ -55,43 +53,50 @@ class Features extends Component{
     };
 
     render(){
-        console.log("state");
-        console.log(this.state.leftRightFirst);
-        console.log(this.state.leftRightSecond);
         return (
             <div>
                 <FeatureView
-                    id={"featureView"}
-                    flip={false}
-                    image={teamsImg}
+                    id={"featureViewFirst"}
+                    style={{backgroundColor: '#f6f7f9'}}
+                    title={"What is Lorem Ipsum?"}
                     icon={checkboxIcon}
-                    animationState={this.state.featureView}
+                    video={demoVideo}
                     isMobile={this.props.isMobile}
-                    title={"Klepet"}
+                    animationState={this.state.leftRightSecond}
                     textItems={[
                         "Ustvarjanje skupin in podskupin",
                         "Hitro iskanje vsebin in pogovorov",
                         "Odgovarjanje na posamezna sporočila"
                     ]}
+                    flip={true}
                 />
-                <LeftRightContainer
-                    id={"leftRightFirst"}
-                    style={{backgroundColor: '#f6f7f9'}}
+                <FeatureView
+                    id={"featureViewSecond"}
                     title={"What is Lorem Ipsum?"}
-                    description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."}
+                    icon={checkboxIcon}
                     video={demoVideo}
                     isMobile={this.props.isMobile}
                     animationState={this.state.leftRightSecond}
-                    flip={true}
+                    textItems={[
+                        "Ustvarjanje skupin in podskupin",
+                        "Hitro iskanje vsebin in pogovorov",
+                        "Odgovarjanje na posamezna sporočila"
+                    ]}
+                    flip={false}
                 />
-                <LeftRightContainer
-                    id={"leftRightSecond"}
+                <FeatureView
+                    id={"featureViewThird"}
                     title={"What is Lorem Ipsum?"}
-                    description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."}
-                    video={demoVideoMov}
+                    icon={checkboxIcon}
+                    video={demoVideo}
                     isMobile={this.props.isMobile}
                     animationState={this.state.leftRightSecond}
-                    flip={false}
+                    textItems={[
+                        "Ustvarjanje skupin in podskupin",
+                        "Hitro iskanje vsebin in pogovorov",
+                        "Odgovarjanje na posamezna sporočila"
+                    ]}
+                    flip={true}
                 />
             </div>
         )

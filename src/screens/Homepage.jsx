@@ -85,10 +85,9 @@ export default class Homepage extends Component {
             <div style={{overflowX: "hidden"}}>
                 <Parallax>
                     <FirstRow
-                        title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                        title="Microsoft Teams"
                         description={"Nunc ac sapien vulputate odio convallis posuere nec vitae magna." +
-                        "In a efficitur ex, eget dictum elit. Nullam ac elit blandit, pharetra augue id, pulvinar ipsum." +
-                        "Maecenas vel libero odio. Mauris vehicula neque ex, in malesuada purus luctus sit amet."}
+                        "In a efficitur ex, eget dictum elit. Nullam ac elit blandit, pharetra augue id, pulvinar ipsum."}
                         btnTitle="Klikni vec"
                         onClick={() => alert("You pressed a button!")}
                         bigLogo={TelefonLaptop}
