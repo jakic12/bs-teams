@@ -2,4 +2,52 @@ $font-stack: Helvetica, sans-serif;
 $DARK-GREY: #3a3a3a;
 $RED: #c51e2b;
 $mobile-width:765px;
+$small-mobile-width:375px;
 $LIGHT-GREY: #f6f7f9;
+
+@font-face {
+  src: local('Open Sans'), local('OpenSans'),
+  url("../res/fonts/DINCE-BoldAlternate.otf") format('embedded-opentype'),
+  url("../res/fonts/DINCE-BoldAlternate.otf") format('embedded-opentype'),
+  url("../res/fonts/DINCE-BoldAlternate.otf") format('embedded-opentype'),
+  url("../res/fonts/DINCE-BoldAlternate.otf") format('embedded-opentype'),
+  url("../res/fonts/DINCE-BoldAlternate.otf") format('embedded-opentype');
+}
+
+.bigLightTitle {
+  color: $LIGHT-GREY;
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.bigDarkTitle {
+  color: $DARK-GREY;
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.mediumDarkTitle {
+  color: $DARK-GREY;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.mediumRedTitle {
+  color: $RED;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.3;
+}
+
+.lightParagraph {
+  color: $LIGHT-GREY;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.darkParagraph {
+  color: $DARK-GREY;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.1;
+}

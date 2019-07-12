@@ -1,25 +1,50 @@
 .topWrapper{
     position:relative;
-    background:#3c3c3b;
-    #topParallax{
-        height:calc(100vh - 70px);
-        overflow:hidden;
+    background-image: url("../res/img/svg/space_zgoraj_kvadrat.svg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow:hidden;
+    z-index:-1;
+    .topParallaxWrapper{
+        background-color:rgba(0, 0, 0, 0.664);
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:20px;
+        
+    }
+    .shortParallax {
+        height:calc(100vh - 70vh);
         position:relative;
 
         .innerParallax{
-            transition: scale 0.01s;
+            //transition: scale 0.01s;
             height:calc(100vh - 70px);
-            position:fixed;
+            //position:fixed;
+        }
+    }
+    .topParallax{
+        height:calc(100vh - 70px);
+        position:relative;
+
+        .innerParallax{
+            //transition: scale 0.01s;
+            height:calc(100vh - 70px);
+            //position:fixed;
         }
     }
     #waveCover{
         /*position:absolute;
         bottom:-10px;*/
         position:relative;
-        z-index: 2000;
         width:100vw;
+        z-index:3000;
         padding-bottom:-20px;
         overflow: hidden;
+     
         .svg-wave{
             width:100vw;
         }

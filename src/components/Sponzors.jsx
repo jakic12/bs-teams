@@ -7,13 +7,17 @@ class Sponzors extends Component{
         return (
             <div className="sponzors">
                 <div className="sponzorsWrapper">
+                    <div className="title">
+                        Zaupajo nam že
+                    </div>
                     <div className="logos">
-                        {this.props.sponzors.map(s => 
-                            <img src={ s } alt="Kepion" className="logo"/>
+                        {this.props.sponzors.map((s,i) => 
+                            <img key={i} src={ s } alt="Kepion" className="logo"/>
                         )}
                     </div>
                 </div>
             </div>
+
         )
     }
 }

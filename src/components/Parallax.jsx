@@ -40,56 +40,48 @@ class Parallax extends Component{
     handleScroll = () =>{
         let start = 1;
         let end = 0.2;
-        let top = document.getElementById("topParallax")
-        let wave = document.getElementById("waveCover")
+        let top = document.getElementById("topParallax");
+        let wave = document.getElementById("waveCover");
         
         let topRect = top.getBoundingClientRect();
-        let waveRect = wave.getBoundingClientRect()
+        let waveRect = wave.getBoundingClientRect();
 
-        if(topRect.bottom > 0){
-            if(waveRect.top < topRect.top+waveRect.height/2){
+        if (waveRect.bottom > 0){
+            /*if(waveRect.top < topRect.top+waveRect.height/2){
                 
                 //if(!this.state.ignoreAnim)
                     console.log(waveRect.top, topRect.top+waveRect.height/2)
                     //this.setState(() => ({ignoreAnim:true, sizeCoeficient:0}))
-            }else{
+            }else{*/
                 this.sizeCoeficient = (start-end)*(topRect.bottom/(topRect.height+70))*start + end
                 window.requestAnimationFrame(() =>{
                     this.setState(() => ({ignoreAnim:false,sizeCoeficient:this.sizeCoeficient}))
                 });
-            }
+            //}
         }
     }
 
-    triggerAnimation = () =>{
-
-    }
-
     render(){
-        console.log(this.state.sizeCoeficient);
         return (
             <React.Fragment>
                 <div className="topWrapper">
-                    <div id="topParallax" style={this.state.parallaxEffect?{}:{position:`relative`, background:`#3c3c3b`, height:`calc(100vh-70px)`}}>
-                        <div className="innerParallax" style={this.state.parallaxEffect?{transform:`scale(${this.state.sizeCoeficient}) translate(0,${(1-this.state.sizeCoeficient)*-500}px)`}:{}}>
+                    <div
+                        className={`topParallaxWrapper`}
+                        style={{ opacity: 1-this.state.sizeCoeficient }}>
+                    </div>
+                    <div id={'topParallax'} className={`${this.props.resizeHeightBy ? 'shortParallax' : 'topParallax'}`}>
+                        <div className="innerParallax" style={this.state.parallaxEffect?{transform:`translate3d(0,${(1-this.state.sizeCoeficient)*(window.innerHeight/1.1)}px,0)`}:{}}>
                             {this.props.children[0]}
                         </div>
                     </div>
-                    <ReactSVG 
+                    <ReactSVG
                         id="waveCover"
                         src={waveCover}
                         beforeInjection={svg => {
                           svg.classList.add('svg-wave')
                           svg.setAttribute('preserveAspectRatio', 'none')
-                          if(svg.parentElement){
-                            let prect = svg.parentElement.getBoundingClientRect();
-                            svg.height = prect.height
-                            svg.width = prect.width
-                          }else{
-                              console.log(svg);
-                          }
                         }}
-                        
+
                         afterInjection={(err, svg)=>{
                             svg.parentElement.setAttribute('style', '')//set wrapper style
                         }}

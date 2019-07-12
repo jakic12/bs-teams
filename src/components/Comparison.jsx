@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "../styles/comparison.scss"
+import '../styles/shared.scss'
 import posed, {PoseGroup} from 'react-pose';
 
 const Image = posed.img({
@@ -25,7 +26,24 @@ const Image = posed.img({
     },
 });
 
-export default ({id, config, teamsLogo, leftIconsSize, rightIconSize, animationState, description, title, isMobile, style}) => {
+const LeftDiv = posed.div({
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 1000
+        }
+    },
+    hidden: {
+        opacity: 1,
+        x: -500,
+        transition: {
+            duration: 1000
+        }
+    },
+});
+
+export default ({id, config, teamsLogo, animationState, animationTriggerState, description, title, isMobile, style}) => {
     return (
         <div
             id={id}
@@ -33,17 +51,18 @@ export default ({id, config, teamsLogo, leftIconsSize, rightIconSize, animationS
                 {display: "flex", flexDirection: "column", ...style} :
                 {display: "flex", flexDirection: "row", ...style}
             }>
-            <div
+            <LeftDiv
                 id="left"
+                pose={animationState > animationTriggerState ? 'visible' : 'hidden'}
                 style={isMobile ?
                     {width: "100%", marginBottom: 40} :
                     {width: "30%", marginLeft: 80}
                 }>
                 <div>
-                    <h2>{title}</h2>
-                    <p>{description}</p>
+                    <h2 className={'mediumDarkTitle'}>{title}</h2>
+                    <p className={'darkParagraph'}>{description}</p>
                 </div>
-            </div>
+            </LeftDiv>
             <div
                 id="right"
                 style={isMobile ?
@@ -60,7 +79,7 @@ export default ({id, config, teamsLogo, leftIconsSize, rightIconSize, animationS
                                     src={ele.img}
                                     alt={ele.name}
                                     style={{margin: "auto", maxWidth: "60px"}}
-                                    pose={(animationState > 0 && animationState < 2) ? "visibleTop" : "hiddenTop"}
+                                    pose={(animationState > animationTriggerState && animationState < 2) ? "visibleTop" : "hiddenTop"}
                                 />
                             </div>
                         ))}
@@ -76,7 +95,7 @@ export default ({id, config, teamsLogo, leftIconsSize, rightIconSize, animationS
                         id={"teamsLogo"}
                         src={teamsLogo}
                         alt={"teams"}
-                        pose={(animationState > 1 ? "visibleBottom" : "hiddenBottom")}
+                        pose={(animationState > animationTriggerState ? "visibleBottom" : "hiddenBottom")}
                         style={{display: "block", margin: "auto"}}
                     />
                 </div>
