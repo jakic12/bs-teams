@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react';
-//import Button from '../components/Button';
 import Sponzors from '../components/Sponzors'
 import Ebs from '../res/img/spon_logo/ICON_EBS.svg' 
 import insTech from '../res/img/spon_logo/ICON_INS_TECH.svg' 
@@ -33,6 +32,8 @@ import coffeImage from '../res/img/camera-coffe.jpg'
 import teamsImg from '../res/img/test-moch-image.png'
 import TelefonLaptop from "../res/img/telefon_laptop.png"
 import Telefon from "../res/img/telefon.png"
+import redPlanet from '../res/img/planets/planet_big_red.svg'
+import moon from '../res/img/planets/planet_small_gray.svg'
 
 import Comparison from "../components/Comparison";
 import FeatureScroll from "../components/FeatureScroll"
@@ -60,6 +61,8 @@ export default class Homepage extends Component {
             comparison: 0,
             featureScroll: 0,
             featuresList: 0,
+            functionsView: 0,
+            planetsView: 0
         };
         this.track = null;
     }
@@ -73,7 +76,7 @@ export default class Homepage extends Component {
     }
 
     isTop = (el) => {
-        return el.getBoundingClientRect().top <= window.innerHeight;
+        return el.getBoundingClientRect().top <= window.innerHeight / 1.3;
     };
 
     isBottom = (el) => {
@@ -85,12 +88,20 @@ export default class Homepage extends Component {
     };
 
     trackScrolling = () => {
+        const planetsView = document.getElementById('planetsView');
+        const functionsView = document.getElementById('functionsView');
         const comparisonView = document.getElementById('comparisonView');
         const featureScroll = document.getElementById('featureScroll');
-        const bigImpact = document.getElementById('bigImpact');
+
+        this.getAnimationState(planetsView, state => this.setState({planetsView: state}));
+        this.getAnimationState(functionsView, state => this.setState({functionsView: state}));
         this.getAnimationState(comparisonView, state => this.setState({comparison: state}));
         this.getAnimationState(featureScroll, state => this.setState({featureScroll: state}));
-        this.getAnimationState(bigImpact, state => this.setState({featuresList: state}))
+
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrolled = (winScroll / height) * 100;
+        console.log(scrolled);
     };
 
     getAnimationState = (element, callback) => {
@@ -98,26 +109,34 @@ export default class Homepage extends Component {
         if (this.isMiddle(element)) callback(2);
         if (this.isBottom(element)) callback(3);
     };
+
     render(){
         return (
             <div style={{overflowX: "hidden"}}>
                 <Parallax isMobile={this.props.isMobile}>
                     <FirstRow
-                        title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                        title="Microsoft Teams"
                         description={"Nunc ac sapien vulputate odio convallis posuere nec vitae magna." +
-                        "In a efficitur ex, eget dictum elit. Nullam ac elit blandit, pharetra augue id, pulvinar ipsum." +
-                        "Maecenas vel libero odio. Mauris vehicula neque ex, in malesuada purus luctus sit amet."}
+                        "In a efficitur ex, eget dictum elit. Nullam ac elit blandit, pharetra augue id, pulvinar ipsum."}
                         btnTitle="Klikni vec"
                         onClick={() => alert("You pressed a button!")}
                         bigLogo={TelefonLaptop}
                         smallLogo={Telefon}/>
                     <div>
                         <div style={{position:`relative`}}>
-                            <Planets />
-                            <FeatureList 
-                                id={"bigImpact"}
-                                subtitle="Hiter pregled nekaterih osnovnih funkcij:"
+                            <Planets
+                                id={'planetsView'}
+                                firstImage={redPlanet}
+                                secondImage={moon}
+                                animationTriggerState={1}
+                                animationState={this.state.planetsView}/>
+                            <FeatureList
+                                id={"functionsView"}
+                                animationTriggerState={1}
+                                animationState={this.state.functionsView}
                                 title="Funkcije"
+                                style={{paddingBottom: 200}}
+                                subtitle="Hiter pregled nekaterih osnovnih funkcij:"
                                 content={[
                                     {icon: iconCall,    title:"Chat", desc:"Instantno posiljanje"},
                                     {icon: iconApp,     title:"Aplikacije", desc:"več kot xxx aplikacij na voljo"},
@@ -131,6 +150,8 @@ export default class Homepage extends Component {
                         </div>
                         <FeatureScroll
                             id={"featureScroll"}
+                            style={{paddingBottom: 200}}
+                            animationTriggerState={1}
                             animationState={this.state.featureScroll}
                             features={[
                                 {screenshot:mochFeature1, title:"chat", icon:mochFeature1logo},
@@ -139,12 +160,8 @@ export default class Homepage extends Component {
                                 {screenshot:mochFeature4, title:"aktivnosti", icon:mochFeature4logo},
                                 {screenshot:mochFeature5, title:"datoteke", icon:mochFeature5logo}
                             ]}
-                            moreLinkText={
-                                "view more features"
-                            }
-                            morePath={
-                                `#`
-                            }
+                            moreLinkText={"view more features"}
+                            morePath={`#`}
                             isMobile={this.props.isMobile}
                         />
                         <Comparison
@@ -154,6 +171,8 @@ export default class Homepage extends Component {
                             title={"Vsa orodja v enem"}
                             description={"Microsoft teams zdruzuje vsa Microsoftova orodja za komunikacijo, shranjevanje in management v novo orodje ki vkljucuje vse v enem bla bla..."}
                             animationState={this.state.comparison}
+                            topAnimationTriggerState={0}
+                            bottomAnimationTriggerState={2}
                             leftIconsSize={100}
                             rightIconsSize={200}
                             teamsLogo={teamsLogo}

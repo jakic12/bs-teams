@@ -11,8 +11,7 @@ import Features from './screens/Features';
  */
 class Router extends Component{
     constructor(props){
-        super(props)
-        
+        super(props);
         this.state = {
             width:window.innerWidth
         }

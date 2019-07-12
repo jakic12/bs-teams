@@ -1,6 +1,10 @@
 .topWrapper{
     position:relative;
-    background:#3c3c3b;
+    background-image: url("../res/img/svg/space_zgoraj_kvadrat.svg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     overflow:hidden;
     z-index:-1;
     .topParallaxWrapper{
@@ -12,10 +16,19 @@
         bottom:20px;
         
     }
-    #topParallax{
-        height:calc(100vh - 70px);
+    .shortParallax {
+        height:calc(100vh - 70vh);
         position:relative;
 
+        .innerParallax{
+            //transition: scale 0.01s;
+            height:calc(100vh - 70px);
+            //position:fixed;
+        }
+    }
+    .topParallax{
+        height:calc(100vh - 70px);
+        position:relative;
 
         .innerParallax{
             //transition: scale 0.01s;

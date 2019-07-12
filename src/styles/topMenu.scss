@@ -1,3 +1,5 @@
+@import 'shared.scss';
+
 $bar-height:70px;
 
 .topBar{
@@ -41,8 +43,10 @@ $bar-height:70px;
                         bottom:0;
                         font-size:17px;
                         text-decoration: none;
-                        color:#f6f7f9;
+                        color: $LIGHT-GREY;
                         line-height:20px;
+                        font-weight: 500;
+                        padding-left: 30px;
                     }
                 }
             }

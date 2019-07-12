@@ -34,11 +34,11 @@ class Parallax extends Component{
     handleScroll = () =>{
         let start = 1;
         let end = 0.2;
-        let top = document.getElementById("topParallax")
-        let wave = document.getElementById("waveCover")
+        let top = document.getElementById("topParallax");
+        let wave = document.getElementById("waveCover");
         
         let topRect = top.getBoundingClientRect();
-        let waveRect = wave.getBoundingClientRect()
+        let waveRect = wave.getBoundingClientRect();
 
         if (waveRect.bottom > 0){
             /*if(waveRect.top < topRect.top+waveRect.height/2){
@@ -55,17 +55,15 @@ class Parallax extends Component{
         }
     }
 
-    triggerAnimation = () =>{
-
-    }
-
     render(){
         return (
             <React.Fragment>
                 <div className="topWrapper">
-                    <div className="topParallaxWrapper" style={{ opacity: 1-this.state.sizeCoeficient }}>
+                    <div
+                        className={`topParallaxWrapper`}
+                        style={{ opacity: 1-this.state.sizeCoeficient }}>
                     </div>
-                    <div id="topParallax">
+                    <div id={'topParallax'} className={`${this.props.resizeHeightBy ? 'shortParallax' : 'topParallax'}`}>
                         {!this.props.isMobile &&
                             <Px y={[-70, 100]} className="innerParallax" /*style={{transform:`translate3d(0,${(1-this.state.sizeCoeficient)*(window.innerHeight/1.1)}px,0)`}}*/>
                                 {this.props.children[0]}
@@ -77,14 +75,14 @@ class Parallax extends Component{
                             </div>
                         }
                     </div>
-                    <ReactSVG 
+                    <ReactSVG
                         id="waveCover"
                         src={waveCover}
                         beforeInjection={svg => {
                           svg.classList.add('svg-wave')
                           svg.setAttribute('preserveAspectRatio', 'none')
                         }}
-                        
+
                         afterInjection={(err, svg)=>{
                             svg.parentElement.setAttribute('style', '')//set wrapper style
                         }}
