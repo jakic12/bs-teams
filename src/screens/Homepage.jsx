@@ -113,7 +113,7 @@ export default class Homepage extends Component {
     render(){
         return (
             <div style={{overflowX: "hidden"}}>
-                <Parallax>
+                <Parallax isMobile={this.props.isMobile}>
                     <FirstRow
                         title="Microsoft Teams"
                         description={"Nunc ac sapien vulputate odio convallis posuere nec vitae magna." +
