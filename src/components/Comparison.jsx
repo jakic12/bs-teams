@@ -43,7 +43,7 @@ const LeftDiv = posed.div({
     },
 });
 
-export default ({id, config, teamsLogo, animationState, animationTriggerState, description, title, isMobile, style}) => {
+export default ({id, config, teamsLogo, animationState, topAnimationTriggerState, bottomAnimationTriggerState, description, title, isMobile, style}) => {
     return (
         <div
             id={id}
@@ -53,7 +53,7 @@ export default ({id, config, teamsLogo, animationState, animationTriggerState, d
             }>
             <LeftDiv
                 id="left"
-                pose={animationState > animationTriggerState ? 'visible' : 'hidden'}
+                pose={animationState > topAnimationTriggerState ? 'visible' : 'hidden'}
                 style={isMobile ?
                     {width: "100%", marginBottom: 40} :
                     {width: "30%", marginLeft: 80}
@@ -79,7 +79,7 @@ export default ({id, config, teamsLogo, animationState, animationTriggerState, d
                                     src={ele.img}
                                     alt={ele.name}
                                     style={{margin: "auto", maxWidth: "60px"}}
-                                    pose={(animationState > animationTriggerState && animationState < 2) ? "visibleTop" : "hiddenTop"}
+                                    pose={(animationState > topAnimationTriggerState && animationState < bottomAnimationTriggerState) ? "visibleTop" : "hiddenTop"}
                                 />
                             </div>
                         ))}
@@ -95,7 +95,7 @@ export default ({id, config, teamsLogo, animationState, animationTriggerState, d
                         id={"teamsLogo"}
                         src={teamsLogo}
                         alt={"teams"}
-                        pose={(animationState > animationTriggerState ? "visibleBottom" : "hiddenBottom")}
+                        pose={(animationState > bottomAnimationTriggerState ? "visibleBottom" : "hiddenBottom")}
                         style={{display: "block", margin: "auto"}}
                     />
                 </div>

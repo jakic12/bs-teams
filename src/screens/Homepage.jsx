@@ -76,7 +76,7 @@ export default class Homepage extends Component {
     }
 
     isTop = (el) => {
-        return el.getBoundingClientRect().top <= window.innerHeight;
+        return el.getBoundingClientRect().top <= window.innerHeight / 1.3;
     };
 
     isBottom = (el) => {
@@ -84,7 +84,7 @@ export default class Homepage extends Component {
     };
 
     isMiddle = (el) => {
-        return el.getBoundingClientRect().top <= window.innerHeight / 1.3;
+        return el.getBoundingClientRect().top <= window.innerHeight / 2.5;
     };
 
     trackScrolling = () => {
@@ -171,7 +171,8 @@ export default class Homepage extends Component {
                             title={"Vsa orodja v enem"}
                             description={"Microsoft teams zdruzuje vsa Microsoftova orodja za komunikacijo, shranjevanje in management v novo orodje ki vkljucuje vse v enem bla bla..."}
                             animationState={this.state.comparison}
-                            animationTriggerState={1}
+                            topAnimationTriggerState={0}
+                            bottomAnimationTriggerState={2}
                             leftIconsSize={100}
                             rightIconsSize={200}
                             teamsLogo={teamsLogo}
