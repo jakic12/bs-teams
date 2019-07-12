@@ -21,10 +21,10 @@ const Div = pose.div({
     }
 });
 
-export default ({content, title, style, id, animationState, animationTriggerState}) => {
+export default ({isMobile, content, title, style, id, animationState, animationTriggerState}) => {
     return (
         <Div
-            pose={animationState > animationTriggerState ? 'show' : 'hidden'}
+            pose={(isMobile || animationState > animationTriggerState) ? 'show' : 'hidden'}
             id={id} className="featureList" style={style}>
             <div className="content">
                 <div className="header">

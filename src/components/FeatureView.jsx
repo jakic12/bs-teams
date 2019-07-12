@@ -65,7 +65,7 @@ export default ({id, icon, isMobile, flip = false, title, textItems, video, anim
         return (
             <div style={style} id={id} className="featureViewContainer">
                 <div className="videoContainer">
-                    <RightVideo pose={animationState > animationTriggerState ? "open" : "closed"}>
+                    <RightVideo pose={isMobile || animationState > animationTriggerState ? "open" : "closed"}>
                         <ReactPlayer
                             loop={true}
                             playing={true}
@@ -77,7 +77,7 @@ export default ({id, icon, isMobile, flip = false, title, textItems, video, anim
                     </RightVideo>
                 </div>
                 <div className="textContainer">
-                    <Title pose={animationState > animationTriggerState ? "open" : "closed"} className="title mediumRedTitle">{title}</Title>
+                    <Title pose={isMobile || animationState > animationTriggerState ? "open" : "closed"} className="title mediumRedTitle">{title}</Title>
                     <List className={'list'} pose={animationState > animationTriggerState ? "open" : "closed"}>
                         <PoseGroup>
                             {textItems.map((text, index) => (
@@ -85,7 +85,7 @@ export default ({id, icon, isMobile, flip = false, title, textItems, video, anim
                                     key={index}
                                     className={"listItem"}
                                     style={{listStyleType: "none"}}
-                                    pose={animationState > animationTriggerState ? "open" : "closed"}>
+                                    pose={isMobile || animationState > animationTriggerState ? "open" : "closed"}>
                                     <img style={{width: 25}} src={icon} alt={"checkbox"}/>
                                     <p className={'darkParagraph'} style={{display: "inline", paddingLeft: 10}}>{text}</p>
                                 </Item>
@@ -99,15 +99,15 @@ export default ({id, icon, isMobile, flip = false, title, textItems, video, anim
         return (
             <div style={style} id={id} className="featureViewContainer">
                 <div className="textContainer">
-                    <Title pose={animationState > animationTriggerState ? "open" : "closed"} className={"title mediumRedTitle"}>{title}</Title>
-                    <List className={'list'} pose={animationState > animationTriggerState ? "open" : "closed"}>
+                    <Title pose={isMobile || animationState > animationTriggerState ? "open" : "closed"} className={"title mediumRedTitle"}>{title}</Title>
+                    <List className={'list'} pose={isMobile || animationState > animationTriggerState ? "open" : "closed"}>
                         <PoseGroup>
                             {textItems.map((text, index) => (
                                 <Item
                                     key={index}
                                     className={"listItem"}
                                     style={{listStyleType: "none"}}
-                                    pose={animationState > animationTriggerState ? "open" : "closed"}>
+                                    pose={isMobile || animationState > animationTriggerState ? "open" : "closed"}>
                                     <img style={{width: 25}} src={icon} alt={"checkbox"}/>
                                     <p className={'darkParagraph'} style={{display: "inline", paddingLeft: 10}}>{text}</p>
                                 </Item>
@@ -116,7 +116,7 @@ export default ({id, icon, isMobile, flip = false, title, textItems, video, anim
                     </List>
                 </div>
                 <div className="videoContainer">
-                    <LeftVideo className={'video'} pose={animationState > animationTriggerState ? "open" : "closed"}>
+                    <LeftVideo className={'video'} pose={isMobile || animationState > animationTriggerState ? "open" : "closed"}>
                         <ReactPlayer
                             loop={true}
                             playing={true}

@@ -53,7 +53,7 @@ export default ({id, config, teamsLogo, animationState, topAnimationTriggerState
             }>
             <LeftDiv
                 id="left"
-                pose={animationState > topAnimationTriggerState ? 'visible' : 'hidden'}
+                pose={isMobile || animationState > topAnimationTriggerState ? 'visible' : 'hidden'}
                 style={isMobile ?
                     {width: "100%", marginBottom: 40} :
                     {width: "30%", marginLeft: 80}
@@ -79,7 +79,7 @@ export default ({id, config, teamsLogo, animationState, topAnimationTriggerState
                                     src={ele.img}
                                     alt={ele.name}
                                     style={{margin: "auto", maxWidth: "60px"}}
-                                    pose={(animationState > topAnimationTriggerState && animationState < bottomAnimationTriggerState) ? "visibleTop" : "hiddenTop"}
+                                    pose={isMobile ? 'hidden' : (animationState > topAnimationTriggerState && animationState < bottomAnimationTriggerState) ? "visibleTop" : "hiddenTop"}
                                 />
                             </div>
                         ))}
@@ -95,8 +95,8 @@ export default ({id, config, teamsLogo, animationState, topAnimationTriggerState
                         id={"teamsLogo"}
                         src={teamsLogo}
                         alt={"teams"}
-                        pose={(animationState > bottomAnimationTriggerState ? "visibleBottom" : "hiddenBottom")}
-                        style={{display: "block", margin: "auto"}}
+                        pose={(isMobile ? 'visible' : (animationState > bottomAnimationTriggerState ? "visibleBottom" : "hiddenBottom"))}
+                        style={isMobile ? {width: '100%'} : {display: "block", margin: "auto"}}
                     />
                 </div>
             </div>

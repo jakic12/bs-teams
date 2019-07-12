@@ -132,6 +132,7 @@ export default class Homepage extends Component {
                                 animationState={this.state.planetsView}/>
                             <FeatureList
                                 id={"functionsView"}
+                                isMobile={this.props.isMobile}
                                 animationTriggerState={1}
                                 animationState={this.state.functionsView}
                                 title="Funkcije"
