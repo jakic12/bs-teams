@@ -15,10 +15,19 @@
         bottom:20px;
         z-index:3000;
     }
-    #topParallax{
-        height:calc(100vh - 70px);
+    .shortParallax {
+        height:calc(100vh - 45vh);
         position:relative;
 
+        .innerParallax{
+            //transition: scale 0.01s;
+            height:calc(100vh - 70px);
+            //position:fixed;
+        }
+    }
+    .topParallax{
+        height:calc(100vh - 70px);
+        position:relative;
 
         .innerParallax{
             //transition: scale 0.01s;

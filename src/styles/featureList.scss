@@ -1,0 +1,108 @@
+
+@import 'shared.scss';
+
+
+@media screen and (max-width:$mobile-width) {
+    .featureList{
+        padding:50px 10px 100px 10px !important;
+        .content{
+            .header{
+                .title{
+                    margin:0 auto !important;
+                    h1{
+                        text-align:center !important;
+                    }
+                }
+
+                .subtitle{
+                    text-align:center !important;
+                }
+            }
+            .body{
+                ul{
+                    padding:0 !important;
+                    li{
+                        overflow:hidden;
+                        .img {
+                            display:block !important;
+                            margin: 0 auto !important;
+                        }
+                        
+                        .titleDesc{
+                            text-align:center !important;
+                            height:auto !important;
+                            display:block !important;
+                            .desc {
+                                
+                            }
+                            
+                            .title {
+                            }
+                            padding-bottom:50px;
+                        }
+    
+                    }
+                }
+            }
+            .foot{
+                position:relative;
+                .buttonWrapper{
+                    position: absolute;
+                    left:50%;
+                    transform: translate(-50%);
+                }
+            }
+        }
+    }
+}
+
+.featureList{
+    padding:50px;
+    padding-left:100px;
+    .content{
+        box-sizing: content-box;
+        .header{
+            .title{
+                font-size:30px;
+            }
+            .subtitle{
+                font-size:20px;
+                font-weight:bold;
+            }
+        }
+        .body{
+            ul{
+                list-style-type: none;
+                padding:20px;
+                padding-left:0;
+                li{
+                    padding:10px;
+                    .img {
+                        width:50px;
+                        height:50px;
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+                    .titleDesc{
+                        margin-left:30px;
+                        display: inline-block;
+                        height:50px;
+                        .desc {
+                            display: inline;
+                            font-size:25px;
+                            line-height:50px;
+                        }
+
+                        .title {
+                            font-weight: 500;
+                            display: inline;
+                            line-height:50px;
+                            font-size:25px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

@@ -2,14 +2,12 @@
 .contacts{
     position:relative;
     width:100%;
-    
     background:$DARK-GREY;
-    padding:0px 20px;
     .contentWrapper{
+        margin:0 auto;
         position:relative;
-        width:100%;
+        width:80%;
         height:100%;
-        padding:20px;
         padding-bottom:40px;
         .content{
             position: relative;
@@ -17,6 +15,7 @@
             justify-content: space-evenly;
             align-items: center;
             flex-direction: column;
+            flex-wrap:wrap;
 
             .p1{
                 margin-top:0;

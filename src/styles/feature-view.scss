@@ -1,63 +1,49 @@
 @import "shared.scss";
 
-.leftRightContainer {
-    height:50%;
-    width:100%;
-    position:relative;
+.featureViewContainer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: calc(100vh);
+    padding: 60px 20px 60px 20px;
 
-    .containerWrapper {
-        position:relative;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: wrap;
-        width:100%;
-        height:100%;
-        line-height:100%;
+    @media screen and (max-width: $mobile-width) {
+        flex-direction: column;
+    }
+
+    .list {
+        padding: 0;
     }
 
     .videoContainer {
         position: relative;
         display: block;
-        width: 70%;
-        height: 100%;
-        padding: 30px 0px 30px 0px;
-        line-height: 100%;
-        margin: 0 auto;
+        margin: auto auto;
+        padding-right: 20px;
+        width: 60%;
+
+        @media screen and (max-width: $mobile-width) {
+            padding-right: 0;
+            width: 100%;
+        }
     }
 
     .textContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         position: relative;
-        display: block;
-        width: 30%;
-        height: 100%;
-        padding: 30px 0px 30px 0px;
         line-height: 100%;
         margin: 0 auto;
-    }
+        width: 40%;
 
-        .title {
-            margin:50px;
-            color: $RED;
-            line-height: 1.6;
+        .listItem {
+            margin-bottom: 20px;
         }
-        .text {
-            margin:50px;
-            line-height: 1.6;
-        }
-        .video {
-            width:90%;
-            height:90%;
-            padding:0;
-            margin: 5% ;
-        }
+
         @media screen and (max-width: $mobile-width) {
-            width:100%; 
-            padding: 5px 0px 5px 0px;
+            width: 100%;
         }
-
+    }
 }
-
-@media only screen and (max-width: 600px) {
-
-  }

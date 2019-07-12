@@ -4,6 +4,18 @@ import '../styles/shared.scss'
 import { Link } from 'react-router-dom';
 import pose from "react-pose";
 
+
+const Image = pose.img({
+    closed: {
+        opacity: 0,
+        transition: { duration: 500 }
+    },
+    open: {
+        opacity: 1,
+        transition: { duration: 500 }
+    }
+});
+
 const ImageWrapper = pose.div({
     closed: {
         x: -100,
@@ -34,7 +46,8 @@ class FeatureScroll extends Component{
     constructor(props){
         super(props);
         this.state = {
-            featured:0,
+            featured: 0,
+            switching: false
         };
         this.updateFeatured = this.updateFeatured.bind(this)
     }
@@ -52,11 +65,19 @@ class FeatureScroll extends Component{
             clearTimeout(this.timeout)
         }
         this.timeout = setTimeout(() => {
-            this.setState(state => {
-                return {featured: (state.featured+1) % this.props.features.length}
-            })
+            this.updateState(this.state.featured + 1);
         }, 3000)
     }
+
+    updateState = (nextImg) => {
+        this.setState(state => {
+            return {
+                featured: (nextImg) % this.props.features.length,
+                switching: true
+            }
+        });
+        setTimeout(() => this.setState({switching: false}), 200);
+    };
 
     render(){
         return (
@@ -66,12 +87,18 @@ class FeatureScroll extends Component{
                             if(!this.props.isMobile){
                                 return <React.Fragment>
                                     <ImageWrapper pose={this.props.animationState > 1 ? "open" : "closed"} className="screenshot">
-                                        <img src={this.props.features[this.state.featured].screenshot} alt="feature-screenshot"/>
+                                        <Image
+                                            pose={this.state.switching ? 'closed' : 'open'}
+                                            src={this.props.features[this.state.featured].screenshot}
+                                            alt="feature-screenshot"/>
                                     </ImageWrapper>
                                     <SelectionBar pose={this.props.animationState > 1 ? "open" : "closed"} className="featureList">
                                         <div className="features">
                                             {this.props.features.map((f,i) => 
-                                            <button className={`featureCard ${i===this.state.featured? "featured" : ""}`} key={i} onClick={() => {this.setState({featured:i})}}>
+                                            <button
+                                                className={`featureCard ${i===this.state.featured? "featured" : ""}`}
+                                                key={i}
+                                                onClick={() => { this.updateState(i)}}>
                                                 <div className="icon"><img src={f.icon} alt="feature-icon"/></div>
                                                 <div className="text">{f.title}</div>
                                             </button>)}

@@ -60,73 +60,74 @@ const LeftVideo = posed.div({
     }
 });
 
-export default ({id, icon, isMobile, flip = false, title, textItems, video, animationState, style}) => {
-    return (
-        <div style={style} id={id} className="leftRightContainer">
-            {(flip && !isMobile) && (
-                <div className="containerWrapper">
-                    <div className="videoContainer">
-                        <RightVideo className={'video'} pose={animationState > 1 ? "open" : "closed"}>
-                            <ReactPlayer
-                                loop={true}
-                                playing={true}
-                                className='react-player'
-                                url={video}
-                                width='90%'
-                                height='90%'
-                            />
-                        </RightVideo>
-                    </div>
-                    <div className="textContainer">
-                        <Title pose={animationState > 0 ? "open" : "closed"} className="title mediumRedTitle">{title}</Title>
-                        <List pose={animationState > -1 ? "open" : "closed"}>
-                            <PoseGroup>
-                                {textItems.map((text, index) => (
-                                    <Item
-                                        key={index}
-                                        className={"listItem"}
-                                        style={{listStyleType: "none"}}
-                                        pose={animationState > 0 ? "open" : "closed"}>
-                                        <img style={{width: 25}} src={icon} alt={"checkbox"}/>
-                                        <p className={'darkParagraph'} style={{display: "inline", paddingLeft: 10}}>{text}</p>
-                                    </Item>
-                                ))}
-                            </PoseGroup>
-                        </List>
-                    </div>
+export default ({id, icon, isMobile, flip = false, title, textItems, video, animationState, style, triggerValue}) => {
+    if (flip && !isMobile) {
+        return (
+            <div style={style} id={id} className="featureViewContainer">
+                <div className="videoContainer">
+                    <RightVideo pose={animationState > triggerValue ? "open" : "closed"}>
+                        <ReactPlayer
+                            loop={true}
+                            playing={true}
+                            className='react-player'
+                            url={video}
+                            width='100%'
+                            height='100%'
+                        />
+                    </RightVideo>
                 </div>
-            )}
-            {(isMobile || !flip) && (
-                <div className="containerWrapper">
-                    <div className="textContainer">
-                        <Title pose={animationState > 1 ? "open" : "closed"} className={"title mediumRedTitle"}>{title}</Title>
+                <div className="textContainer">
+                    <Title pose={animationState > triggerValue ? "open" : "closed"} className="title mediumRedTitle">{title}</Title>
+                    <List className={'list'} pose={animationState > triggerValue ? "open" : "closed"}>
                         <PoseGroup>
                             {textItems.map((text, index) => (
                                 <Item
                                     key={index}
                                     className={"listItem"}
                                     style={{listStyleType: "none"}}
-                                    pose={animationState > 0 ? "open" : "closed"}>
+                                    pose={animationState > triggerValue ? "open" : "closed"}>
                                     <img style={{width: 25}} src={icon} alt={"checkbox"}/>
                                     <p className={'darkParagraph'} style={{display: "inline", paddingLeft: 10}}>{text}</p>
                                 </Item>
                             ))}
                         </PoseGroup>
-                    </div>
-                    <div className="videoContainer">
-                        <LeftVideo className={'video'} pose={animationState > 1 ? "open" : "closed"}>
-                            <ReactPlayer
-                                loop={true}
-                                playing={true}
-                                className='react-player'
-                                url={video}
-                                width='100%'
-                                height='100%'
-                            />
-                        </LeftVideo>
-                    </div>
+                    </List>
                 </div>
-            )}
-        </div>
-    )
+            </div>
+        )
+    } else {
+        return (
+            <div style={style} id={id} className="featureViewContainer">
+                <div className="textContainer">
+                    <Title pose={animationState > triggerValue ? "open" : "closed"} className={"title mediumRedTitle"}>{title}</Title>
+                    <List className={'list'} pose={animationState > triggerValue ? "open" : "closed"}>
+                        <PoseGroup>
+                            {textItems.map((text, index) => (
+                                <Item
+                                    key={index}
+                                    className={"listItem"}
+                                    style={{listStyleType: "none"}}
+                                    pose={animationState > triggerValue ? "open" : "closed"}>
+                                    <img style={{width: 25}} src={icon} alt={"checkbox"}/>
+                                    <p className={'darkParagraph'} style={{display: "inline", paddingLeft: 10}}>{text}</p>
+                                </Item>
+                            ))}
+                        </PoseGroup>
+                    </List>
+                </div>
+                <div className="videoContainer">
+                    <LeftVideo className={'video'} pose={animationState > triggerValue ? "open" : "closed"}>
+                        <ReactPlayer
+                            loop={true}
+                            playing={true}
+                            className='react-player'
+                            url={video}
+                            width='100%'
+                            height='100%'
+                        />
+                    </LeftVideo>
+                </div>
+            </div>
+        )
+    }
 }

@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import FeatureView from "../components/FeatureView";
+import FeaturesLandingView from '../components/FeaturesLandingView';
 import teamsImg from "../res/img/test-moch-image.png";
 import demoVideo from "../res/video/CHAT_DEMO_FINAL.mov";
+import Telefon from "../res/img/telefon - Copy.png"
 
 import checkboxIcon from "../res/img/checkbox-icon.png";
+import Parallax from "../components/Parallax";
+import FirstRow from "../components/FirstRow";
 
 class Features extends Component{
 
@@ -11,9 +15,9 @@ class Features extends Component{
         super(props);
         this.track = null;
         this.state = {
-            featureView: 0,
-            leftRightFirst: 0,
-            leftRightSecond: 0
+            featureViewFirst: 0,
+            featureViewSecond: 0,
+            featureViewThird: 0
         }
     }
 
@@ -26,7 +30,7 @@ class Features extends Component{
     }
 
     isTop = (el) => {
-        return el.getBoundingClientRect().top <= window.innerHeight / 4.8;
+        return el.getBoundingClientRect().top <= window.innerHeight / 6;
     };
 
     isBottom = (el) => {
@@ -41,9 +45,9 @@ class Features extends Component{
         const featureView = document.getElementById('featureViewFirst');
         const lefRightFirst = document.getElementById('featureViewSecond');
         const leftRightSecond = document.getElementById('featureViewThird');
-        this.getAnimationState(featureView, state => this.setState({featureView: state}));
-        this.getAnimationState(lefRightFirst, state => this.setState({leftRightFirst: state}));
-        this.getAnimationState(leftRightSecond, state => this.setState({leftRightSecond: state}))
+        this.getAnimationState(featureView, state => this.setState({featureViewFirst: state}));
+        this.getAnimationState(lefRightFirst, state => this.setState({featureViewSecond: state}));
+        this.getAnimationState(leftRightSecond, state => this.setState({featureViewThird: state}))
     };
 
     getAnimationState = (element, callback) => {
@@ -55,49 +59,59 @@ class Features extends Component{
     render(){
         return (
             <div>
-                <FeatureView
-                    id={"featureViewFirst"}
-                    style={{backgroundColor: '#f6f7f9'}}
-                    title={"What is Lorem Ipsum?"}
-                    icon={checkboxIcon}
-                    video={demoVideo}
-                    isMobile={this.props.isMobile}
-                    animationState={this.state.leftRightSecond}
-                    textItems={[
-                        "Ustvarjanje skupin in podskupin",
-                        "Hitro iskanje vsebin in pogovorov",
-                        "Odgovarjanje na posamezna sporočila"
-                    ]}
-                    flip={true}
-                />
-                <FeatureView
-                    id={"featureViewSecond"}
-                    title={"What is Lorem Ipsum?"}
-                    icon={checkboxIcon}
-                    video={demoVideo}
-                    isMobile={this.props.isMobile}
-                    animationState={this.state.leftRightSecond}
-                    textItems={[
-                        "Ustvarjanje skupin in podskupin",
-                        "Hitro iskanje vsebin in pogovorov",
-                        "Odgovarjanje na posamezna sporočila"
-                    ]}
-                    flip={false}
-                />
-                <FeatureView
-                    id={"featureViewThird"}
-                    title={"What is Lorem Ipsum?"}
-                    icon={checkboxIcon}
-                    video={demoVideo}
-                    isMobile={this.props.isMobile}
-                    animationState={this.state.leftRightSecond}
-                    textItems={[
-                        "Ustvarjanje skupin in podskupin",
-                        "Hitro iskanje vsebin in pogovorov",
-                        "Odgovarjanje na posamezna sporočila"
-                    ]}
-                    flip={true}
-                />
+                <Parallax resizeHeightBy={'50vh'}>
+                    <FeaturesLandingView
+                        logo={Telefon}
+                        title="Get all the tools you need to make teamwork a breeze"/>
+                        <div>
+                            <FeatureView
+                                id={"featureViewFirst"}
+                                triggerValue={-1}
+                                title={"What is Lorem Ipsum?"}
+                                icon={checkboxIcon}
+                                video={demoVideo}
+                                isMobile={this.props.isMobile}
+                                animationState={this.state.featureViewFirst}
+                                textItems={[
+                                    "Ustvarjanje skupin in podskupin",
+                                    "Hitro iskanje vsebin in pogovorov",
+                                    "Odgovarjanje na posamezna sporočila"
+                                ]}
+                                flip={true}
+                            />
+                            <FeatureView
+                                id={"featureViewSecond"}
+                                triggerValue={1}
+                                title={"What is Lorem Ipsum?"}
+                                style={{backgroundColor: '#f6f7f9'}}
+                                icon={checkboxIcon}
+                                video={demoVideo}
+                                isMobile={this.props.isMobile}
+                                animationState={this.state.featureViewSecond}
+                                textItems={[
+                                    "Ustvarjanje skupin in podskupin",
+                                    "Hitro iskanje vsebin in pogovorov",
+                                    "Odgovarjanje na posamezna sporočila"
+                                ]}
+                                flip={false}
+                            />
+                            <FeatureView
+                                id={"featureViewThird"}
+                                triggerValue={1}
+                                title={"What is Lorem Ipsum?"}
+                                icon={checkboxIcon}
+                                video={demoVideo}
+                                isMobile={this.props.isMobile}
+                                animationState={this.state.featureViewThird}
+                                textItems={[
+                                    "Ustvarjanje skupin in podskupin",
+                                    "Hitro iskanje vsebin in pogovorov",
+                                    "Odgovarjanje na posamezna sporočila"
+                                ]}
+                                flip={true}
+                            />
+                        </div>
+                </Parallax>
             </div>
         )
     }
