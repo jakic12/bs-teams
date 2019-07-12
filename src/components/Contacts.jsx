@@ -10,9 +10,11 @@ export default class Contacts extends Component{
                     <div className="content">
                         <p className="p1">Spremenite vaše poslovanje že danes</p>
                         <p className="p2">Stopite v kontakt z nami</p>
-                        <Button 
-                            onClick={() => alert("You clicked a button")}
-                            title={"KONTAKTI"} />
+                        <div className="buttonMumbleWrapper">
+                            <Button 
+                                onClick={() => alert("You clicked a button")}
+                                title={"KONTAKTI"} />
+                        </div>
                     </div>
                  </div>
              </div>   

@@ -2,7 +2,6 @@
 .contacts{
     position:relative;
     width:100%;
-    background:$DARK-GREY;
     .contentWrapper{
         margin:0 auto;
         position:relative;
@@ -30,16 +29,45 @@
             }
             @media screen and (max-width: $mobile-width){
               .p1{
-                    font-size:30px;
+                    font-size:20px;
                     justify-content: center;
               }  
               .p2{
-                    font-size:20px;
+                    font-size:15px;
               }
               .contacts{
                   height:80vh;
               }
+              .buttonMumbleWrapper{
+                .roundButton{
+                    font-size: 15px !important;
+                    width:110px !important;
+                    height:35px !important;
+                    
+                }
+            }
             }  
+            @media screen and (max-width: $small-mobile-width) {
+                .p1{
+                    font-size:15px;
+                    justify-content: center;
+                    margin-bottom:0px !important;
+                }  
+                .p2{
+                    font-size:10px;
+                }
+                .contacts{
+                  height:40vh;
+                }
+                .buttonMumbleWrapper{
+                    .roundButton{
+                        font-size: 10px !important;
+                        width:75px !important;
+                        height:20px !important;
+                        
+                    }
+                }
+            }
         }
     }
 }
