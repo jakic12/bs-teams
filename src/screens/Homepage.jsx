@@ -171,6 +171,7 @@ export default class Homepage extends Component {
                             title={"Vsa orodja v enem"}
                             description={"Microsoft teams zdruzuje vsa Microsoftova orodja za komunikacijo, shranjevanje in management v novo orodje ki vkljucuje vse v enem bla bla..."}
                             animationState={this.state.comparison}
+                            animationTriggerState={1}
                             leftIconsSize={100}
                             rightIconsSize={200}
                             teamsLogo={teamsLogo}

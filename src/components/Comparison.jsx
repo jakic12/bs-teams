@@ -36,7 +36,7 @@ const LeftDiv = posed.div({
     },
     hidden: {
         opacity: 1,
-        x: -400,
+        x: -500,
         transition: {
             duration: 1000
         }
