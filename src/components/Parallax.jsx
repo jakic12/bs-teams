@@ -79,8 +79,11 @@ class Parallax extends Component{
                         id="waveCover"
                         src={waveCover}
                         beforeInjection={svg => {
-                          svg.classList.add('svg-wave')
-                          svg.setAttribute('preserveAspectRatio', 'none')
+                            if(svg.classList)
+                                svg.classList.add('svg-wave')
+                            else
+                                svg.className = 'svg-wave'
+                                svg.setAttribute('preserveAspectRatio', 'none')
                         }}
 
                         afterInjection={(err, svg)=>{
