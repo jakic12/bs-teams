@@ -36,7 +36,7 @@
             display: flex;
             justify-content: space-evenly;
             align-items: center;
-            flex-wrap:wrap;
+            flex-wrap:nowrap;
             
             .logo{
                 opacity: 0.3;
@@ -50,14 +50,15 @@
                     opacity:1;
                 }
             }
-            @media screen and(max-width:$mobile-width){
+            /*@media screen and(max-width:$mobile-width){
                 .logo{
                     padding:5%;
                     height:30px;
                 }
-            }
+            }*/
             @media screen and(max-width:$mobile-width){
                 .logo{
+                    opacity:1;
                     padding:5%;
                     height:20px;
                 }

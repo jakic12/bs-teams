@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@elsdoerfer/react-arrow": "^1.0.3",
+    "babel-polyfill": "^6.26.0",
     "konva": "^3.3.3",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",

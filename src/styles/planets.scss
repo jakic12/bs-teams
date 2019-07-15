@@ -2,21 +2,21 @@
 
 .planets{
     position: absolute;
-    top:-10%;
+    top:-20%;
     left:62%;
     .redPlanet{
 
         img{
-            width:300%;
+            width:40vw;
         }
     }
 
     .moon{
         position: relative;
-        top:50%;
-        left:180%;
+        top:60px;
+        left:20vw;
         img{
-            width:200%;
+            width:15vw;
         }
     }
     @media screen and (max-width:$mobile-width +250px){
