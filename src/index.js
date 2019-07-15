@@ -6,6 +6,8 @@ import './styles/index.scss';
 import Router from './Router.jsx';
 import * as serviceWorker from './serviceWorker';
 
+//test commit
+
 ReactDOM.render(<Router />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
