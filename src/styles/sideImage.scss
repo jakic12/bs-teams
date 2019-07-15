@@ -1,0 +1,18 @@
+@import "shared.scss";
+
+.sideImage{
+    position: absolute;
+    top:50%;
+    transform: translate(0,-50%);
+    right:5%;
+    .image{
+        img{
+            width:40vw;
+        }
+        @media screen and (max-width:$mobile-width +250px){
+            img{
+                display:none;
+            }
+        }
+    }
+}

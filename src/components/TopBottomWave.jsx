@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import BottomWave from '../res/img/space_spodaj_funkcije.svg'
+import BottomWave from '../res/img/svg/bg_spodaj.svg'
 import '../styles/topBottom.scss'
 
 class TopBottom extends Component{
