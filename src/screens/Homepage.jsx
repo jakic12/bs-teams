@@ -32,8 +32,8 @@ import coffeImage from '../res/img/camera-coffe.jpg'
 import teamsImg from '../res/img/test-moch-image.png'
 import TelefonLaptop from "../res/img/telefon_laptop.png"
 import Telefon from "../res/img/telefon.png"
-import redPlanet from '../res/img/planets/planet_big_red.svg'
-import moon from '../res/img/planets/planet_small_gray.svg'
+
+import PieChart from "../res/img/svg/graf_rdec.svg"
 
 import Comparison from "../components/Comparison";
 import FeatureScroll from "../components/FeatureScroll"
@@ -44,7 +44,7 @@ import FeatureList from "../components/FeatureList"
 import Footer from "../components/Footer"
 import Contacts from "../components/Contacts"
 import TopBottomWave from "../components/TopBottomWave"
-import Planets from "../components/Planets"
+import SideImage from "../components/SideImage"
 
 import iconCall from "../res/img/feature_icons/icon_call.svg"
 import iconApp from "../res/img/feature_icons/icon_app.svg"
@@ -62,7 +62,7 @@ export default class Homepage extends Component {
             featureScroll: 0,
             featuresList: 0,
             functionsView: 0,
-            planetsView: 0
+            sideImageView: 0
         };
         this.track = null;
     }
@@ -88,15 +88,11 @@ export default class Homepage extends Component {
     };
 
     trackScrolling = () => {
-        const planetsView = document.getElementById('planetsView');
+        const sideImageView = document.getElementById('sideImageView');
         const functionsView = document.getElementById('functionsView');
-        const comparisonView = document.getElementById('comparisonView');
-        const featureScroll = document.getElementById('featureScroll');
 
-        this.getAnimationState(planetsView, state => this.setState({planetsView: state}));
+        this.getAnimationState(sideImageView, state => this.setState({sideImageView: state}));
         this.getAnimationState(functionsView, state => this.setState({functionsView: state}));
-        this.getAnimationState(comparisonView, state => this.setState({comparison: state}));
-        this.getAnimationState(featureScroll, state => this.setState({featureScroll: state}));
 
         let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -115,75 +111,42 @@ export default class Homepage extends Component {
             <div style={{overflowX: "hidden"}}>
                 <Parallax isMobile={this.props.isMobile}>
                     <FirstRow
-                        title="Microsoft Teams"
+                        title="PowerBi"
                         description={"Nunc ac sapien vulputate odio convallis posuere nec vitae magna." +
-                        "In a efficitur ex, eget dictum elit. Nullam ac elit blandit, pharetra augue id, pulvinar ipsum."}
+                        "In a efficitur ex, eget dictum elit. Nullam ac elit blandit, pharetra augue id, pulvinar\n ipsum."}
                         btnTitle="Klikni vec"
                         onClick={() => alert("You pressed a button!")}
                         bigLogo={TelefonLaptop}
                         smallLogo={Telefon}/>
                     <div>
                         <div style={{position:`relative`}}>
-                            <Planets
-                                id={'planetsView'}
-                                firstImage={redPlanet}
-                                secondImage={moon}
-                                animationTriggerState={1}
-                                animationState={this.state.planetsView}/>
-                            <FeatureList
-                                id={"functionsView"}
-                                isMobile={this.props.isMobile}
-                                animationTriggerState={1}
-                                animationState={this.state.functionsView}
-                                title="Funkcije"
-                                style={{paddingBottom: 200}}
-                                subtitle="Hiter pregled nekaterih osnovnih funkcij:"
-                                content={[
-                                    {icon: iconCall,    title:"Chat", desc:"Instantno posiljanje"},
-                                    {icon: iconApp,     title:"Aplikacije", desc:"več kot xxx aplikacij na voljo"},
-                                    {icon: iconChat,    title:"Cloud", desc:"dosegljivost datotek"},
-                                    {icon: iconCloud,   title:"Feature 4", desc:"test"},
-                                    {icon: iconPlanner, title:"Feature 5", desc:"Very short descri sit amet"},
-                                ]}
-                                image={coffeImage}
-                                buttonText={"FREE TRIAL"}
-                            />
+                            <div style={{position:`relative`}}>
+                                <SideImage 
+                                    id={'sideImageView'}
+                                    image={PieChart}
+                                    animationTriggerState={1}
+                                    animationState={this.state.sideImageView}/>
+                                <FeatureList
+                                    id={"functionsView"}
+                                    isMobile={this.props.isMobile}
+                                    animationTriggerState={1}
+                                    animationState={this.state.functionsView}
+                                    title="Funkcije"
+                                    style={{paddingBottom: 200}}
+                                    subtitle="Hiter pregled nekaterih osnovnih funkcij:"
+                                    content={[
+                                        {icon: iconCall,    title:"Chat", desc:"Instantno posiljanje"},
+                                        {icon: iconApp,     title:"Aplikacije", desc:"več kot xxx aplikacij na voljo"},
+                                        {icon: iconChat,    title:"Cloud", desc:"dosegljivost datotek"},
+                                        {icon: iconCloud,   title:"Feature 4", desc:"test"},
+                                        {icon: iconPlanner, title:"Feature 5", desc:"Very short descri sit amet"},
+                                    ]}
+                                    image={coffeImage}
+                                    buttonText={"FREE TRIAL"}
+                                />
+                            </div>
+                            <AdvContainer />
                         </div>
-                        <FeatureScroll
-                            id={"featureScroll"}
-                            style={{paddingBottom: 200}}
-                            animationTriggerState={1}
-                            animationState={this.state.featureScroll}
-                            features={[
-                                {screenshot:mochFeature1, title:"chat", icon:mochFeature1logo},
-                                {screenshot:mochFeature2, title:"channel", icon:mochFeature2logo},
-                                {screenshot:mochFeature3, title:"sestanek", icon:mochFeature3logo},
-                                {screenshot:mochFeature4, title:"aktivnosti", icon:mochFeature4logo},
-                                {screenshot:mochFeature5, title:"datoteke", icon:mochFeature5logo}
-                            ]}
-                            moreLinkText={"view more features"}
-                            morePath={`#`}
-                            isMobile={this.props.isMobile}
-                        />
-                        <Comparison
-                            id={"comparisonView"}
-                            style={{padding: 20}}
-                            isMobile={this.props.isMobile}
-                            title={"Vsa orodja v enem"}
-                            description={"Microsoft teams zdruzuje vsa Microsoftova orodja za komunikacijo, shranjevanje in management v novo orodje ki vkljucuje vse v enem bla bla..."}
-                            animationState={this.state.comparison}
-                            topAnimationTriggerState={0}
-                            bottomAnimationTriggerState={2}
-                            leftIconsSize={100}
-                            rightIconsSize={200}
-                            teamsLogo={teamsLogo}
-                            config={[
-                                {img: mailLogo, name: "drive"},
-                                {img: wordLogo, name: "word"},
-                                {img: excelLogo, name: "calendar"},
-                                {img: powerpointLogo, name: "power points"},
-                                {img: storageLogo, name: "drive"}
-                            ]}/>
                         <TopBottomWave>
                             <Sponzors sponzors={[
                                 Ebs,
