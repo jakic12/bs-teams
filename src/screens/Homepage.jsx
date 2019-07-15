@@ -116,8 +116,9 @@ export default class Homepage extends Component {
                 <Parallax isMobile={this.props.isMobile}>
                     <FirstRow
                         title="Microsoft Teams"
-                        description={"Nunc ac sapien vulputate odio convallis posuere nec vitae magna." +
-                        "In a efficitur ex, eget dictum elit. Nullam ac elit blandit, pharetra augue id, pulvinar ipsum."}
+                        description={<div>Kako upravljati komunikacijo, deljenje in hrambo datotek ter 
+                        splošno organizacijo vaše ekipe vse na enem mestu?<br />
+                        Enostavno.</div>}
                         btnTitle="Klikni vec"
                         onClick={() => alert("You pressed a button!")}
                         bigLogo={TelefonLaptop}
@@ -135,18 +136,18 @@ export default class Homepage extends Component {
                                 isMobile={this.props.isMobile}
                                 animationTriggerState={1}
                                 animationState={this.state.functionsView}
-                                title="Funkcije"
+                                title="Prednosti"
                                 style={{paddingBottom: 200}}
                                 subtitle="Hiter pregled nekaterih osnovnih funkcij:"
                                 content={[
-                                    {icon: iconCall,    title:"Chat", desc:"Instantno posiljanje"},
-                                    {icon: iconApp,     title:"Aplikacije", desc:"več kot xxx aplikacij na voljo"},
-                                    {icon: iconChat,    title:"Cloud", desc:"dosegljivost datotek"},
-                                    {icon: iconCloud,   title:"Feature 4", desc:"test"},
-                                    {icon: iconPlanner, title:"Feature 5", desc:"Very short descri sit amet"},
+                                    {icon: iconCall,    title:"Microsoftov ekosistem", desc:" - povezljivost in varnost"},
+                                    {icon: iconApp,     title:"Dokumentni sistem", desc:" - skupno urejanje in dosegljivost datotek"},
+                                    {icon: iconChat,    title:"Sharepoint site", desc:" - hramba datotek v oblaku"},
+                                    {icon: iconCloud,   title:"odstrani", desc:"odstrani + zamenjat vse ikone!"},
+                                    {icon: iconPlanner, title:"odstrani", desc:"odstrani"},
                                 ]}
                                 image={coffeImage}
-                                buttonText={"FREE TRIAL"}
+                                buttonText={"Kontaktirajte nas!"}
                             />
                         </div>
                         <FeatureScroll
@@ -155,13 +156,13 @@ export default class Homepage extends Component {
                             animationTriggerState={1}
                             animationState={this.state.featureScroll}
                             features={[
-                                {screenshot:mochFeature1, title:"chat", icon:mochFeature1logo},
-                                {screenshot:mochFeature2, title:"channel", icon:mochFeature2logo},
-                                {screenshot:mochFeature3, title:"sestanek", icon:mochFeature3logo},
-                                {screenshot:mochFeature4, title:"aktivnosti", icon:mochFeature4logo},
-                                {screenshot:mochFeature5, title:"datoteke", icon:mochFeature5logo}
+                                {screenshot:mochFeature1, title:"Klepet - učinkovita komunikacija", icon:mochFeature1logo},
+                                {screenshot:mochFeature2, title:"Skupni klepet v kanalih", icon:mochFeature2logo},
+                                {screenshot:mochFeature3, title:"Načrtovanje sestankov", icon:mochFeature3logo},
+                                {screenshot:mochFeature4, title:"Sledenje vsem aktivnostim", icon:mochFeature4logo},
+                                {screenshot:mochFeature5, title:"Oblak - deljenje in hramba datotek", icon:mochFeature5logo}
                             ]}
-                            moreLinkText={"view more features"}
+                            moreLinkText={"Več lastnosti."}
                             morePath={`#`}
                             isMobile={this.props.isMobile}
                         />
@@ -170,7 +171,8 @@ export default class Homepage extends Component {
                             style={{padding: 20}}
                             isMobile={this.props.isMobile}
                             title={"Vsa orodja v enem"}
-                            description={"Microsoft teams zdruzuje vsa Microsoftova orodja za komunikacijo, shranjevanje in management v novo orodje ki vkljucuje vse v enem bla bla..."}
+                            description={"Klepetajte posamezno ali v skupini, ustvarite kanale za posamezne projekte ali oddelke, shranjujte in urejajte datoteke v oblaku. " + 
+                            "Vse kar potrebujete za celovito komunikacijo."}
                             animationState={this.state.comparison}
                             topAnimationTriggerState={0}
                             bottomAnimationTriggerState={2}
