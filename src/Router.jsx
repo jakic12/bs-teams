@@ -10,7 +10,7 @@ import Contact from './screens/Contact';
 
 
 const RouteContainer = pose.div({
-  enter: { opacity: 1, delay: 300, beforeChildren: true },
+  enter: { opacity: 1 },
   exit: { opacity: 0 }
 });
 
