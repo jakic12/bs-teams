@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import Sponzors from '../components/Sponzors'
 
 import ICON_AERO from '../res/img/references/ICON_AERO.svg'  
@@ -63,6 +63,7 @@ import iconChat from "../res/img/feature_icons/icon_chat.svg"
 import iconCloud from "../res/img/feature_icons/icon_cloud.svg"
 import iconPlanner from "../res/img/feature_icons/icon_planner.svg"
 
+const PowerBIpreview = React.lazy(() => import("../components/PowerBIpreview"))
 
 export default class Homepage extends Component {
 
@@ -156,27 +157,34 @@ export default class Homepage extends Component {
                                     buttonText={"FREE TRIAL"}
                                 />
                             </div>
-                            <AdvContainer />
+                            <AdvContainer id={"advContainer"} />
+
+                            {(!this.props.isMobile) &&
+                                <Suspense fallback={<div>loading...</div>}>
+                                    <PowerBIpreview  display={document.getElementById("advContainer") && this.isTop(document.getElementById("advContainer"))}/>
+                                </Suspense>
+                            }
+
+                            <TopBottomWave isMobile = {this.props.isMobile}>
+                                <Sponzors sponzors={[
+                                    ICON_AERO,
+                                    ICON_AFIT,
+                                    ICON_AMZS,
+                                    ICON_CREANEST,
+                                    ICON_CVS,
+                                    ICON_DANA,
+                                    ICON_GTG,
+                                    ICON_INS_TECH,
+                                    ICON_MATJAZ,
+                                    ICON_MDM,
+                                    ICON_TEKNO,
+                                    ICON_TRGOTUR,
+                                    IKON_NIVO,
+                                ]} isMobile={this.props.isMobile}/>
+                                <Contacts />
+                            </TopBottomWave>
+                            <Footer />
                         </div>
-                        <TopBottomWave>
-                            <Sponzors sponzors={[
-                                ICON_AERO,
-                                ICON_AFIT,
-                                ICON_AMZS,
-                                ICON_CREANEST,
-                                ICON_CVS,
-                                ICON_DANA,
-                                ICON_GTG,
-                                ICON_INS_TECH,
-                                ICON_MATJAZ,
-                                ICON_MDM,
-                                ICON_TEKNO,
-                                ICON_TRGOTUR,
-                                IKON_NIVO,
-                            ]} isMobile={this.props.isMobile}/>
-                            <Contacts />
-                        </TopBottomWave>
-                        <Footer />
                     </div>
                 </Parallax>
             </div>

@@ -23,8 +23,6 @@ export default class Carousel extends Component{
     }
 
     render(){
-
-        console.log(this.props.children)
         return (
             <div style={this.props} className="carousel">
                 {this.props.children.slice(this.state.selected, this.state.selected+(this.props.isMobile? 2 : 3))}
