@@ -64,6 +64,14 @@
                 }
             }
 
+            @media screen and(min-width:$mobile-width){
+                .logo{
+                    opacity:1;
+                    padding:5%;
+                    height:60px;
+                }
+            }
+
         }
     }
 }
