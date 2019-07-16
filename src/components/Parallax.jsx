@@ -41,17 +41,10 @@ class Parallax extends Component{
         let waveRect = wave.getBoundingClientRect();
 
         if (waveRect.bottom > 0){
-            /*if(waveRect.top < topRect.top+waveRect.height/2){
-                
-                //if(!this.state.ignoreAnim)
-                    console.log(waveRect.top, topRect.top+waveRect.height/2)
-                    //this.setState(() => ({ignoreAnim:true, sizeCoeficient:0}))
-            }else{*/
                 this.sizeCoeficient = (start-end)*(topRect.bottom/(topRect.height+70))*start + end
                 window.requestAnimationFrame(() =>{
                     this.setState(() => ({ignoreAnim:false,sizeCoeficient:this.sizeCoeficient}))
                 });
-            //}
         }
     }
 

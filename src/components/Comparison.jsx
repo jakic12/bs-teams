@@ -22,7 +22,7 @@ const Image = posed.img({
     visibleBottom: {
         y: -50,
         opacity: 1,
-        transition: { duration: 1000 }
+        transition: { duration: 1500 }
     },
 });
 
@@ -53,7 +53,7 @@ export default ({id, config, teamsLogo, animationState, topAnimationTriggerState
             }>
             <LeftDiv
                 id="left"
-                pose={isMobile || animationState > topAnimationTriggerState ? 'visible' : 'hidden'}
+                pose={isMobile || animationState >= topAnimationTriggerState ? 'visible' : 'hidden'}
                 style={isMobile ?
                     {width: "100%", marginBottom: 40} :
                     {width: "30%", marginLeft: 80}
@@ -79,7 +79,7 @@ export default ({id, config, teamsLogo, animationState, topAnimationTriggerState
                                     src={ele.img}
                                     alt={ele.name}
                                     style={{margin: "auto", maxWidth: "60px"}}
-                                    pose={isMobile ? 'hidden' : (animationState > topAnimationTriggerState && animationState < bottomAnimationTriggerState) ? "visibleTop" : "hiddenTop"}
+                                    pose={isMobile ? 'hidden' : (animationState >= topAnimationTriggerState && animationState < bottomAnimationTriggerState) ? "visibleTop" : "hiddenTop"}
                                 />
                             </div>
                         ))}
