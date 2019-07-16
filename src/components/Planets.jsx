@@ -25,13 +25,12 @@ const Image = pose.img({
 });
 
 export default ({id, style, animationProgress, animationState, animationTriggerState, firstImage, secondImage}) => {
-    console.log('animation state ', animationState);
     return (
         <div id={id} className="planets"  style={style}>
             {firstImage && <div className={"redPlanet"}>
                 <Image
                     i={animationProgress}
-                    pose={animationState > animationTriggerState ? 'visible' : 'hidden'}
+                    pose={animationState >= animationTriggerState ? 'visible' : 'hidden'}
                     src={firstImage} alt={"red planet"} />
             </div>}
             {secondImage && <div className={"moon"}>

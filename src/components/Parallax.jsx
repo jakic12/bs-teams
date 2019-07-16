@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import '../styles/parallax.scss'
 import waveCover from '../res/img/space_cloud.svg';
 import ReactSVG from 'react-svg'
-import { relative } from 'path';
 import { Parallax as Px } from 'react-scroll-parallax';
 
 class Parallax extends Component{
@@ -41,17 +40,10 @@ class Parallax extends Component{
         let waveRect = wave.getBoundingClientRect();
 
         if (waveRect.bottom > 0){
-            /*if(waveRect.top < topRect.top+waveRect.height/2){
-                
-                //if(!this.state.ignoreAnim)
-                    console.log(waveRect.top, topRect.top+waveRect.height/2)
-                    //this.setState(() => ({ignoreAnim:true, sizeCoeficient:0}))
-            }else{*/
                 this.sizeCoeficient = (start-end)*(topRect.bottom/(topRect.height+70))*start + end
                 window.requestAnimationFrame(() =>{
                     this.setState(() => ({ignoreAnim:false,sizeCoeficient:this.sizeCoeficient}))
                 });
-            //}
         }
     }
 
@@ -80,7 +72,7 @@ class Parallax extends Component{
                         src={waveCover}
                         beforeInjection={svg => {
                             if(svg.classList)
-                                svg.classList.add('svg-wave')
+                                svg.classList.add('svg-wave');
                             else
                                 svg.className = 'svg-wave'
                                 svg.setAttribute('preserveAspectRatio', 'none')

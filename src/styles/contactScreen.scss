@@ -1,0 +1,12 @@
+.contactScreenContainer {
+  height: calc(100vh - 70px);
+  width: 100vw;
+  position: relative;
+  background-image: url("../res/img/svg/space_zgoraj_kvadrat.svg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow:hidden;
+  z-index:-1;
+}

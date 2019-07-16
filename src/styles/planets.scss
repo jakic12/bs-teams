@@ -1,17 +1,14 @@
 @import "shared.scss";
 
-.planets{
+.planets {
     position: absolute;
-    top:-20%;
-    left:62%;
-    .redPlanet{
-
-        img{
-            width:40vw;
+    .redPlanet {
+        img {
+            width: 40vw;
         }
     }
 
-    .moon{
+    .moon {
         position: relative;
         top:60px;
         left:20vw;

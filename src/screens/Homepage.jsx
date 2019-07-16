@@ -75,8 +75,12 @@ export default class Homepage extends Component {
         this.track = window.addEventListener('scroll', this.trackScrolling);
     }
 
+    isInvisible = (el) => {
+      return (!this.isTop(el) && !this.isMiddle(el) && !this.isBottom(el));
+    };
+
     isTop = (el) => {
-        return el.getBoundingClientRect().top <= window.innerHeight / 1.3;
+        return el.getBoundingClientRect().top <= window.innerHeight;
     };
 
     isBottom = (el) => {
@@ -93,18 +97,18 @@ export default class Homepage extends Component {
         const comparisonView = document.getElementById('comparisonView');
         const featureScroll = document.getElementById('featureScroll');
 
+        console.log('IS_FUNCTIONS_TOP ', this.isTop(comparisonView));
+        console.log('IS_FUNCTIONS_MIDDLE ', this.isMiddle(comparisonView));
+        console.log('IS_FUNCTIONS_BOTTOM ', this.isBottom(comparisonView));
+
         this.getAnimationState(planetsView, state => this.setState({planetsView: state}));
         this.getAnimationState(functionsView, state => this.setState({functionsView: state}));
         this.getAnimationState(comparisonView, state => this.setState({comparison: state}));
         this.getAnimationState(featureScroll, state => this.setState({featureScroll: state}));
-
-        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        let scrolled = (winScroll / height) * 100;
-        console.log(scrolled);
     };
 
     getAnimationState = (element, callback) => {
+        if (this.isInvisible(element)) callback(0);
         if (this.isTop(element)) callback(1);
         if (this.isMiddle(element)) callback(2);
         if (this.isBottom(element)) callback(3);
@@ -129,6 +133,7 @@ export default class Homepage extends Component {
                                 id={'planetsView'}
                                 firstImage={redPlanet}
                                 secondImage={moon}
+                                style={{top: '-20%', left: '60%'}}
                                 animationTriggerState={1}
                                 animationState={this.state.planetsView}/>
                             <FeatureList

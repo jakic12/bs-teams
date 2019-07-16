@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link} from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
-import TopMenu from './components/TopMenu'
+import pose, {PoseGroup} from 'react-pose';
 
+import TopMenu from './components/TopMenu'
 import Homepage from './screens/Homepage';
 import Features from './screens/Features';
+import Contact from './screens/Contact';
 
-/**
- * hiest level - routes pages
- */
+
+const RouteContainer = pose.div({
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
+});
+
 class Router extends Component{
     constructor(props){
         super(props);
@@ -35,20 +40,28 @@ class Router extends Component{
 
         const isIE = /*@cc_on!@*/false || !!document.documentMode;
 
-        return <div>
-            <ParallaxProvider>
-                {!isIE && 
-                    <BrowserRouter>
-                        <TopMenu isMobile={isMobile}/>
-                        <div className="main-content">
-                            <Route exact={true} path="/" render={props => <Homepage {...props} isMobile={isMobile} />} />
-                            <Route path="/features" render={props => <Features {...props} isMobile={isMobile} />} />
-                        </div>
-                    </BrowserRouter>
-                }
-                {isIE && <div>Ta stran ne dela na Internet Explorer, prosimo uporabite <a href="https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=en">chrome</a> ali <a href="https://www.mozilla.org/sl/firefox/new/">firefox</a></div>}
-            </ParallaxProvider>
-        </div>
+      return (
+        <ParallaxProvider>
+          <BrowserRouter>
+            <Route
+              render={({ location }) => (
+                <div style={{width: '100%', height: '100%'}}>
+                  <TopMenu isMobile={isMobile}/>
+                    <PoseGroup>
+                      <RouteContainer key={'route'}>
+                        <Switch key={'switch'} location={location}>
+                          <Route exact path="/" render={props => <Homepage {...props} isMobile={isMobile}/>} key="home" />
+                          <Route path="/features" render={props => <Features {...props} isMobile={isMobile}/>} key="features" />
+                          <Route path="/contact" render={props => <Contact {...props} isMobile={isMobile}/>} key="contact" />
+                        </Switch>
+                      </RouteContainer>
+                    </PoseGroup>
+                </div>
+              )}
+            />
+          </BrowserRouter>
+        </ParallaxProvider>
+      );
     }
 }
 
