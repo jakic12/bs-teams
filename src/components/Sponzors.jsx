@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../styles/sponzors.scss'
+import Carousel from '../components/Carousel'
 
 
 class Sponzors extends Component{
@@ -11,9 +12,11 @@ class Sponzors extends Component{
                         Zaupajo nam že
                     </div>
                     <div className="logos">
-                        {this.props.sponzors.map((s,i) => 
-                            <img key={i} src={ s } alt="Kepion" className="logo"/>
-                        )}
+                        <Carousel isMobile={this.props.isMobile}>
+                            {this.props.sponzors.map((s,i) => 
+                                <img key={i} src={ s } alt="reference"/>
+                            )}
+                        </Carousel>
                     </div>
                 </div>
             </div>
