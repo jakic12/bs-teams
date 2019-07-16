@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../styles/footer.scss'
 import BsLogo from '../res/img/BS logo_business solutions.png'
+import NthLogo from '../res/img/NTH_LOGO.svg'
 import SocLogoFb from '../res/img/icon_fb.svg'
 import SocLogoIn from '../res/img/icon_in.svg'
 
@@ -11,7 +12,7 @@ export default class Footer extends Component{
                     <div className="containerWrapper">
                         <div className="contentRow">
                             <img src={ BsLogo } className="logo" />  
-                            <img src={ BsLogo } className="logo" />  
+                            <img src={ NthLogo } className="logo" />  
                         </div>
                         <div className="contentRow2">
                             <img src={ SocLogoFb } className="logoSoc" />   
