@@ -14,7 +14,7 @@
         left:0;
         right:0;
         bottom:20px;
-        
+        pointer-events: none;
     }
     .shortParallax {
         height:calc(100vh - 70vh);

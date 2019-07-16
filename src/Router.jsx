@@ -6,6 +6,7 @@ import pose, {PoseGroup} from 'react-pose';
 import TopMenu from './components/TopMenu'
 import Homepage from './screens/Homepage';
 import Features from './screens/Features';
+import Contact from './screens/Contact';
 
 
 const RouteContainer = pose.div({
@@ -47,14 +48,15 @@ class Router extends Component{
                 <div id="site-container">
                   <TopMenu isMobile={isMobile}/>
                     <PoseGroup>
-                      <RouteContainer key={location.key}>
-                        <Switch location={location}>
+                      <RouteContainer key={'route'}>
+                        <Switch key={'switch'} location={location}>
                           <Route exact path="/" render={props => <Homepage {...props} isMobile={isMobile}/>} key="home" />
-                          <Route path="/features" render={props => <Features {...props} isMobile={isMobile}/>} key="about" />
+                          <Route path="/features" render={props => <Features {...props} isMobile={isMobile}/>} key="features" />
+                          <Route path="/contact" render={props => <Contact {...props} isMobile={isMobile}/>} key="contact" />
                         </Switch>
                       </RouteContainer>
                     </PoseGroup>
-                  </div>
+                </div>
               )}
             />
           </BrowserRouter>
