@@ -9,6 +9,9 @@ class AdvContainer extends Component{
     render(){
         return (
             <div className="advContainer" style={this.props.style}>
+                <div className="titleClass">
+                    <h1 className="Contenttitle">Prednosti</h1>  
+                </div>
                 <div className="containerWrapper">
                     <div className="content">
                         <img src={ mob } className="logo" />
