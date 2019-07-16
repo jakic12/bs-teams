@@ -1,9 +1,20 @@
 
 import React, { Component } from 'react';
 import Sponzors from '../components/Sponzors'
-import Ebs from '../res/img/spon_logo/ICON_EBS.svg' 
-import insTech from '../res/img/spon_logo/ICON_INS_TECH.svg' 
-import pronega from '../res/img/spon_logo/ICON_PRONEGA.svg' 
+
+import ICON_AERO from '../res/img/references/ICON_AERO.svg'  
+import ICON_AFIT from '../res/img/references/ICON_AFIT.svg'  
+import ICON_AMZS from '../res/img/references/ICON_AMZS.svg'  
+import ICON_CREANEST from '../res/img/references/ICON_CREANEST.svg'  
+import ICON_CVS from '../res/img/references/ICON_CVS.svg'  
+import ICON_DANA from '../res/img/references/ICON_DANA.svg'  
+import ICON_GTG from '../res/img/references/ICON_GTG.svg'  
+import ICON_INS_TECH from '../res/img/references/ICON_INS_TECH.svg'  
+import ICON_MATJAZ from '../res/img/references/ICON_MATJAZ.svg'  
+import ICON_MDM from '../res/img/references/ICON_MDM.svg'  
+import ICON_TEKNO from '../res/img/references/ICON_TEKNO.svg'  
+import ICON_TRGOTUR from '../res/img/references/ICON_TRGOTUR.svg'  
+import IKON_NIVO from '../res/img/references/IKON_NIVO.svg'  
 
 import AdvContainer from '../components/AdvContainer'
 
@@ -149,10 +160,20 @@ export default class Homepage extends Component {
                         </div>
                         <TopBottomWave>
                             <Sponzors sponzors={[
-                                Ebs,
-                                insTech,
-                                pronega
-                            ]}/>
+                                ICON_AERO,
+                                ICON_AFIT,
+                                ICON_AMZS,
+                                ICON_CREANEST,
+                                ICON_CVS,
+                                ICON_DANA,
+                                ICON_GTG,
+                                ICON_INS_TECH,
+                                ICON_MATJAZ,
+                                ICON_MDM,
+                                ICON_TEKNO,
+                                ICON_TRGOTUR,
+                                IKON_NIVO,
+                            ]} isMobile={this.props.isMobile}/>
                             <Contacts />
                         </TopBottomWave>
                         <Footer />
