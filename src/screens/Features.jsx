@@ -3,6 +3,10 @@ import FeatureView from "../components/FeatureView";
 import FeaturesLandingView from '../components/FeaturesLandingView';
 import teamsImg from "../res/img/test-moch-image.png";
 import demoVideo from "../res/video/CHAT_DEMO_FINAL.mov";
+import demoVideo2 from "../res/video/GROUPCHAT_DEMO_FINAL.mov";
+import demoVideo3 from "../res/video/MEETINGS_DEMO_FINAL.mov";
+import demoVideo4 from "../res/video/FILES_DEMO_FINAL.mov";
+import demoVideo5 from "../res/video/CALLS_DEMO_FINAL.mov";
 import Telefon from "../res/img/telefon - Copy.png"
 import redPlanet from '../res/img/planets/planet_small_red.svg'
 
@@ -104,7 +108,7 @@ class Features extends Component{
                                 title={"Skupine in kanali"}
                                 style={{backgroundColor: '#f6f7f9'}}
                                 icon={checkboxIcon}
-                                video={demoVideo}
+                                video={demoVideo2}
                                 isMobile={this.props.isMobile}
                                 animationState={this.state.featureViewSecond}
                                 textItems={[
@@ -120,7 +124,7 @@ class Features extends Component{
                                 animationTriggerState={1}
                                 title={"Planiranje (Sestanki, Dogodki)"}
                                 icon={checkboxIcon}
-                                video={demoVideo}
+                                video={demoVideo3}
                                 isMobile={this.props.isMobile}
                                 animationState={this.state.featureViewThird}
                                 textItems={[
@@ -137,7 +141,7 @@ class Features extends Component{
                                 title={"Datoteke"}
                                 style={{backgroundColor: 'f6f7f9'}}
                                 icon={checkboxIcon}
-                                video={demoVideo}
+                                video={demoVideo4}
                                 isMobile={this.props.isMobile}
                                 animationState={this.state.featureViewFourth}
                                 textItems={[
@@ -153,7 +157,7 @@ class Features extends Component{
                                 animationTriggerState={1}
                                 title={"Avdio in video klici"}
                                 icon={checkboxIcon}
-                                video={demoVideo}
+                                video={demoVideo5}
                                 isMobile={this.props.isMobile}
                                 animationState={this.state.featureViewFifth}
                                 textItems={[
