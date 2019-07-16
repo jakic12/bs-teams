@@ -145,11 +145,9 @@ export default class Homepage extends Component {
                                 style={{paddingBottom: 200}}
                                 subtitle="Hiter pregled nekaterih osnovnih funkcij:"
                                 content={[
-                                    {icon: iconCall,    title:"Microsoftov ekosistem", desc:" - povezljivost in varnost"},
-                                    {icon: iconApp,     title:"Dokumentni sistem", desc:" - skupno urejanje in dosegljivost datotek"},
-                                    {icon: iconChat,    title:"Sharepoint site", desc:" - hramba datotek v oblaku"},
-                                    {icon: iconCloud,   title:"odstrani", desc:"odstrani + zamenjat vse ikone!"},
-                                    {icon: iconPlanner, title:"odstrani", desc:"odstrani"},
+                                    {icon: iconCall,    title:"Microsoftov ekosistem", desc:"povezljivost in varnost"},
+                                    {icon: iconApp,     title:"Dokumentni sistem", desc:"skupno urejanje in dosegljivost datotek"},
+                                    {icon: iconChat,    title:"Sharepoint site", desc:"hramba datotek v oblaku"},
                                 ]}
                                 image={coffeImage}
                                 buttonText={"Kontaktirajte nas!"}
