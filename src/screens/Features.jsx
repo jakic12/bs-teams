@@ -20,6 +20,8 @@ class Features extends Component{
             featureViewFirst: 0,
             featureViewSecond: 0,
             featureViewThird: 0,
+            featureViewFourth: 0,
+            featureViewFifth: 0,
             planetView: 0
         }
     }
@@ -49,11 +51,15 @@ class Features extends Component{
         const featureView = document.getElementById('featureViewFirst');
         const lefRightFirst = document.getElementById('featureViewSecond');
         const leftRightSecond = document.getElementById('featureViewThird');
+        const leftRightThird = document.getElementById('featureViewFourth');
+        const leftRightFourth = document.getElementById('featureViewFifth');
 
         this.getAnimationState(planetView, state => this.setState({planetView: state}));
         this.getAnimationState(featureView, state => this.setState({featureViewFirst: state}));
         this.getAnimationState(lefRightFirst, state => this.setState({featureViewSecond: state}));
-        this.getAnimationState(leftRightSecond, state => this.setState({featureViewThird: state}))
+        this.getAnimationState(leftRightSecond, state => this.setState({featureViewThird: state}));
+        this.getAnimationState(leftRightThird, state => this.setState({featureViewFourth: state}));
+        this.getAnimationState(leftRightFourth, state => this.setState({featureViewFifth: state}))
     };
 
     getAnimationState = (element, callback) => {
@@ -68,7 +74,7 @@ class Features extends Component{
                 <Parallax resizeHeightBy={'70vh'}>
                     <FeaturesLandingView
                         logo={Telefon}
-                        title="Get all the tools you need to make teamwork a breeze"/>
+                        title="Imejte vsa orodja za tekoče delo na enem mestu."/>
                         <div>
                             <Planets
                                 id={'planetView'}
@@ -79,46 +85,82 @@ class Features extends Component{
                             <FeatureView
                                 id={"featureViewFirst"}
                                 animationTriggerState={1}
-                                title={"What is Lorem Ipsum?"}
+                                title={"Klepet"}
                                 icon={checkboxIcon}
                                 video={demoVideo}
                                 isMobile={this.props.isMobile}
                                 animationState={this.state.featureViewFirst}
                                 textItems={[
-                                    "Ustvarjanje skupin in podskupin",
-                                    "Hitro iskanje vsebin in pogovorov",
-                                    "Odgovarjanje na posamezna sporočila"
+                                    "Učinkovita komunikacija",
+                                    "Hiter klepet s posamezniki ali v skupini",
+                                    "Prikaz dosegljivosti osebe",
+                                    "Enostavno deljenje datotek"
                                 ]}
                                 flip={true}
                             />
                             <FeatureView
                                 id={"featureViewSecond"}
                                 animationTriggerState={1}
-                                title={"What is Lorem Ipsum?"}
+                                title={"Skupine in kanali"}
                                 style={{backgroundColor: '#f6f7f9'}}
                                 icon={checkboxIcon}
                                 video={demoVideo}
                                 isMobile={this.props.isMobile}
                                 animationState={this.state.featureViewSecond}
                                 textItems={[
-                                    "Ustvarjanje skupin in podskupin",
-                                    "Hitro iskanje vsebin in pogovorov",
-                                    "Odgovarjanje na posamezna sporočila"
+                                    "Delitev po ekipah, oddelkih in projektih",
+                                    "Vsaka ekipa ima svoje kanale",
+                                    "Jasna delitev skupin",
+                                    "Prikaz vseh kanalov v katerih je posameznik prisoten"
                                 ]}
                                 flip={false}
                             />
                             <FeatureView
                                 id={"featureViewThird"}
                                 animationTriggerState={1}
-                                title={"What is Lorem Ipsum?"}
+                                title={"Planiranje (Sestanki, Dogodki)"}
                                 icon={checkboxIcon}
                                 video={demoVideo}
                                 isMobile={this.props.isMobile}
                                 animationState={this.state.featureViewThird}
                                 textItems={[
-                                    "Ustvarjanje skupin in podskupin",
-                                    "Hitro iskanje vsebin in pogovorov",
-                                    "Odgovarjanje na posamezna sporočila"
+                                    "Planiranje sestankov glede na zasedenost ostalih članov",
+                                    "Pregled dnevnega reda",
+                                    "Ustvarjanje sestanka v povezavi s točno določenim kanalom",
+                                    "Sprotni zapiski sestanka in deljene datoteke"
+                                ]}
+                                flip={true}
+                            />
+                            <FeatureView
+                                id={"featureViewFourth"}
+                                animationTriggerState={1}
+                                title={"Datoteke"}
+                                style={{backgroundColor: 'f6f7f9'}}
+                                icon={checkboxIcon}
+                                video={demoVideo}
+                                isMobile={this.props.isMobile}
+                                animationState={this.state.featureViewFourth}
+                                textItems={[
+                                    "Shranjevanje vseh datotek na enem mestu (SharePoint)",
+                                    "1TB prostora v oblaku za shranjevanje na uporabnika",
+                                    "Deljenje s skupino ali posameznikom",
+                                    "Skupno urejanje datotek znotraj aplikacije"
+                                ]}
+                                flip={false}
+                            />
+                            <FeatureView
+                                id={"featureViewFifth"}
+                                animationTriggerState={1}
+                                title={"Avdio in video klici"}
+                                icon={checkboxIcon}
+                                video={demoVideo}
+                                isMobile={this.props.isMobile}
+                                animationState={this.state.featureViewFifth}
+                                textItems={[
+                                    "Skupinski in posamezni video klici",
+                                    "Telefonske konference",
+                                    "Možnost opravljanja sestankov na daljavo",
+                                    "Pridruževanje skupinskim pogovorom in sestankom"
                                 ]}
                                 flip={true}
                             />
