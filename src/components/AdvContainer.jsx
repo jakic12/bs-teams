@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import '../styles/advContainer.scss'
+import mob from '../res/img/mobilnost.svg'
+import pov from '../res/img/povezovanje.svg'
+import viz from '../res/img/vizualizacija.svg'
 
 
 class AdvContainer extends Component{
@@ -8,16 +11,19 @@ class AdvContainer extends Component{
             <div className="advContainer" style={this.props.style}>
                 <div className="containerWrapper">
                     <div className="content">
-                        <h1 className="title">1</h1>  
-                        <p className="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <img src={ mob } className="logo" />
+                        <h1 className="title">Mobilnost</h1>  
+                        <p className="text">Možnost prikaza ažuriranih informacij na vseh vaših napravah.</p>
                     </div>
                     <div className="content">
-                    <h1 className="title">2</h1>  
-                        <p className="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <img src={ pov } className="logo" />
+                        <h1 className="title">Povezovanje sistemov</h1>  
+                        <p className="text">Združujte podatke iz različnih sistemov, ki so vam najbolj pomembni</p>
                     </div>
                     <div className="content">
-                    <h1 className="title">3</h1>  
-                        <p className="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p> 
+                        <img src={ viz } className="logo" />
+                        <h1 className="title">Pregledna vizualizacija</h1>  
+                        <p className="text">Enostavno oblikovanje in urejanje preglednih nadzornih plošč</p> 
                     </div>
                 </div>
             </div>
