@@ -59,7 +59,7 @@ export default ({id, config, teamsLogo, animationState, topAnimationTriggerState
                     {width: "30%", marginLeft: 80}
                 }>
                 <div>
-                    <h2 className={'mediumDarkTitle'}>{title}</h2>
+                    <h2 className={'bigDarkTitle'}>{title}</h2>
                     <p className={'darkParagraph'}>{description}</p>
                 </div>
             </LeftDiv>

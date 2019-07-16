@@ -45,7 +45,7 @@ class Router extends Component{
           <BrowserRouter>
             <Route
               render={({ location }) => (
-                <div id="site-container">
+                <div style={{width: '100%', height: '100%'}}>
                   <TopMenu isMobile={isMobile}/>
                     <PoseGroup>
                       <RouteContainer key={'route'}>

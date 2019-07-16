@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import '../styles/parallax.scss'
 import waveCover from '../res/img/space_cloud.svg';
 import ReactSVG from 'react-svg'
-import { relative } from 'path';
 import { Parallax as Px } from 'react-scroll-parallax';
 
 class Parallax extends Component{

@@ -72,9 +72,9 @@ class Features extends Component{
                         <div>
                             <Planets
                                 id={'planetView'}
-                                style={{padding: 60, width: '10%'}}
+                                style={{padding: 60, top: '-10%', left: '60%', width: '10%'}}
                                 firstImage={redPlanet}
-                                animationTriggerState={-1}
+                                animationTriggerState={0}
                                 animationState={this.state.planetView}/>
                             <FeatureView
                                 id={"featureViewFirst"}

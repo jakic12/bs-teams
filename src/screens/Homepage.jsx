@@ -132,6 +132,7 @@ export default class Homepage extends Component {
                                 id={'planetsView'}
                                 firstImage={redPlanet}
                                 secondImage={moon}
+                                style={{top: '-20%', left: '60%'}}
                                 animationTriggerState={1}
                                 animationState={this.state.planetsView}/>
                             <FeatureList
