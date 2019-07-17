@@ -135,7 +135,16 @@ export default class Homepage extends Component {
                             <div data-aos='fade-up-left' data-aos-anchor-placement="bottom-bottom">
                                 <Planets
                                     id={'planetsView'}
+                                    style={{top: -200}}
+                                    width={'35vw'}
                                     image={redPlanet}/>
+                            </div>
+                            <div data-aos='fade-up-left' data-aos-anchor-placement="bottom-bottom">
+                                <Planets
+                                    id={'planetsView'}
+                                    style={{top: 350, right: 0}}
+                                    width={'20vw'}
+                                    image={moon}/>
                             </div>
                             <div data-aos='fade-up' data-aos-anchor-placement="bottom-bottom">
                                 <FeatureList
@@ -156,12 +165,10 @@ export default class Homepage extends Component {
                                 />
                             </div>
                         </div>
-                        <div data-aos='fade-up' data-aos-anchor-placement="bottom-bottom">
+                        <div data-aos='fade-up' data-aos-anchor-placement="top-bottom">
                             <FeatureScroll
                                 id={"featureScroll"}
                                 style={{paddingBottom: 200}}
-                                animationTriggerState={1}
-                                animationState={this.state.featureScroll}
                                 features={[
                                     {screenshot:mochFeature1, title:"Klepet - učinkovita komunikacija", icon:mochFeature1logo},
                                     {screenshot:mochFeature2, title:"Skupni klepet v kanalih", icon:mochFeature2logo},
@@ -196,7 +203,7 @@ export default class Homepage extends Component {
                                     {img: storageLogo, name: "drive"}
                                 ]}/>
                         </div>
-                        <TopBottomWave>
+                        <TopBottomWave isMobile={this.props.isMobile}>
                             <Sponzors sponzors={[
                                 Ebs,
                                 insTech,

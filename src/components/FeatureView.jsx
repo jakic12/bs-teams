@@ -22,12 +22,13 @@ export default ({id, icon, isMobile, flip = false, title, textItems, video, styl
                     <div className="title mediumRedTitle">{title}</div>
                     <ul className={'list'}>
                         {textItems.map((text, index) => (
-                            <li
-                                key={index}
-                                className={"listItem"}
-                                style={{listStyleType: "none"}}>
-                                <img style={{width: 25}} src={icon} alt={"checkbox"}/>
-                                <p className={'darkParagraph'} style={{display: "inline", paddingLeft: 10}}>{text}</p>
+                            <li key={index} className={"listItem"}>
+                                <div className='listInnerLeft'>
+                                    <img src={icon} alt={"checkbox"}/>
+                                </div>
+                                <div className='listInnerRight'>
+                                    <p className={'darkParagraph'}>{text}</p>
+                                </div>
                             </li>
                         ))}
                     </ul>
@@ -41,12 +42,13 @@ export default ({id, icon, isMobile, flip = false, title, textItems, video, styl
                     <div className={"title mediumRedTitle"}>{title}</div>
                     <ul className={'list'}>
                         {textItems.map((text, index) => (
-                            <li
-                                key={index}
-                                className={"listItem"}
-                                style={{listStyleType: "none"}}>
-                                <img style={{width: 25}} src={icon} alt={"checkbox"}/>
-                                <p className={'darkParagraph'} style={{display: "inline", paddingLeft: 10}}>{text}</p>
+                            <li key={index} className={"listItem"}>
+                                <div className='listInnerLeft'>
+                                    <img src={icon} alt={"checkbox"}/>
+                                </div>
+                                <div className='listInnerRight'>
+                                    <p className={'darkParagraph'}>{text}</p>
+                                </div>
                             </li>
                         ))}
                     </ul>

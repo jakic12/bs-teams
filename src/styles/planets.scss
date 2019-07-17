@@ -5,10 +5,10 @@
   position: absolute;
   right: 0;
   top: -200px;
-}
 
-@media screen and (max-width:$mobile-width +250px){
-  img{
-    display:none;
+  @media screen and (max-width:$mobile-width +250px){
+    img{
+      display:none;
+    }
   }
 }

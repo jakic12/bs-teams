@@ -14,7 +14,7 @@ export default ({style, onSubmit}) => {
 
   return (
     <div style={style} className='contactContainer'>
-      <div>
+      <div className='formTitle'>
         <h1 className='bigLightTitle'>Kontaktirajte nas</h1>
       </div>
       <form>

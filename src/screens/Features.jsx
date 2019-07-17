@@ -16,6 +16,13 @@ import FirstRow from "../components/FirstRow";
 import Planets from "../components/Planets";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import TopBottomWave from "../components/TopBottomWave";
+import Sponzors from "../components/Sponzors";
+import Ebs from "../res/img/spon_logo/ICON_EBS.svg";
+import insTech from "../res/img/spon_logo/ICON_INS_TECH.svg";
+import pronega from "../res/img/spon_logo/ICON_PRONEGA.svg";
+import Contacts from "../components/Contacts";
+import Footer from "../components/Footer";
 
 class Features extends Component{
 
@@ -46,13 +53,14 @@ class Features extends Component{
                         logo={Telefon}
                         title="Imejte vsa orodja za tekoče delo na enem mestu."/>
                         <div>
-                            <div data-aos='fade-up'>
+                            <div data-aos='fade-up-left' data-aos-anchor-placement="top-center">
                                 <Planets
                                     style={{bottom: 0}}
+                                    width={'30vw'}
                                     id={'planetView'}
                                     image={redPlanet}/>
                             </div>
-                            <div data-aos='fade-up'>
+                            <div data-aos='fade-up' data-aos-anchor-placement="top-bottom">
                                 <FeatureView
                                     id={"featureViewFirst"}
                                     animationTriggerState={1}
@@ -70,7 +78,7 @@ class Features extends Component{
                                     flip={true}
                                 />
                             </div>
-                            <div data-aos='fade-up'>
+                            <div data-aos='fade-up' data-aos-anchor-placement="top-bottom">
                                 <FeatureView
                                     id={"featureViewSecond"}
                                     animationTriggerState={1}
@@ -89,7 +97,7 @@ class Features extends Component{
                                     flip={false}
                                 />
                             </div>
-                            <div data-aos='fade-up'>
+                            <div data-aos='fade-up' data-aos-anchor-placement="top-bottom">
                                 <FeatureView
                                     id={"featureViewThird"}
                                     animationTriggerState={1}
@@ -107,7 +115,7 @@ class Features extends Component{
                                     flip={true}
                                 />
                             </div>
-                            <div data-aos='fade-up'>
+                            <div data-aos='fade-up' data-aos-anchor-placement="top-bottom">
                                 <FeatureView
                                     id={"featureViewFourth"}
                                     title={"Datoteke"}
@@ -124,7 +132,7 @@ class Features extends Component{
                                     flip={false}
                                 />
                             </div>
-                            <div data-aos='fade-up'>
+                            <div data-aos='fade-up' data-aos-anchor-placement="top-bottom">
                                 <FeatureView
                                     id={"featureViewFifth"}
                                     animationTriggerState={1}
@@ -142,6 +150,11 @@ class Features extends Component{
                                     flip={true}
                                 />
                             </div>
+                            <TopBottomWave>
+                                <div/>
+                                <Contacts />
+                            </TopBottomWave>
+                            <Footer />
                         </div>
                 </Parallax>
             </div>
