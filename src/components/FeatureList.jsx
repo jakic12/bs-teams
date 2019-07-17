@@ -1,30 +1,12 @@
 import React, { Component } from 'react'
 import '../styles/topMenu.scss'
-import pose from 'react-pose';
 import '../styles/shared.scss';
 import '../styles/featureList.scss';
 
-const Div = pose.div({
-   show: {
-       x: 0,
-       opacity: 1,
-       transition: {
-           duration: 1000
-       }
-   },
-    hidden: {
-        x: -100,
-        opacity: 0,
-        transition: {
-            duration: 1000
-        }
-    }
-});
 
-export default ({isMobile, content, title, style, id, animationState, animationTriggerState}) => {
+export default ({content, title, style, id}) => {
     return (
-        <Div
-            pose={(isMobile || animationState > animationTriggerState) ? 'show' : 'hidden'}
+        <div
             id={id} className="featureList" style={style}>
             <div className="content">
               <h1 className={'bigDarkTitle'}>{title}</h1>
@@ -42,6 +24,6 @@ export default ({isMobile, content, title, style, id, animationState, animationT
                     </ul>
                 </div>
             </div>
-        </Div>
+        </div>
     )
 };

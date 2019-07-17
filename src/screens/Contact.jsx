@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
 import ContactForm from '../components/ContactForm';
+import Planets from '../components/Planets';
 import '../styles/contactScreen.scss';
+
+import bottomBorder from '../res/img/contacts_img/cloud_contact_bottom.svg';
+import topBorder from '../res/img/contacts_img/cloud_contact_top.svg';
+import AOS from "aos";
+import 'aos/dist/aos.css';
 
 class Contact extends Component {
 
@@ -15,40 +21,19 @@ class Contact extends Component {
 
     componentDidMount() {
         this.track = window.addEventListener('scroll', this.trackScrolling);
+        AOS.init({
+            duration: 2000
+        })
     }
-
-    isInvisible = (el) => {
-        return (!this.isTop(el) && !this.isMiddle(el) && !this.isBottom(el));
-    };
-
-    isTop = (el) => {
-        return el.getBoundingClientRect().top <= window.innerHeight;
-    };
-
-    isBottom = (el) => {
-        return el.getBoundingClientRect().bottom <= window.innerHeight;
-    };
-
-    isMiddle = (el) => {
-        return el.getBoundingClientRect().top <= window.innerHeight / 2.5;
-    };
-
-    trackScrolling = () => {
-        // TODO: add elements tracking
-        // LIKE THIS: this.getAnimationState(featureScroll, state => this.setState({featureScroll: state}));
-    };
-
-    getAnimationState = (element, callback) => {
-        if (this.isInvisible(element)) callback(0);
-        if (this.isTop(element)) callback(1);
-        if (this.isMiddle(element)) callback(2);
-        if (this.isBottom(element)) callback(3);
-    };
 
     render() {
         return (
             <div className='contactScreenContainer'>
-                <ContactForm/>
+                <div data-aos='fade-up'>
+                    <ContactForm onSubmit={console.log}/>
+                </div>
+                <Planets image={topBorder} style={{top: 0, left: 0, width: '30vw'}}/>
+                <Planets image={bottomBorder} style={{bottom: 0, right: 0}}/>
             </div>
         )
     }
