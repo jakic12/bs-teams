@@ -36,10 +36,12 @@ export default ({isMobile, content, title, style, id, animationState, animationT
                     <ul>
                         {content.map((feature,i) => 
                             <li key={i}>
-                                <img className={'img'} src={feature.icon} alt='logo'/>
+                                <div className="imgWrapper">
+                                    <img className={'img'} src={feature.icon} alt='logo'/>
+                                </div>
                                 <div className="titleDesc">
-                                    <div className={'smallDarkTitle'}>{feature.title} </div>
-                                    <div className={'darkParagraph'}>{feature.desc}</div>
+                                    <div className={'title smallDarkTitle'}>{feature.title} </div>
+                                    <div className={'desc darkParagraph'}>{feature.desc}</div>
                                 </div>
                             </li>
                         )}
