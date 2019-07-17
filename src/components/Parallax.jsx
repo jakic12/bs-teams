@@ -3,21 +3,14 @@ import '../styles/parallax.scss'
 import waveCover from '../res/img/svg/bg_ki_prekrije.svg';
 import ReactSVG from 'react-svg'
 import { relative } from 'path';
-import { Parallax as Px } from 'react-scroll-parallax';
+import $ from 'jquery'
 
 class Parallax extends Component{
     constructor(props){
         super(props)
-
-        this.sizeCoeficient = 1;
-
-        this.state = {
-            sizeCoeficient:this.sizeCoeficient,
-            ignoreAnim:false
-        }
     }
     componentDidMount(){
-        //window.addEventListener('scroll', this.handleScroll);
+        // window.addEventListener('scroll', this.handleScroll);
         var passiveIfSupported = false;
 
         try {
@@ -32,27 +25,16 @@ class Parallax extends Component{
     }
     
     handleScroll = () =>{
-        let start = 1;
-        let end = 0.2;
-        let top = document.getElementById("topParallax");
-        let wave = document.getElementById("waveCover");
+        window.requestAnimationFrame(() => {    
+            if($('#parallaxer').innerHeight()+300 > $(document).scrollTop()){
+                $('#parallaxer').css("transform", `translate3d(0,${$(document).scrollTop()/2}px,0)`)
+                let ammount = $(document).scrollTop()/2;
+                $('#parallaxer').css("transform", `translate3d(0, ${ammount}px, 0)`)
+                let sizeCoeficient = ammount / window.innerHeight
+                $('#blackCover').css("opacity", sizeCoeficient)
+            }
+        })
         
-        let topRect = top.getBoundingClientRect();
-        let waveRect = wave.getBoundingClientRect();
-
-        if (waveRect.bottom > 0){
-            /*if(waveRect.top < topRect.top+waveRect.height/2){
-                
-                //if(!this.state.ignoreAnim)
-                    console.log(waveRect.top, topRect.top+waveRect.height/2)
-                    //this.setState(() => ({ignoreAnim:true, sizeCoeficient:0}))
-            }else{*/
-                this.sizeCoeficient = (start-end)*(topRect.bottom/(topRect.height+70))*start + end
-                window.requestAnimationFrame(() =>{
-                    this.setState(() => ({ignoreAnim:false,sizeCoeficient:this.sizeCoeficient}))
-                });
-            //}
-        }
     }
 
     render(){
@@ -61,13 +43,16 @@ class Parallax extends Component{
                 <div className="topWrapper">
                     <div
                         className={`topParallaxWrapper`}
-                        style={{ opacity: 1-this.state.sizeCoeficient }}>
+                        id={`blackCover`}    
+                    >
                     </div>
                     <div id={'topParallax'} className={`${this.props.resizeHeightBy ? 'shortParallax' : 'topParallax'}`}>
                         {!this.props.isMobile &&
-                            <Px y={[-70, 100]} className="innerParallax" /*style={{transform:`translate3d(0,${(1-this.state.sizeCoeficient)*(window.innerHeight/1.1)}px,0)`}}*/>
-                                {this.props.children[0]}
-                            </Px>
+                            <div id="parallaxer" className="paroller innerParallax">
+                                <div className="parallaxCenter">
+                                    {this.props.children[0]}
+                                </div>
+                            </div>
                         }
                         {this.props.isMobile &&
                             <div className="innerParallax">
