@@ -8,7 +8,7 @@ import viz from '../res/img/vizualizacija.svg'
 class AdvContainer extends Component{
     render(){
         return (
-            <div className="advContainer" style={this.props.style}>
+            <div className="advContainer" style={this.props.style} id={this.props.id}>
                 <div className="titleClass">
                     <h1 className="Contenttitle">Prednosti</h1>  
                 </div>
