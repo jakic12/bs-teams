@@ -1,25 +1,18 @@
 @import "shared.scss";
 
 .planets {
-    z-index: 4000;
-    position: absolute;
-    .redPlanet {
-        img {
-            width: 40vw;
-        }
-    }
+  z-index: 4000;
+  position: absolute;
+  left: 55%;
+  right: 0;
+  bottom: 30%;
+  img {
+    width: 40vw;
+  }
+}
 
-    .moon {
-        position: relative;
-        top:60px;
-        left:20vw;
-        img{
-            width:15vw;
-        }
-    }
-    @media screen and (max-width:$mobile-width +250px){
-        img{
-            display:none;
-        }
-    }
+@media screen and (max-width:$mobile-width +250px){
+  img{
+    display:none;
+  }
 }

@@ -1,15 +1,10 @@
 import React, { Component } from 'react'
 import '../styles/planets.scss'
 
-export default ({id, style, firstImage, secondImage}) => {
+export default ({id, style, image, width}) => {
     return (
-        <div id={id} className="planets"  style={style}>
-            {firstImage && <div className={"redPlanet"}>
-                <img src={firstImage} alt={"red planet"} />
-            </div>}
-            {secondImage && <div className={"moon"}>
-                <img src={secondImage} alt={"red planet"} />
-            </div>}
-        </div>
+      <div className={"planets"}>
+        <img src={image} alt={"red planet"} style={{width}}/>
+      </div>
     )
 };
