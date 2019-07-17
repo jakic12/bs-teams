@@ -131,7 +131,7 @@ export default class Homepage extends Component {
                         onClick={() => {
                             $('#parallaxer').css(`transition`, `none`);
                             $([document.documentElement, document.body]).animate({
-                                scrollTop: $("#bottom_parallax").offset().top
+                                scrollTop: $("#planetsView").offset().top
                             }, 1000, `swing`, () =>{
                                 $('#parallaxer').css(`transition`, `transform 0.1s ease-out`);
                             });
