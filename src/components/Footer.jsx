@@ -11,12 +11,12 @@ export default class Footer extends Component{
                 <div className="footer">
                     <div className="containerWrapper">
                         <div className="contentRow">
-                            <img src={ BsLogo } className="logo" />  
-                            <img src={ NthLogo } className="logo" />  
+                            <img src={ BsLogo } className="logo" href = "https://www.b-s.si/si-si/homepage/"/>  
+                            <img src={ NthLogo } className="logo" href = "https://www.talenthub.si/" />  
                         </div>
                         <div className="contentRow2">
-                            <img src={ SocLogoFb } className="logoSoc" />   
-                            <img src={ SocLogoIn } className="logoSoc" />
+                            <img src={ SocLogoFb } className="logoSoc" href = "https://www.facebook.com/BusinessSolutionsdoo/"/>   
+                            <img src={ SocLogoIn } className="logoSoc" href = "https://www.linkedin.com/company/business-solutions-d-o-o---bs-power-your-business"/>
                         </div>
                         <div className="contentColumn">
                             <h3>PRODUKTI</h3>
