@@ -46,11 +46,9 @@ import Contacts from "../components/Contacts"
 import TopBottomWave from "../components/TopBottomWave"
 import Planets from "../components/Planets"
 
-import iconCall from "../res/img/feature_icons/icon_call.svg"
-import iconApp from "../res/img/feature_icons/icon_app.svg"
-import iconChat from "../res/img/feature_icons/icon_chat.svg"
-import iconCloud from "../res/img/feature_icons/icon_cloud.svg"
-import iconPlanner from "../res/img/feature_icons/icon_planner.svg"
+import ecosystem from "../res/img/adv_icons/ecosystem.svg"
+import sharepoint from "../res/img/adv_icons/sharepoint.svg"
+import skupnoUrejanje from "../res/img/adv_icons/skupno_urejanje.svg"
 
 
 export default class Homepage extends Component {
@@ -150,9 +148,9 @@ export default class Homepage extends Component {
                                 style={{paddingBottom: 200}}
                                 subtitle="Hiter pregled nekaterih osnovnih funkcij:"
                                 content={[
-                                    {icon: iconCall,    title:"Microsoftov ekosistem", desc:"povezljivost in varnost"},
-                                    {icon: iconApp,     title:"Dokumentni sistem", desc:"skupno urejanje in dosegljivost datotek"},
-                                    {icon: iconChat,    title:"Sharepoint site", desc:"hramba datotek v oblaku"},
+                                    {icon: ecosystem,    title:"Microsoftov ekosistem", desc:"povezljivost in varnost"},
+                                    {icon: skupnoUrejanje,     title:"Dokumentni sistem", desc:"skupno urejanje in dosegljivost datotek"},
+                                    {icon: sharepoint,    title:"Sharepoint site", desc:"hramba datotek v oblaku"},
                                 ]}
                                 image={coffeImage}
                                 buttonText={"Kontaktirajte nas!"}
