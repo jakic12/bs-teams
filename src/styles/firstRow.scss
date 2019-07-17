@@ -25,6 +25,7 @@ body{
         max-width: 700px;
         h1 {
           padding-left: 30px;
+          margin-top:70px;
         }
         p {
           padding: 30px;
@@ -63,11 +64,15 @@ body{
     }
 
     .right{
-        width: 50%;
+        height:50vh;
+        width: 70%;
         justify-content: space-around;
 
         .telefonLaptop{
-            top:50%;
+            margin-top:30%;
+            @media screen and (max-height: 700px) {
+                margin-top:40%;
+            }
         }
     }
 
@@ -80,4 +85,15 @@ body{
         height: 40px;
         margin: 0 auto;
       }
+}
+
+@media screen and (max-width: $mobile-width - 100px){
+    .right{
+        height:50vh;
+        width: 80%;
+
+        .telefonLaptop{
+            margin-top:10%;
+        }
+    }
 }
