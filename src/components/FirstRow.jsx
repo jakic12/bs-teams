@@ -8,17 +8,18 @@ export default ({title, description, btnTitle, onClick, bigLogo, smallLogo, styl
     return (
         <div className="firstRow" style={style}>
             <div className="left">
-                <h1 className={'bigLightTitle'}>{title}</h1>
-                <p className={'lightParagraph'}>{description}</p>
-                <div className="btnWraper">
-                    <Button
-                        title={btnTitle}
-                        onClick={onClick}/>
+                <div className="leftInner">
+                    <h1 className={'bigLightTitle'}>{title}</h1>
+                    <p className={'lightParagraph'}>{description}</p>
+                    <div className="btnWraper">
+                        <Button
+                            title={btnTitle}
+                            onClick={onClick}/>
+                    </div>
                 </div>
             </div>
             <div className="right">
-                <img src={bigLogo} className="telefonLaptop"></img>
-                <img src={smallLogo} className="telefon"></img>
+                <img src={bigLogo} className="telefonLaptop" />
             </div>
         </div>
     )

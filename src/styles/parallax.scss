@@ -22,7 +22,7 @@
 
         .innerParallax{
             transition: transform 0.1s ease-out;
-            height:calc(100vh - 70px);
+            height:calc(100vh);
             //position:fixed;
         }
     }
@@ -39,6 +39,7 @@
                 position:absolute;
                 top:calc(50% - 70px);
                 transform:translate(0,-50%);
+                width:100%;
             }
         }
     }

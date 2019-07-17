@@ -17,38 +17,14 @@ import ICON_TRGOTUR from '../res/img/references/ICON_TRGOTUR.svg'
 import IKON_NIVO from '../res/img/references/IKON_NIVO.svg'  
 
 import AdvContainer from '../components/AdvContainer'
-
-import screenImg from "../res/img/telefon_laptop_teams_mockup.png";
-import storageLogo from "../res/img/onedrive-logo.png";
-import mailLogo from "../res/img/mail-logo.png";
-import excelLogo from "../res/img/excel-logo.png";
-import powerpointLogo from "../res/img/powerpoint-logo.png";
-import wordLogo from "../res/img/word-logo.png";
-import teamsLogo from "../res/img/teams-logo.png";
 import "../styles/home.scss";
 
-import mochFeature1 from '../res/img/features_img/1_screenshot-CHAT1on1.png'
-import mochFeature2 from '../res/img/features_img/2_screenshot-CHANNEL.png'
-import mochFeature3 from '../res/img/features_img/3_screenshot-SESTANEK.png'
-import mochFeature4 from '../res/img/features_img/4_screenshot-AKTIVNOSTI.png'
-import mochFeature5 from '../res/img/features_img/5_screenshot-DATOTEKE.png'
-
-import mochFeature1logo from '../res/img/features_logo/icon_chat.svg'
-import mochFeature2logo from '../res/img/features_logo/icon_call.svg'
-import mochFeature3logo from '../res/img/features_logo/icon_planer.svg'
-import mochFeature4logo from '../res/img/features_logo/icon_app.svg'
-import mochFeature5logo from '../res/img/features_logo/icon_clud.svg'
-
 import coffeImage from '../res/img/camera-coffe.jpg'
-import teamsImg from '../res/img/test-moch-image.png'
-import TelefonLaptop from "../res/img/telefon_laptop.png"
+import PowerBiShema from "../res/img/svg/POWER_BI_SHEMA.svg"
 import Telefon from "../res/img/telefon.png"
 
 import PieChart from "../res/img/svg/graf_rdec.svg"
 
-import Comparison from "../components/Comparison";
-import FeatureScroll from "../components/FeatureScroll"
-import BigImpact from "../components/BigImpact"
 import FirstRow from "../components/FirstRow"
 import Parallax from "../components/Parallax"
 import FeatureList from "../components/FeatureList"
@@ -57,11 +33,10 @@ import Contacts from "../components/Contacts"
 import TopBottomWave from "../components/TopBottomWave"
 import SideImage from "../components/SideImage"
 
-import iconCall from "../res/img/feature_icons/icon_call.svg"
-import iconApp from "../res/img/feature_icons/icon_app.svg"
-import iconChat from "../res/img/feature_icons/icon_chat.svg"
-import iconCloud from "../res/img/feature_icons/icon_cloud.svg"
-import iconPlanner from "../res/img/feature_icons/icon_planner.svg"
+import iconPodatki from "../res/img/feature_icons/icon_podatki.svg"
+import iconPresentation from "../res/img/feature_icons/icon_presentation.svg"
+import iconRealtime from "../res/img/feature_icons/icon_realtime.svg"
+import iconVprasanja from "../res/img/feature_icons/icon_vprasanja.svg"
 
 import $ from 'jquery'
 const PowerBIpreview = React.lazy(() => import("../components/PowerBIpreview"))
@@ -125,8 +100,7 @@ export default class Homepage extends Component {
                 <Parallax isMobile={this.props.isMobile}>
                     <FirstRow
                         title="Power BI"
-                        description={`Microsoftovo orodje Power BI je rešitev za poslovno analitiko, ki vam omogoča vizualizacijo vaših podatkov in izmenjavo izkušenj v vaši organizaciji ali pa jih vdelate v aplikacijo ali spletno stran. Povežite se s stotinami podatkovnih virov in oživite svoje podatke z nadzornimi ploščami in poročili v živo.
-                        Power BI je poslovna analitična storitev, ki omogoča vizualizacijo in analizo podatkov za uspešno vodenje vašega podjetja.`}
+                        description={`Power BI je poslovna analitična storitev, ki omogoča vizualizacijo in analizo podatkov za uspešno vodenje vašega podjetja.`}
                         btnTitle="Klikni vec"
                         onClick={() => {
                             $('#parallaxer').css(`transition`, `none`);
@@ -136,7 +110,7 @@ export default class Homepage extends Component {
                                 $('#parallaxer').css(`transition`, `transform 0.1s ease-out`);
                             });
                         }}
-                        bigLogo={TelefonLaptop}
+                        bigLogo={PowerBiShema}
                         smallLogo={Telefon}
                         style={{height:`100%`}}/>
                     <div>
@@ -156,10 +130,10 @@ export default class Homepage extends Component {
                                     style={{paddingBottom: 200}}
                                     subtitle="Hiter pregled nekaterih osnovnih funkcij:"
                                     content={[
-                                        {icon: iconCall,    title:"Vsi vaši podatki, kjerkoli so", desc:"Excelove preglednice, Navision storitve v oblaku, pretakanje podatkov in lokalne podatkovne baze - ne glede na to, kje so podatki ali v kakšni obliki so, dobite celovit pregled ključnih meritev za vaše podjetje."},
-                                        {icon: iconApp,     title:"Bodite obveščeni - vedno v realnem času", desc:"Takoj veste, kdaj vaše podjetje potrebuje vašo pozornost z nadzornimi ploščami Power BI v realnem času. Rešite težave in izkoristite priložnosti takoj, ko se pojavijo."},
-                                        {icon: iconChat,    title:"Zagotovite napredne analitike z domačnostjo Excela", desc:"Raziskujte podatke in poiščite vzorce, ki ste jih sicer zamudili. Naprednim uporabnikom daje popoln nadzor nad svojim modelom z uporabo DAX jezika. Če poznate Excel, se boste v Power BI počutili kot doma."},
-                                        {icon: iconCloud,   title:"Delite svoje predstavitve na svoji spletni strani ali blogu", desc:"Prikažite svoje podatke s storitvijo Power BI tudi na svoji spletni strani. Združite svoje podatkovne vire, z lahkoto ustvarite osupljive vizualizacije in v nekaj minutah vstavite svoje predstavitve na spletno stran."},
+                                        {icon: iconPodatki,    title:"Vsi vaši podatki, kjerkoli so", desc:"Excelove preglednice, Navision storitve v oblaku, pretakanje podatkov in lokalne podatkovne baze - ne glede na to, kje so podatki ali v kakšni obliki so, dobite celovit pregled ključnih meritev za vaše podjetje."},
+                                        {icon: iconRealtime,     title:"Bodite obveščeni - vedno v realnem času", desc:"Takoj veste, kdaj vaše podjetje potrebuje vašo pozornost z nadzornimi ploščami Power BI v realnem času. Rešite težave in izkoristite priložnosti takoj, ko se pojavijo."},
+                                        {icon: iconVprasanja,    title:"Zagotovite napredne analitike z domačnostjo Excela", desc:"Raziskujte podatke in poiščite vzorce, ki ste jih sicer zamudili. Naprednim uporabnikom daje popoln nadzor nad svojim modelom z uporabo DAX jezika. Če poznate Excel, se boste v Power BI počutili kot doma."},
+                                        {icon: iconPresentation,   title:"Delite svoje predstavitve na svoji spletni strani ali blogu", desc:"Prikažite svoje podatke s storitvijo Power BI tudi na svoji spletni strani. Združite svoje podatkovne vire, z lahkoto ustvarite osupljive vizualizacije in v nekaj minutah vstavite svoje predstavitve na spletno stran."},
                                         //{icon: iconPlanner, title:"Feature 5", desc:"Very short descri sit amet"},
                                     ]}
                                     image={coffeImage}
