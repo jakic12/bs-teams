@@ -30,8 +30,8 @@ import mochFeature5logo from '../res/img/features_logo/icon_clud.svg'
 
 import coffeImage from '../res/img/camera-coffe.jpg'
 import teamsImg from '../res/img/test-moch-image.png'
-import TelefonLaptop from "../res/img/telefon_laptop.png"
-import Telefon from "../res/img/telefon.png"
+import Laptop from "../res/img/LAPTOP_MOCKUP.png"
+import Telefon from "../res/img/TELEFON_MOCKUP.png"
 import redPlanet from '../res/img/planets/planet_big_red.svg'
 import moon from '../res/img/planets/planet_small_gray.svg'
 
@@ -136,7 +136,7 @@ export default class Homepage extends Component {
                                 $('#parallaxer').css(`transition`, `transform 0.1s ease-out`);
                             });
                         }}
-                        bigLogo={TelefonLaptop}
+                        bigLogo={Laptop}
                         smallLogo={Telefon}
                         style={{height:`100%`}}/>
                     <div>
