@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import '../styles/planets.scss'
 
-export default ({id, style, image}) => {
+export default ({id, style, image, width}) => {
     return (
-      <div style={style} className={"planets"}>
-        <img src={image} alt={"red planet"} style={{width: '100%'}}/>
+      <div id={id} style={style} className={"planets"}>
+        <img src={image} alt={"red planet"} style={{width}}/>
       </div>
     )
 };
