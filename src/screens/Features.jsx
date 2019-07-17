@@ -53,6 +53,9 @@ class Features extends Component{
                         logo={Telefon}
                         title="Imejte vsa orodja za tekoče delo na enem mestu."/>
                         <div>
+                            <div className="btnwrap">
+                                <button className="btnMore">Pokaži več</button>
+                            </div>
                             <div data-aos='fade-up-left' data-aos-anchor-placement="top-center">
                                 <Planets
                                     style={{bottom: 0}}
