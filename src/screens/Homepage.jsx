@@ -63,7 +63,9 @@ import iconChat from "../res/img/feature_icons/icon_chat.svg"
 import iconCloud from "../res/img/feature_icons/icon_cloud.svg"
 import iconPlanner from "../res/img/feature_icons/icon_planner.svg"
 
+import $ from 'jquery'
 const PowerBIpreview = React.lazy(() => import("../components/PowerBIpreview"))
+
 
 export default class Homepage extends Component {
 
@@ -122,11 +124,18 @@ export default class Homepage extends Component {
             <div style={{overflowX: "hidden"}}>
                 <Parallax isMobile={this.props.isMobile}>
                     <FirstRow
-                        title="PowerBi"
-                        description={"Nunc ac sapien vulputate odio convallis posuere nec vitae magna." +
-                        "In a efficitur ex, eget dictum elit. Nullam ac elit blandit, pharetra augue id, pulvinar\n ipsum."}
+                        title="Power BI"
+                        description={`Microsoftovo orodje Power BI je rešitev za poslovno analitiko, ki vam omogoča vizualizacijo vaših podatkov in izmenjavo izkušenj v vaši organizaciji ali pa jih vdelate v aplikacijo ali spletno stran. Povežite se s stotinami podatkovnih virov in oživite svoje podatke z nadzornimi ploščami in poročili v živo.
+                        Power BI je poslovna analitična storitev, ki omogoča vizualizacijo in analizo podatkov za uspešno vodenje vašega podjetja.`}
                         btnTitle="Klikni vec"
-                        onClick={() => alert("You pressed a button!")}
+                        onClick={() => {
+                            $('#parallaxer').css(`transition`, `none`);
+                            $([document.documentElement, document.body]).animate({
+                                scrollTop: $("#bottom_parallax").offset().top
+                            }, 1000, `swing`, () =>{
+                                $('#parallaxer').css(`transition`, `transform 0.1s ease-out`);
+                            });
+                        }}
                         bigLogo={TelefonLaptop}
                         smallLogo={Telefon}
                         style={{height:`100%`}}/>
@@ -147,15 +156,18 @@ export default class Homepage extends Component {
                                     style={{paddingBottom: 200}}
                                     subtitle="Hiter pregled nekaterih osnovnih funkcij:"
                                     content={[
-                                        {icon: iconCall,    title:"Chat", desc:"Instantno posiljanje"},
-                                        {icon: iconApp,     title:"Aplikacije", desc:"več kot xxx aplikacij na voljo"},
-                                        {icon: iconChat,    title:"Cloud", desc:"dosegljivost datotek"},
-                                        {icon: iconCloud,   title:"Feature 4", desc:"test"},
-                                        {icon: iconPlanner, title:"Feature 5", desc:"Very short descri sit amet"},
+                                        {icon: iconCall,    title:"Vsi vaši podatki, kjerkoli so", desc:"Excelove preglednice, Navision storitve v oblaku, pretakanje podatkov in lokalne podatkovne baze - ne glede na to, kje so podatki ali v kakšni obliki so, dobite celovit pregled ključnih meritev za vaše podjetje."},
+                                        {icon: iconApp,     title:"Bodite obveščeni - vedno v realnem času", desc:"Takoj veste, kdaj vaše podjetje potrebuje vašo pozornost z nadzornimi ploščami Power BI v realnem času. Rešite težave in izkoristite priložnosti takoj, ko se pojavijo."},
+                                        {icon: iconChat,    title:"Zagotovite napredne analitike z domačnostjo Excela", desc:"Raziskujte podatke in poiščite vzorce, ki ste jih sicer zamudili. Naprednim uporabnikom daje popoln nadzor nad svojim modelom z uporabo DAX jezika. Če poznate Excel, se boste v Power BI počutili kot doma."},
+                                        {icon: iconCloud,   title:"Delite svoje predstavitve na svoji spletni strani ali blogu", desc:"Prikažite svoje podatke s storitvijo Power BI tudi na svoji spletni strani. Združite svoje podatkovne vire, z lahkoto ustvarite osupljive vizualizacije in v nekaj minutah vstavite svoje predstavitve na spletno stran."},
+                                        //{icon: iconPlanner, title:"Feature 5", desc:"Very short descri sit amet"},
                                     ]}
                                     image={coffeImage}
                                     buttonText={"FREE TRIAL"}
                                 />
+
+
+
                             </div>
                             <AdvContainer id={"advContainer"} />
 

@@ -42,7 +42,6 @@ class Router extends Component{
                         <TopMenu isMobile={isMobile}/>
                         <div className="main-content">
                             <Route exact={true} path="/" render={props => <Homepage {...props} isMobile={isMobile} />} />
-                            <Route path="/features" render={props => <Features {...props} isMobile={isMobile} />} />
                         </div>
                     </BrowserRouter>
                 }
