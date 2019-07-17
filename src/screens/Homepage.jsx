@@ -105,6 +105,10 @@ export default class Homepage extends Component {
         this.getAnimationState(functionsView, state => this.setState({functionsView: state}));
         this.getAnimationState(comparisonView, state => this.setState({comparison: state}));
         this.getAnimationState(featureScroll, state => this.setState({featureScroll: state}));
+
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrolled = (winScroll / height) * 100;
     };
 
     getAnimationState = (element, callback) => {
@@ -126,7 +130,8 @@ export default class Homepage extends Component {
                         btnTitle="Klikni vec"
                         onClick={() => alert("You pressed a button!")}
                         bigLogo={TelefonLaptop}
-                        smallLogo={Telefon}/>
+                        smallLogo={Telefon}
+                        style={{height:`100%`}}/>
                     <div>
                         <div style={{position:`relative`}}>
                             <Planets
