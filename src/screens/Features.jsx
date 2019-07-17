@@ -48,6 +48,7 @@ class Features extends Component{
                         <div>
                             <div data-aos='fade-up'>
                                 <Planets
+                                    style={{bottom: 0}}
                                     id={'planetView'}
                                     image={redPlanet}/>
                             </div>

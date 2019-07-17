@@ -137,7 +137,7 @@ export default class Homepage extends Component {
                                     id={'planetsView'}
                                     image={redPlanet}/>
                             </div>
-                            <div data-aos='fade-up-right' data-aos-anchor-placement="bottom-bottom">
+                            <div data-aos='fade-up' data-aos-anchor-placement="bottom-bottom">
                                 <FeatureList
                                     id={"functionsView"}
                                     isMobile={this.props.isMobile}
