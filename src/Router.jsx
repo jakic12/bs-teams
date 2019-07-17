@@ -47,15 +47,14 @@ class Router extends Component{
               render={({ location }) => (
                 <div style={{width: '100%', height: '100%'}}>
                   <TopMenu isMobile={isMobile}/>
-                    <PoseGroup>
-                      <RouteContainer key={'route'}>
+                    <RouteContainer key={'route'}>
                         <Switch key={'switch'} location={location}>
-                          <Route exact path="/" render={props => <Homepage {...props} isMobile={isMobile}/>} key="home" />
-                          <Route path="/features" render={props => <Features {...props} isMobile={isMobile}/>} key="features" />
-                          <Route path="/contact" render={props => <Contact {...props} isMobile={isMobile}/>} key="contact" />
+                            {console.log(location)}
+                            <Route exact path="/" render={props => <Homepage {...props} isMobile={isMobile}/>} key="home" />
+                            <Route path="/features" render={props => <Features {...props} isMobile={isMobile}/>} key="features" />
+                            <Route path="/contact" render={props => <Contact {...props} isMobile={isMobile}/>} key="contact" />
                         </Switch>
-                      </RouteContainer>
-                    </PoseGroup>
+                    </RouteContainer>
                 </div>
               )}
             />
