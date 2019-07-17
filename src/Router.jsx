@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch, Link} from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import pose, {PoseGroup} from 'react-pose';
+import CookieConsent from "react-cookie-consent";
+import Button from 'react-bootstrap/Button';
 
 import TopMenu from './components/TopMenu'
 import Homepage from './screens/Homepage';
 import Features from './screens/Features';
 import Contact from './screens/Contact';
+import CookiePolicy from './components/CookiePolicy';
 
 
 const RouteContainer = pose.div({
@@ -47,6 +50,20 @@ class Router extends Component{
               render={({ location }) => (
                 <div style={{width: '100%', height: '100%'}}>
                   <TopMenu isMobile={isMobile}/>
+
+                  <CookieConsent
+                    location="bottom"
+                    buttonText="Razumem"
+                    style={{ background: "#2B373B" }}
+                    buttonStyle={{ background: "#c51e2b", color: "#ffffff", fontSize: "13px" }}
+                    expires={150}
+                  >
+                    We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.{" "}
+                          <a style={{color: 'white', fontSize: "15px"}} ><u>Learn more</u></a>
+                </CookieConsent>
+
+                {/*<CookiePolicy show={true} />*/}
+
                     <PoseGroup>
                       <RouteContainer key={'route'}>
                         <Switch key={'switch'} location={location}>
