@@ -14,6 +14,8 @@ import checkboxIcon from "../res/img/checkbox-icon.png";
 import Parallax from "../components/Parallax";
 import FirstRow from "../components/FirstRow";
 import Planets from "../components/Planets";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 class Features extends Component{
 
@@ -32,6 +34,9 @@ class Features extends Component{
 
     componentDidMount() {
         this.track = window.addEventListener('scroll', this.trackScrolling);
+        AOS.init({
+            duration: 2000
+        })
     }
 
     componentWillUnmount() {
@@ -80,94 +85,104 @@ class Features extends Component{
                         logo={Telefon}
                         title="Imejte vsa orodja za tekoče delo na enem mestu."/>
                         <div>
-                            <Planets
-                                id={'planetView'}
-                                style={{padding: 60, top: '-10%', left: '60%', width: '10%'}}
-                                firstImage={redPlanet}
-                                animationTriggerState={0}
-                                animationState={this.state.planetView}/>
-                            <FeatureView
-                                id={"featureViewFirst"}
-                                animationTriggerState={1}
-                                title={"Klepet"}
-                                icon={checkboxIcon}
-                                video={demoVideo}
-                                isMobile={this.props.isMobile}
-                                animationState={this.state.featureViewFirst}
-                                textItems={[
-                                    "Učinkovita komunikacija",
-                                    "Hiter klepet s posamezniki ali v skupini",
-                                    "Prikaz dosegljivosti osebe",
-                                    "Enostavno deljenje datotek"
-                                ]}
-                                flip={true}
-                            />
-                            <FeatureView
-                                id={"featureViewSecond"}
-                                animationTriggerState={1}
-                                title={"Skupine in kanali"}
-                                style={{backgroundColor: '#f6f7f9'}}
-                                icon={checkboxIcon}
-                                video={demoVideo2}
-                                isMobile={this.props.isMobile}
-                                animationState={this.state.featureViewSecond}
-                                textItems={[
-                                    "Delitev po ekipah, oddelkih in projektih",
-                                    "Vsaka ekipa ima svoje kanale",
-                                    "Jasna delitev skupin",
-                                    "Prikaz vseh kanalov v katerih je posameznik prisoten"
-                                ]}
-                                flip={false}
-                            />
-                            <FeatureView
-                                id={"featureViewThird"}
-                                animationTriggerState={1}
-                                title={"Planiranje (Sestanki, Dogodki)"}
-                                icon={checkboxIcon}
-                                video={demoVideo3}
-                                isMobile={this.props.isMobile}
-                                animationState={this.state.featureViewThird}
-                                textItems={[
-                                    "Planiranje sestankov glede na zasedenost ostalih članov",
-                                    "Pregled dnevnega reda",
-                                    "Ustvarjanje sestanka v povezavi s točno določenim kanalom",
-                                    "Sprotni zapiski sestanka in deljene datoteke"
-                                ]}
-                                flip={true}
-                            />
-                            <FeatureView
-                                id={"featureViewFourth"}
-                                animationTriggerState={1}
-                                title={"Datoteke"}
-                                style={{backgroundColor: 'f6f7f9'}}
-                                icon={checkboxIcon}
-                                video={demoVideo4}
-                                isMobile={this.props.isMobile}
-                                animationState={this.state.featureViewFourth}
-                                textItems={[
-                                    "Shranjevanje vseh datotek na enem mestu (SharePoint)",
-                                    "1TB prostora v oblaku za shranjevanje na uporabnika",
-                                    "Deljenje s skupino ali posameznikom",
-                                    "Skupno urejanje datotek znotraj aplikacije"
-                                ]}
-                                flip={false}
-                            />
-                            <FeatureView
-                                id={"featureViewFifth"}
-                                animationTriggerState={1}
-                                title={"Avdio in video klici"}
-                                icon={checkboxIcon}
-                                video={demoVideo5}
-                                isMobile={this.props.isMobile}
-                                animationState={this.state.featureViewFifth}
-                                textItems={[
-                                    "Skupinski in posamezni video klici",
-                                    "Telefonske konference",
-                                    "Možnost opravljanja sestankov na daljavo",
-                                    "Pridruževanje skupinskim pogovorom in sestankom"
-                                ]}
-                                flip={true}
-                            />
+                            <div data-aos='fade-up'>
+                                <Planets
+                                    id={'planetView'}
+                                    style={{padding: 60, top: '-10%', left: '60%', width: '10%'}}
+                                    firstImage={redPlanet}
+                                    animationTriggerState={0}
+                                    animationState={this.state.planetView}/>
+                            </div>
+                            <div data-aos='fade-up'>
+                                <FeatureView
+                                    id={"featureViewFirst"}
+                                    animationTriggerState={1}
+                                    title={"Klepet"}
+                                    icon={checkboxIcon}
+                                    video={demoVideo}
+                                    isMobile={this.props.isMobile}
+                                    animationState={this.state.featureViewFirst}
+                                    textItems={[
+                                        "Učinkovita komunikacija",
+                                        "Hiter klepet s posamezniki ali v skupini",
+                                        "Prikaz dosegljivosti osebe",
+                                        "Enostavno deljenje datotek"
+                                    ]}
+                                    flip={true}
+                                />
+                            </div>
+                            <div data-aos='fade-up'>
+                                <FeatureView
+                                    id={"featureViewSecond"}
+                                    animationTriggerState={1}
+                                    title={"Skupine in kanali"}
+                                    style={{backgroundColor: '#f6f7f9'}}
+                                    icon={checkboxIcon}
+                                    video={demoVideo2}
+                                    isMobile={this.props.isMobile}
+                                    animationState={this.state.featureViewSecond}
+                                    textItems={[
+                                        "Delitev po ekipah, oddelkih in projektih",
+                                        "Vsaka ekipa ima svoje kanale",
+                                        "Jasna delitev skupin",
+                                        "Prikaz vseh kanalov v katerih je posameznik prisoten"
+                                    ]}
+                                    flip={false}
+                                />
+                            </div>
+                            <div data-aos='fade-up'>
+                                <FeatureView
+                                    id={"featureViewThird"}
+                                    animationTriggerState={1}
+                                    title={"Planiranje (Sestanki, Dogodki)"}
+                                    icon={checkboxIcon}
+                                    video={demoVideo3}
+                                    isMobile={this.props.isMobile}
+                                    animationState={this.state.featureViewThird}
+                                    textItems={[
+                                        "Planiranje sestankov glede na zasedenost ostalih članov",
+                                        "Pregled dnevnega reda",
+                                        "Ustvarjanje sestanka v povezavi s točno določenim kanalom",
+                                        "Sprotni zapiski sestanka in deljene datoteke"
+                                    ]}
+                                    flip={true}
+                                />
+                            </div>
+                            <div data-aos='fade-up'>
+                                <FeatureView
+                                    id={"featureViewFourth"}
+                                    title={"Datoteke"}
+                                    style={{backgroundColor: 'f6f7f9'}}
+                                    icon={checkboxIcon}
+                                    video={demoVideo4}
+                                    isMobile={this.props.isMobile}
+                                    textItems={[
+                                        "Shranjevanje vseh datotek na enem mestu (SharePoint)",
+                                        "1TB prostora v oblaku za shranjevanje na uporabnika",
+                                        "Deljenje s skupino ali posameznikom",
+                                        "Skupno urejanje datotek znotraj aplikacije"
+                                    ]}
+                                    flip={false}
+                                />
+                            </div>
+                            <div data-aos='fade-up'>
+                                <FeatureView
+                                    id={"featureViewFifth"}
+                                    animationTriggerState={1}
+                                    title={"Avdio in video klici"}
+                                    icon={checkboxIcon}
+                                    video={demoVideo5}
+                                    isMobile={this.props.isMobile}
+                                    animationState={this.state.featureViewFifth}
+                                    textItems={[
+                                        "Skupinski in posamezni video klici",
+                                        "Telefonske konference",
+                                        "Možnost opravljanja sestankov na daljavo",
+                                        "Pridruževanje skupinskim pogovorom in sestankom"
+                                    ]}
+                                    flip={true}
+                                />
+                            </div>
                         </div>
                 </Parallax>
             </div>

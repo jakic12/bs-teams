@@ -4,6 +4,8 @@ import Sponzors from '../components/Sponzors'
 import Ebs from '../res/img/spon_logo/ICON_EBS.svg' 
 import insTech from '../res/img/spon_logo/ICON_INS_TECH.svg' 
 import pronega from '../res/img/spon_logo/ICON_PRONEGA.svg' 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import AdvContainer from '../components/AdvContainer'
 
@@ -73,6 +75,9 @@ export default class Homepage extends Component {
 
     componentDidMount() {
         this.track = window.addEventListener('scroll', this.trackScrolling);
+        AOS.init({
+            duration: 2000
+        })
     }
 
     isInvisible = (el) => {
@@ -141,66 +146,72 @@ export default class Homepage extends Component {
                         style={{height:`100%`}}/>
                     <div>
                         <div style={{position:`relative`}}>
-                            <Planets
-                                id={'planetsView'}
-                                firstImage={redPlanet}
-                                secondImage={moon}
-                                style={{top: '-20%', left: '60%'}}
-                                animationTriggerState={1}
-                                animationState={this.state.planetsView}/>
-                            <FeatureList
-                                id={"functionsView"}
-                                isMobile={this.props.isMobile}
-                                animationTriggerState={1}
-                                animationState={this.state.functionsView}
-                                title="Prednosti"
+                            <div data-aos='fade-up-left' data-aos-anchor-placement="center-center">
+                                <Planets
+                                    id={'planetsView'}
+                                    firstImage={redPlanet}
+                                    secondImage={moon}
+                                    style={{top: '-20%', left: '60%'}}/>
+                            </div>
+                            <div data-aos='fade-up-right' data-aos-anchor-placement="center-center">
+                                <FeatureList
+                                    id={"functionsView"}
+                                    isMobile={this.props.isMobile}
+                                    animationTriggerState={1}
+                                    animationState={this.state.functionsView}
+                                    title="Prednosti"
+                                    style={{paddingBottom: 200}}
+                                    subtitle="Hiter pregled nekaterih osnovnih funkcij:"
+                                    content={[
+                                        {icon: ecosystem,    title:"Microsoftov ekosistem", desc:"povezljivost in varnost"},
+                                        {icon: skupnoUrejanje,     title:"Dokumentni sistem", desc:"skupno urejanje in dosegljivost datotek"},
+                                        {icon: sharepoint,    title:"Sharepoint site", desc:"hramba datotek v oblaku"},
+                                    ]}
+                                    image={coffeImage}
+                                    buttonText={"Kontaktirajte nas!"}
+                                />
+                            </div>
+                        </div>
+                        <div data-aos='fade-up' data-aos-anchor-placement="center-center">
+                            <FeatureScroll
+                                id={"featureScroll"}
                                 style={{paddingBottom: 200}}
-                                subtitle="Hiter pregled nekaterih osnovnih funkcij:"
-                                content={[
-                                    {icon: ecosystem,    title:"Microsoftov ekosistem", desc:"povezljivost in varnost"},
-                                    {icon: skupnoUrejanje,     title:"Dokumentni sistem", desc:"skupno urejanje in dosegljivost datotek"},
-                                    {icon: sharepoint,    title:"Sharepoint site", desc:"hramba datotek v oblaku"},
+                                animationTriggerState={1}
+                                animationState={this.state.featureScroll}
+                                features={[
+                                    {screenshot:mochFeature1, title:"Klepet - učinkovita komunikacija", icon:mochFeature1logo},
+                                    {screenshot:mochFeature2, title:"Skupni klepet v kanalih", icon:mochFeature2logo},
+                                    {screenshot:mochFeature3, title:"Načrtovanje sestankov", icon:mochFeature3logo},
+                                    {screenshot:mochFeature4, title:"Sledenje vsem aktivnostim", icon:mochFeature4logo},
+                                    {screenshot:mochFeature5, title:"Oblak - deljenje in hramba datotek", icon:mochFeature5logo}
                                 ]}
-                                image={coffeImage}
-                                buttonText={"Kontaktirajte nas!"}
+                                moreLinkText={"Več lastnosti."}
+                                morePath={`#`}
+                                isMobile={this.props.isMobile}
                             />
                         </div>
-                        <FeatureScroll
-                            id={"featureScroll"}
-                            style={{paddingBottom: 200}}
-                            animationTriggerState={1}
-                            animationState={this.state.featureScroll}
-                            features={[
-                                {screenshot:mochFeature1, title:"Klepet - učinkovita komunikacija", icon:mochFeature1logo},
-                                {screenshot:mochFeature2, title:"Skupni klepet v kanalih", icon:mochFeature2logo},
-                                {screenshot:mochFeature3, title:"Načrtovanje sestankov", icon:mochFeature3logo},
-                                {screenshot:mochFeature4, title:"Sledenje vsem aktivnostim", icon:mochFeature4logo},
-                                {screenshot:mochFeature5, title:"Oblak - deljenje in hramba datotek", icon:mochFeature5logo}
-                            ]}
-                            moreLinkText={"Več lastnosti."}
-                            morePath={`#`}
-                            isMobile={this.props.isMobile}
-                        />
-                        <Comparison
-                            id={"comparisonView"}
-                            style={{padding: 20}}
-                            isMobile={this.props.isMobile}
-                            title={"Vsa orodja v enem"}
-                            description={"Klepetajte posamezno ali v skupini, ustvarite kanale za posamezne projekte ali oddelke, shranjujte in urejajte datoteke v oblaku. " + 
-                            "Vse kar potrebujete za celovito komunikacijo."}
-                            animationState={this.state.comparison}
-                            topAnimationTriggerState={0}
-                            bottomAnimationTriggerState={2}
-                            leftIconsSize={100}
-                            rightIconsSize={200}
-                            teamsLogo={teamsLogo}
-                            config={[
-                                {img: mailLogo, name: "drive"},
-                                {img: wordLogo, name: "word"},
-                                {img: excelLogo, name: "calendar"},
-                                {img: powerpointLogo, name: "power points"},
-                                {img: storageLogo, name: "drive"}
-                            ]}/>
+                        <div data-aos='fade-up' data-aos-anchor-placement="center-center">
+                            <Comparison
+                                id={"comparisonView"}
+                                style={{padding: 20}}
+                                isMobile={this.props.isMobile}
+                                title={"Vsa orodja v enem"}
+                                description={"Klepetajte posamezno ali v skupini, ustvarite kanale za posamezne projekte ali oddelke, shranjujte in urejajte datoteke v oblaku. " +
+                                "Vse kar potrebujete za celovito komunikacijo."}
+                                animationState={this.state.comparison}
+                                topAnimationTriggerState={0}
+                                bottomAnimationTriggerState={2}
+                                leftIconsSize={100}
+                                rightIconsSize={200}
+                                teamsLogo={teamsLogo}
+                                config={[
+                                    {img: mailLogo, name: "drive"},
+                                    {img: wordLogo, name: "word"},
+                                    {img: excelLogo, name: "calendar"},
+                                    {img: powerpointLogo, name: "power points"},
+                                    {img: storageLogo, name: "drive"}
+                                ]}/>
+                        </div>
                         <TopBottomWave>
                             <Sponzors sponzors={[
                                 Ebs,
