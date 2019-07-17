@@ -6,9 +6,9 @@
     -o-background-size: cover;
     background-size: cover;
     overflow:hidden;
-    z-index:-1;
     .topParallaxWrapper{
-        background-color:rgba(0, 0, 0, 0.664);
+        background-color:rgba(0, 0, 0, 1);
+        opacity:0;
         position:absolute;
         top:0;
         left:0;
@@ -21,7 +21,7 @@
         position:relative;
 
         .innerParallax{
-            //transition: scale 0.01s;
+            transition: transform 0.1s ease-out;
             height:calc(100vh - 70px);
             //position:fixed;
         }
@@ -31,9 +31,15 @@
         position:relative;
 
         .innerParallax{
-            //transition: scale 0.01s;
+            transition: transform 0.1s ease-out;
             height:calc(100vh - 70px);
-            //position:fixed;
+            position:relative;
+
+            .parallaxCenter{
+                position:absolute;
+                top:calc(50% - 70px);
+                transform:translate(0,-50%);
+            }
         }
     }
     #waveCover{
@@ -54,6 +60,7 @@
 #bottom_parallax{
     margin-top:-10px;
     background:#f2f2f2;
-    z-index:1000;
+    z-index:4000;
     position:relative;
+
 }
