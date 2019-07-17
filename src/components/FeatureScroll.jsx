@@ -48,7 +48,7 @@ class FeatureScroll extends Component{
                         {(() => {
                             if(!isMobile){
                                 return <React.Fragment>
-                                    <div>
+                                    <div className='screenshot'>
                                         <img
                                             src={this.props.features[this.state.featured].screenshot}
                                             alt="feature-screenshot"/>

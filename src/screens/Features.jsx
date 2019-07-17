@@ -33,49 +33,10 @@ class Features extends Component{
     }
 
     componentDidMount() {
-        this.track = window.addEventListener('scroll', this.trackScrolling);
         AOS.init({
             duration: 2000
         })
     }
-
-    componentWillUnmount() {
-        window.removeEventListener("scroll", this.trackScrolling);
-    }
-
-    isTop = (el) => {
-        return el.getBoundingClientRect().top <= window.innerHeight / 1.3;
-    };
-
-    isBottom = (el) => {
-        return el.getBoundingClientRect().bottom <= window.innerHeight;
-    };
-
-    isMiddle = (el) => {
-        return el.getBoundingClientRect().top <= window.innerHeight / 2.5;
-    };
-
-    trackScrolling = () => {
-        const planetView = document.getElementById('planetView');
-        const featureView = document.getElementById('featureViewFirst');
-        const lefRightFirst = document.getElementById('featureViewSecond');
-        const leftRightSecond = document.getElementById('featureViewThird');
-        const leftRightThird = document.getElementById('featureViewFourth');
-        const leftRightFourth = document.getElementById('featureViewFifth');
-
-        this.getAnimationState(planetView, state => this.setState({planetView: state}));
-        this.getAnimationState(featureView, state => this.setState({featureViewFirst: state}));
-        this.getAnimationState(lefRightFirst, state => this.setState({featureViewSecond: state}));
-        this.getAnimationState(leftRightSecond, state => this.setState({featureViewThird: state}));
-        this.getAnimationState(leftRightThird, state => this.setState({featureViewFourth: state}));
-        this.getAnimationState(leftRightFourth, state => this.setState({featureViewFifth: state}))
-    };
-
-    getAnimationState = (element, callback) => {
-        if (this.isTop(element)) callback(1);
-        if (this.isMiddle(element)) callback(2);
-        if (this.isBottom(element)) callback(3);
-    };
 
     render(){
         return (
@@ -88,10 +49,7 @@ class Features extends Component{
                             <div data-aos='fade-up'>
                                 <Planets
                                     id={'planetView'}
-                                    style={{padding: 60, top: '-10%', left: '60%', width: '10%'}}
-                                    firstImage={redPlanet}
-                                    animationTriggerState={0}
-                                    animationState={this.state.planetView}/>
+                                    image={redPlanet}/>
                             </div>
                             <div data-aos='fade-up'>
                                 <FeatureView

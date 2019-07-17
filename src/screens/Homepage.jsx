@@ -97,23 +97,9 @@ export default class Homepage extends Component {
     };
 
     trackScrolling = () => {
-        const planetsView = document.getElementById('planetsView');
-        const functionsView = document.getElementById('functionsView');
         const comparisonView = document.getElementById('comparisonView');
-        const featureScroll = document.getElementById('featureScroll');
 
-        console.log('IS_FUNCTIONS_TOP ', this.isTop(comparisonView));
-        console.log('IS_FUNCTIONS_MIDDLE ', this.isMiddle(comparisonView));
-        console.log('IS_FUNCTIONS_BOTTOM ', this.isBottom(comparisonView));
-
-        this.getAnimationState(planetsView, state => this.setState({planetsView: state}));
-        this.getAnimationState(functionsView, state => this.setState({functionsView: state}));
         this.getAnimationState(comparisonView, state => this.setState({comparison: state}));
-        this.getAnimationState(featureScroll, state => this.setState({featureScroll: state}));
-
-        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        let scrolled = (winScroll / height) * 100;
     };
 
     getAnimationState = (element, callback) => {
@@ -146,14 +132,12 @@ export default class Homepage extends Component {
                         style={{height:`100%`}}/>
                     <div>
                         <div style={{position:`relative`}}>
-                            <div data-aos='fade-up-left' data-aos-anchor-placement="center-center">
+                            <div data-aos='fade-up-left' data-aos-anchor-placement="bottom-bottom">
                                 <Planets
                                     id={'planetsView'}
-                                    firstImage={redPlanet}
-                                    secondImage={moon}
-                                    style={{top: '-20%', left: '60%'}}/>
+                                    image={redPlanet}/>
                             </div>
-                            <div data-aos='fade-up-right' data-aos-anchor-placement="center-center">
+                            <div data-aos='fade-up-right' data-aos-anchor-placement="bottom-bottom">
                                 <FeatureList
                                     id={"functionsView"}
                                     isMobile={this.props.isMobile}
@@ -172,7 +156,7 @@ export default class Homepage extends Component {
                                 />
                             </div>
                         </div>
-                        <div data-aos='fade-up' data-aos-anchor-placement="center-center">
+                        <div data-aos='fade-up' data-aos-anchor-placement="bottom-bottom">
                             <FeatureScroll
                                 id={"featureScroll"}
                                 style={{paddingBottom: 200}}
@@ -190,7 +174,7 @@ export default class Homepage extends Component {
                                 isMobile={this.props.isMobile}
                             />
                         </div>
-                        <div data-aos='fade-up' data-aos-anchor-placement="center-center">
+                        <div data-aos='fade-up' data-aos-anchor-placement="bottom-bottom">
                             <Comparison
                                 id={"comparisonView"}
                                 style={{padding: 20}}
