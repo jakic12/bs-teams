@@ -1,4 +1,6 @@
 .featureScroll{
+    position:relative;
+    z-index: 5000;
     padding:30px;
     
     .featureWrapper{

@@ -1,6 +1,7 @@
 @import "shared.scss";
 
 .planets {
+    z-index: 4000;
     position: absolute;
     .redPlanet {
         img {
