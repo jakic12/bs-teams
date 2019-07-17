@@ -50,6 +50,8 @@ import ecosystem from "../res/img/adv_icons/ecosystem.svg"
 import sharepoint from "../res/img/adv_icons/sharepoint.svg"
 import skupnoUrejanje from "../res/img/adv_icons/skupno_urejanje.svg"
 
+import $ from 'jquery'
+
 
 export default class Homepage extends Component {
 
@@ -126,7 +128,14 @@ export default class Homepage extends Component {
                         splošno organizacijo vaše ekipe vse na enem mestu?<br />
                         Enostavno.</div>}
                         btnTitle="Klikni vec"
-                        onClick={() => alert("You pressed a button!")}
+                        onClick={() => {
+                            $('#parallaxer').css(`transition`, `none`);
+                            $([document.documentElement, document.body]).animate({
+                                scrollTop: $("#bottom_parallax").offset().top
+                            }, 1000, `swing`, () =>{
+                                $('#parallaxer').css(`transition`, `transform 0.1s ease-out`);
+                            });
+                        }}
                         bigLogo={TelefonLaptop}
                         smallLogo={Telefon}
                         style={{height:`100%`}}/>
