@@ -63,7 +63,9 @@ import iconChat from "../res/img/feature_icons/icon_chat.svg"
 import iconCloud from "../res/img/feature_icons/icon_cloud.svg"
 import iconPlanner from "../res/img/feature_icons/icon_planner.svg"
 
+import $ from 'jquery'
 const PowerBIpreview = React.lazy(() => import("../components/PowerBIpreview"))
+
 
 export default class Homepage extends Component {
 
@@ -126,7 +128,14 @@ export default class Homepage extends Component {
                         description={"Nunc ac sapien vulputate odio convallis posuere nec vitae magna." +
                         "In a efficitur ex, eget dictum elit. Nullam ac elit blandit, pharetra augue id, pulvinar\n ipsum."}
                         btnTitle="Klikni vec"
-                        onClick={() => alert("You pressed a button!")}
+                        onClick={() => {
+                            $('#parallaxer').css(`transition`, `none`);
+                            $([document.documentElement, document.body]).animate({
+                                scrollTop: $("#bottom_parallax").offset().top
+                            }, 1000, `swing`, () =>{
+                                $('#parallaxer').css(`transition`, `transform 0.1s ease-out`);
+                            });
+                        }}
                         bigLogo={TelefonLaptop}
                         smallLogo={Telefon}
                         style={{height:`100%`}}/>
