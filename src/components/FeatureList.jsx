@@ -27,7 +27,11 @@ export default ({isMobile, content, title, style, id, animationState, animationT
             pose={(isMobile || animationState > animationTriggerState) ? 'show' : 'hidden'}
             id={id} className="featureList" style={style}>
             <div className="content">
-              <h1 className={'bigDarkTitle'}>{title}</h1>
+                <div className="header">
+                    <div className="title">
+                        <h1 className={'bigDarkTitle'}>{title}</h1>
+                    </div>
+                </div>
                 <div className="body">
                     <ul>
                         {content.map((feature,i) => 
