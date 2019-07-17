@@ -12,7 +12,7 @@ class TopBottom extends Component{
                         {this.props.children[0]}
                     </div>
                 </div>
-                <img src={this.props.isMobile ? BottomWaveMini : BottomWave }/>
+                <img src={!this.props.isMobile ? BottomWaveMini : BottomWave }/>
                 <div className="bottom">
                     <div className="bottomInner">
                         {this.props.children[1]}
