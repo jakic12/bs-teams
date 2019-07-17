@@ -27,8 +27,7 @@ class Parallax extends Component{
     handleScroll = () =>{
         window.requestAnimationFrame(() => {    
             if($('#parallaxer').innerHeight()+300 > $(document).scrollTop()){
-                $('#parallaxer').css("transform", `translate3d(0,${$(document).scrollTop()/2}px,0)`)
-                let ammount = $(document).scrollTop()/2;
+                let ammount = $(document).scrollTop()/2
                 $('#parallaxer').css("transform", `translate3d(0, ${ammount}px, 0)`)
                 let sizeCoeficient = ammount / window.innerHeight
                 $('#blackCover').css("opacity", sizeCoeficient)
@@ -55,7 +54,7 @@ class Parallax extends Component{
                             </div>
                         }
                         {this.props.isMobile &&
-                            <div className="innerParallax">
+                            <div id="parallaxer" className="innerParallax">
                                 {this.props.children[0]}
                             </div>
                         }
