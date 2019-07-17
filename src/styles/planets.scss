@@ -1,6 +1,7 @@
 @import "shared.scss";
 
-.planets{
+.planets {
+    z-index: 4000;
     position: absolute;
     top:-20%;
     left:62%;
