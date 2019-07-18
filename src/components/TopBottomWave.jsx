@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import BottomWaveMini from '../res/img/space_spodaj_funkcije_mini.svg'
-import BottomWave from '../res/img/space_spodaj_funkcije.svg'
+import BottomWave from '../res/img/wave_spodaj.svg'
+import BottomBottomWave from '../res/img/wave_spodaj_spodaj.svg'
 import '../styles/topBottom.scss'
+import ReactSvg from 'react-svg';
 
 class TopBottom extends Component{
     render(){
@@ -12,10 +13,12 @@ class TopBottom extends Component{
                         {this.props.children[0]}
                     </div>
                 </div>
-                <img src={!this.props.isMobile ? BottomWaveMini : BottomWave }/>
-                <div className="bottom">
-                    <div className="bottomInner">
-                        {this.props.children[1]}
+                <ReactSvg src={BottomWave} className="waveImage" alt="waveImage"/>
+                <div className="bottomWrapper">
+                    <div className="bottom" style={{background:`url(${BottomBottomWave}) no-repeat`}}>
+                        <div className="bottomInner">
+                            {this.props.children[1]}
+                        </div>
                     </div>
                 </div>
             </div>

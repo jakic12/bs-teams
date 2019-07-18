@@ -209,7 +209,11 @@ export default class Homepage extends Component {
                                 insTech,
                                 pronega
                             ]}/>
-                            <Contacts />
+                            <Contacts onButtonClick={() => {
+                                $([document.documentElement, document.body]).animate({
+                                    scrollTop: $("#planetsView").offset().top
+                                });
+                            }} />
                         </TopBottomWave>
                         <Footer />
                     </div>

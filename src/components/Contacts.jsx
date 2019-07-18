@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../styles/contacts.scss'
 import Button from './Button.jsx'
+import { Link } from 'react-router-dom';
 
 export default class Contacts extends Component{
     render(){
@@ -11,9 +12,12 @@ export default class Contacts extends Component{
                         <p className="p1">Spremenite vaše poslovanje že danes</p>
                         <p className="p2">Stopite v kontakt z nami</p>
                         <div className="buttonMumbleWrapper">
-                            <Button 
-                                onClick={() => alert("You clicked a button")}
-                                title={"KONTAKTI"} />
+                            <Link to={`/contact`}>
+                                <Button 
+                                    onClick={this.props.onButtonClick}
+                                    title={"KONTAKTI"}
+                                />
+                            </Link>
                         </div>
                     </div>
                  </div>
