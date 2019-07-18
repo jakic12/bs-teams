@@ -29,7 +29,7 @@
   @media screen and (max-width: $mobile-width) {
     display: flex;
     flex-direction: column;
-    margin: 0 100px 0 100px;
+    margin: 0 10px 0 10px;
 
     .innerTextContainer {
       width: 100%;
@@ -44,7 +44,7 @@
       .smallLogo {
         margin: auto;
         display: block !important;
-        width: 400px;
+        width: 100%;
       }
     }
     .smallMargin {
