@@ -1,12 +1,14 @@
 @import 'shared.scss';
 
 .topBottomWave{
+    padding-top:40px;
+    background-color:rgb(246, 247, 249);
     width:100vw;
+    @media screen and (max-width:$mobile-width){
+        background-color:#f2f2f2;
+    }
     .top{
         
-        @media screen and (max-width:$mobile-width){
-            background-color:#f2f2f2;
-        }
     }
     
     .waveImage{

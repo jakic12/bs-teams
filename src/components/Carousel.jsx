@@ -13,7 +13,7 @@ export default class Carousel extends Component{
     componentDidMount(){
         this.timer = setInterval(() => {
             this.setState(state => ({
-                selected: (state.selected+(this.props.isMobile? 2 : 3)) % this.props.children.length
+                selected: (state.selected+3) % this.props.children.length
             }))
         }, 2000)
     }
@@ -25,7 +25,7 @@ export default class Carousel extends Component{
     render(){
         return (
             <div style={this.props} className="carousel">
-                {this.props.children.slice(this.state.selected, this.state.selected+(this.props.isMobile? 2 : 3))}
+                {this.props.children.slice(this.state.selected, this.state.selected+3)}
             </div>   
         )
     } 
