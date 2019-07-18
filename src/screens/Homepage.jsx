@@ -110,7 +110,7 @@ export default class Homepage extends Component {
                 <Parallax isMobile={this.props.isMobile}>
                     <FirstRow
                         title="Microsoft Teams"
-                        subtitle={<div>Kako upravljati komunikacijo, deljenje in hrambo datotek.</div>}
+                        subtitle={'Komunikacija 21. stoletja'}
                         description={<div>Kako upravljati komunikacijo, deljenje in hrambo datotek ter 
                         splošno organizacijo vaše ekipe vse na enem mestu? Enostavno.</div>}
                         btnTitle="Več informacij"

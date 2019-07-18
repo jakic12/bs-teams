@@ -57,7 +57,7 @@ class Features extends Component{
                         title="Imejte vsa orodja za tekoče delo na enem mestu."/>
                         <div>
                           <Button
-                            style={{marginLeft: 100}}
+                            style={this.props.isMobile ? {display: 'none'} : {marginLeft: 100}}
                             title={'Pokazi vec'}
                             onClick={() => {
                               $([document.documentElement, document.body]).animate({
