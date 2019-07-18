@@ -146,6 +146,12 @@
                 width:100%; 
                 padding: 10px 0px 10px 0px;
                 display: block;
+                h3{
+                    font-size:16px;
+                }
+                p{
+                    font-size:12px;
+                }
               
                 
             }
@@ -153,6 +159,7 @@
         
     }
     .copyright{
+       
         position: relative;
         background:$DARK-GREY;
         color: white;
@@ -161,30 +168,41 @@
         width:100%;
         .copyWrapper{
             position: relative;
+            display: flex;
             justify-content: space-evenly;
+            flex-direction:row;
             align-items: center;
             flex-wrap: wrap;
             left:50%;
             height:100%;
             line-height: 100%;
             width:50%;
-            display: flex;
-            .linkCon{
-                position: relative;
-                margin:0% 1%;
-                height: 100%;
-                width:3%;
+            padding:15px;
+           
 
-                .link{
+            .wrapper{
+                width:47%;
+                display:flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                .linkCon{
+                    position: relative;
                     height: 100%;
-                    color:white;
-                    text-decoration: none;
+                    width:30%;
+    
+                    .link{
+                        height: 100%;
+                        color:white;
+                        text-decoration: none;
+                    }
                 }
             }
+            
             .copyContent{
-                width: 40%;
-                p{
-                   
+                width: 47%;
+                height:100%;
+                .cpy{
+                    margin:auto;
                     font-size:14px; 
                }   
             }
@@ -193,6 +211,40 @@
                 
                 width:100%;
                 left:0%;
+                height:5%;
+                display:flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                padding:5px;
+
+                .copyContent{
+                    width: 47%;
+                    height:100%;
+                    .cpy{
+                        padding:5px 0px;
+                        margin-left:15%;
+                        font-size: 10px; 
+                   }   
+                }
+                .wrapper{
+                    width: 47%;
+                    height:100%;
+                    .linkCon{
+                        position: relative;
+                        margin:0;
+                        height: 100%;
+                        width:30%;
+        
+                        .link{
+                            width:100%;
+                            height: 100%;
+                            color:white;
+                            text-decoration: none;
+                            font-size:12px;
+                        }
+                    }
+                }
+                
             }           
         }
     }
