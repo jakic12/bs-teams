@@ -6,21 +6,24 @@
   margin: 0 100px 0 100px;
 
   .innerTextContainer {
-    width: 50%;
+    width: 40%;
     margin: auto;
   }
   .innerImageContainer {
-    width: 50%;
+    width: 60%;
     margin: auto;
     .bigLogo {
-      width: 700px;
+      width: 100%;
     }
     .smallLogo {
       display: none;
     }
   }
-  .btMargin {
+  .smallMargin {
     margin: 30px 0 30px 0;
+  }
+  .bigMargin {
+    margin: 0px 0 50px 0;
   }
 
   @media screen and (max-width: $mobile-width) {
@@ -44,7 +47,7 @@
         width: 400px;
       }
     }
-    .btMargin {
+    .smallMargin {
       margin: 30px 0 30px 0;
     }
   }

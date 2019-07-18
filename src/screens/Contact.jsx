@@ -33,7 +33,7 @@ class Contact extends Component {
                     <ContactForm onSubmit={console.log}/>
                 </div>
                 <Planets image={topBorder} style={{top: 0, left: 0, width: '30vw'}}/>
-                <Planets image={bottomBorder} style={{bottom: 0, right: 0}}/>
+                <Planets image={bottomBorder} style={{bottom: 0, right: 0, width: '30vw'}}/>
             </div>
         )
     }
