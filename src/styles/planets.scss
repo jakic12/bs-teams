@@ -3,8 +3,6 @@
 .planets {
   z-index: 4000;
   position: absolute;
-  right: 0;
-  top: -200px;
 
   @media screen and (max-width:$mobile-width +100px){
     img{

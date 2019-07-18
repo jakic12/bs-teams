@@ -2,6 +2,12 @@
 
 #comparison {
   padding: 40px;
+  #left {
+    vertical-align: center;
+    p {
+      margin: 10px
+    }
+  }
   #right {
     #top {
       display: flex;

@@ -56,12 +56,9 @@ export default ({id, config, teamsLogo, animationState, topAnimationTriggerState
                 pose={isMobile || animationState >= topAnimationTriggerState ? 'visible' : 'hidden'}
                 style={isMobile ?
                     {width: "100%", marginBottom: 40} :
-                    {width: "30%", marginLeft: 80}
-                }>
-                <div>
-                    <h2 className={'bigDarkTitle'}>{title}</h2>
-                    <p className={'darkParagraph'}>{description}</p>
-                </div>
+                    {width: "30%", marginLeft: 80}}>
+                <h2 className={'bigDarkTitle'}>{title}</h2>
+                <p className={'darkParagraph'}>{description}</p>
             </LeftDiv>
             <div
                 id="right"
@@ -72,7 +69,7 @@ export default ({id, config, teamsLogo, animationState, topAnimationTriggerState
                 <div id="top">
                     <PoseGroup>
                         {config.map((ele, index) => (
-                            <div key={index} style={{textAlign: "center",width: "20%", margin: "auto", display: "inline-block"}} className={"imageWrapper"}>
+                            <div key={index} style={{textAlign: "center", width: "20%", margin: "auto", display: "inline-block"}} className={"imageWrapper"}>
                                 <Image
                                     key={index}
                                     className={"comparisonImg"}
