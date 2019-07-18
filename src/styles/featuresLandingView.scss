@@ -1,0 +1,19 @@
+.featuresLandingViewContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 40vh;
+}
+
+.featuresInnerTopContainer {
+  text-align: center;
+  h1 {
+    padding: 10px;
+    margin: auto;
+  }
+  h3 {
+    padding: 10px;
+  }
+  height: 50%;
+  margin: auto;
+}

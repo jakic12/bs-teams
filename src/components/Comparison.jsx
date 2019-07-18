@@ -95,7 +95,7 @@ export default ({id, config, teamsLogo, animationState, topAnimationTriggerState
                         id={"teamsLogo"}
                         src={teamsLogo}
                         alt={"teams"}
-                        pose={(isMobile ? 'visible' : (animationState > bottomAnimationTriggerState ? "visibleBottom" : "hiddenBottom"))}
+                        pose={(isMobile ? 'visible' : (animationState >= bottomAnimationTriggerState ? "visibleBottom" : "hiddenBottom"))}
                         style={isMobile ? {width: '100%'} : {display: "block", margin: "auto"}}
                     />
                 </div>

@@ -19,16 +19,16 @@ export default ({style, onSubmit}) => {
       </div>
       <form>
         <div className='formBlock'>
-          <input className='fieldLong round' onChange={e => setName(e.target.value)} type='text' name='name' placeholder='IME'/>
+          <input className='fieldLong round' onChange={e => setName(e.target.value)} type='text' name='name' placeholder='IME' required/>
         </div>
         <div className='formBlock'>
-          <input className='fieldLong round' onChange={e => setSurname(e.target.value)} type='text' name='surname' placeholder='PRIIMEK'/>
+          <input className='fieldLong round' onChange={e => setSurname(e.target.value)} type='text' name='surname' placeholder='PRIIMEK' required/>
         </div>
         <div className='formBlock'>
-          <input className='fieldLong round' onChange={e => setPhone(e.target.value)} type='text' name='phone' placeholder='TELEFON'/>
+          <input className='fieldLong round' onChange={e => setPhone(e.target.value)} type='text' name='phone' placeholder='TELEFON' required/>
         </div>
         <div className='formBlock'>
-          <input className='fieldArea round' onChange={e => setMsg(e.target.value)} type='text' name='message' placeholder='SPOROCILO'/>
+          <textarea className='fieldArea round' onChange={e => setMsg(e.target.value)} name='message' placeholder='SPOROCILO' required/>
         </div>
         <div className='captcha'>
           <ReCAPTCHA

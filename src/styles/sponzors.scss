@@ -15,18 +15,14 @@
         .title{
             width:100%;
             text-align: center;
-            font-size:40px;
+            font-size:45px;
             color:#3a3a3a8a;
-            font-weight:500;
-            padding-bottom:100px;
+            font-weight:700;
+            padding-bottom:50px;
 
             @media screen and (max-width:$mobile-width){
-                font-size:20px;
-                padding-bottom:0px;
-            }
-            @media screen and (max-width:$small-mobile-width){
-                font: size 10px !important;
-                padding-bottom:0px !important;
+                font-size:30px;
+                padding-bottom:30px;
             }
         }
         .logos{
@@ -36,11 +32,11 @@
             display: flex;
             justify-content: space-evenly;
             align-items: center;
-            flex-wrap:nowrap;
+            flex-wrap:wrap;
             
             .logo{
                 opacity: 0.3;
-                margin:0 auto;
+                //margin:0 auto;
                 transition: opacity 250ms ease-in ;
                 padding:2%;
 
@@ -50,24 +46,18 @@
                     opacity:1;
                 }
             }
-            /*@media screen and(max-width:$mobile-width){
-                .logo{
-                    padding:5%;
-                    height:30px;
-                }
-            }*/
             @media screen and(max-width:$mobile-width){
                 .logo{
                     opacity:1;
-                    padding:5%;
-                    height:20px;
+                    //padding:5%;
+                    height:40px;
                 }
             }
 
             @media screen and(min-width:$mobile-width){
                 .logo{
                     opacity:1;
-                    padding:5%;
+                    //padding:5%;
                     height:60px;
                 }
             }

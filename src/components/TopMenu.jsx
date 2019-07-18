@@ -14,7 +14,9 @@ class TopMenu extends Component{
     }
     render(){
         const logo = <div key={`topLogo`} className="topBarBlock">
-            <img className="bslogo" src={bslogo} alt="Business Solutions logo"/>
+            <Link onClick={() => {this.setState({menuOpen:false})}} className="topLink" to="/">
+                <img className="bslogo" src={bslogo} alt="Business Solutions logo"/>
+            </Link>
         </div>
         const blocks = <React.Fragment key={`Fragment`}>
             <div key={`Domov`}  className="topBarBlock">
@@ -42,7 +44,7 @@ class TopMenu extends Component{
                             <div className="logo">
                                 {logo}
                             </div>
-                            <div classname="topBarButton">
+                            <div className="topBarButton">
                                 <PerspectiveX
                                     color='#fff'
                                     active={this.state.menuOpen}

@@ -17,18 +17,24 @@ $LIGHT-GREY: #f6f7f9;
 .bigLightTitle {
   color: $LIGHT-GREY;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 50px;
 }
 
 .bigDarkTitle {
   color: $DARK-GREY;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 28px;
+}
+
+.mediumLightTitle {
+  color: $LIGHT-GREY;
+  font-weight: 400;
+  font-size: 20px;
 }
 
 .mediumDarkTitle {
   color: $DARK-GREY;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 20px;
 }
 
@@ -51,9 +57,19 @@ $LIGHT-GREY: #f6f7f9;
   font-size: 20px;
 }
 
+.lightBoldParagraph {
+  color: $LIGHT-GREY;
+  font-weight: 500;
+  font-size: 20px;
+}
+
 .darkParagraph {
   color: $DARK-GREY;
   font-weight: 300;
   font-size: 20px;
   line-height: 1.4;
+}
+
+*, ::after, ::before {
+  box-sizing: unset !important;
 }
