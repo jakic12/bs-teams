@@ -6,8 +6,12 @@ $bar-height:70px;
     background:#3a3a3a;
     height:$bar-height;
     position:relative;
+    width:100%;
+    overflow: hidden;
+    transition:height 0.5s;
 
     .innerBarWrapper{
+        transition:height 0.5s 0.5s;
         position:relative;
         width:100%;
         height:100%;
@@ -25,6 +29,7 @@ $bar-height:70px;
 
             .topBarBlock{
                 order:1;
+                text-align: center;
 
                 .bslogo{
                     width:100px;
@@ -56,6 +61,49 @@ $bar-height:70px;
                 }
                 width:200px !important;
             }
+        }
+        
+    }
+    @media screen and (max-width: $mobile-width) {
+        .innerBar{
+            justify-content: space-between;
+        }
+
+        .blocks{
+            .innerBar{
+                justify-content: space-evenly;
+            }
+        }
+
+        .logo{
+    
+        }
+        .blocks{
+            display:none;
+        }
+    
+        .topLinkWrapper{
+            padding-left:0 !important;
+            padding-top:0 !important;
+
+            .topLink{
+                padding-left:0 !important;
+            }
+        }
+    }
+}
+
+.menuOpen{
+    height:$bar-height + 70px;
+    .innerBarWrapper{
+        transition:none;
+        height:$bar-height;
+    }
+    .blocks{
+        display:block !important;
+
+        .topBarBlock{
+
         }
     }
 }
