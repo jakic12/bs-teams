@@ -1,10 +1,10 @@
 @import "shared.scss";
 
-.title {
-    margin: 20px;
-}
 
 .featureViewContainer {
+  .title {
+    margin: 20px;
+  } 
     display: flex;
     flex-direction: row;
     position: relative;
