@@ -27,18 +27,19 @@ export default class Footer extends Component{
                     <div className="copyright">
                         <div className = "copyWrapper">
                             <div className="copyContent">
-                                <p>&copy; 2018 Business Solution. All rights reserved.</p>
+                                <p className="cpy">&copy; 2018 Business Solution. All rights reserved.</p>
                             </div>
-                            <div className="linkCon">
-                               <a className="link" href = "#">Privacy</a> 
+                            <div className="wrapper">
+                                <div className="linkCon">
+                                    <a className="link" href = "#">Privacy</a> 
+                                </div>
+                                <div className="linkCon">
+                                    <a className="link" href = "#">Terms </a>
+                                </div>
+                                <div className="linkCon">
+                                    <a className="link" href = "#">Cookies</a> 
+                                </div>
                             </div>
-                            <div className="linkCon">
-                               <a className="link" href = "#">Terms </a>
-                            </div>
-                            <div className="linkCon">
-                               <a className="link" href = "#">Cookies</a> 
-                            </div>
-
                         </div>    
                     </div>
                 </div>

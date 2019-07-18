@@ -12,6 +12,7 @@
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.1",
+    "react-burgers": "^1.3.0",
     "react-bootstrap": "^1.0.0-beta.9",
     "react-cookie-consent": "^2.3.2",
     "react-dom": "^16.8.6",
