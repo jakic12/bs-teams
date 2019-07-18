@@ -10,9 +10,21 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-wrap:nowrap;
+    flex-wrap:wrap;
 
-    img{
-        width:10vw;
+    .imgWrapper{
+        padding:10px;
+        img{
+            @media screen and(max-width:$mobile-width){
+                height:40px;
+            }
+            @media screen and(max-width:$small-mobile-width){
+                height:30px;
+            }
+
+            @media screen and(min-width:$mobile-width){
+                height:60px;
+            }
+        }
     }
 }

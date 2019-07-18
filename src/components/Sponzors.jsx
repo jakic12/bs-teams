@@ -14,7 +14,9 @@ class Sponzors extends Component{
                     <div className="logos">
                         <Carousel isMobile={this.props.isMobile}>
                             {this.props.sponzors.map((s,i) => 
-                                <img key={i} src={ s } alt="reference"/>
+                                <div className={`imgWrapper`}>
+                                    <img key={i} src={ s } alt="reference"/>
+                                </div>
                             )}
                         </Carousel>
                     </div>

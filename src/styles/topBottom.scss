@@ -1,40 +1,39 @@
-@import "shared.scss";
+@import 'shared.scss';
 
 .topBottomWave{
-    position:relative;
+    padding-top:40px;
+    background-color:rgb(246, 247, 249);
+    width:100vw;
+    @media screen and (max-width:$mobile-width){
+        background-color:#f2f2f2;
+    }
     .top{
-        position:absolute;
-        top:0;
-        width:100vw;
-        height:50%;
-        overflow:hidden;
-        .topInner{
-            position: absolute;
-            top:50%;
-            transform: translate(0,-50%);
-            width:100vw;
-        }
-    }
-    
-    img{
-        background-color:#f6f7f9;
         
-        @media screen and (max-width:$mobile-width){
-            background-color:#f2f2f2;
-        }
     }
     
-    .bottom{
-        position: absolute;
-        bottom:0;
-        width:100vw;
-        height:50%;
-        overflow:hidden;
-        .bottomInner{
-            position: absolute;
-            top:50%;
-            transform: translate(0,-50%);
-            width:100vw;
+    .waveImage{
+        margin-bottom:-5px;
+        width:100%;
+    }
+
+    .bottomWrapper{
+        background: #3c3c3b;
+        .bottom{
+            background: #3c3c3b;
+            position:relative;
+            background-size: cover !important;
+            .bottomInner{
+                padding-top:50px;
+                padding-bottom:50px;
+                @media screen and (max-width:$mobile-width){
+                    padding-top:40px;
+                    padding-bottom:40px;
+                }
+                @media screen and (max-width:$small-mobile-width){
+                    padding-top:20px;
+                    padding-bottom:0;
+                }
+            }
         }
     }
 }

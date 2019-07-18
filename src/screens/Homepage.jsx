@@ -117,7 +117,8 @@ export default class Homepage extends Component {
                         style={{height:`100%`}}/>
                     <div>
                         <div style={{position:`relative`}}>
-                            <div style={{position:`relative`}}>
+                            <AdvContainer id={"advContainer"} />
+                            <div style={{position:`relative`, background:`#f6f7f9`}}>
                                 <SideImage 
                                     id={'sideImageView'}
                                     image={PieChart}
@@ -141,11 +142,7 @@ export default class Homepage extends Component {
                                     image={coffeImage}
                                     buttonText={"FREE TRIAL"}
                                 />
-
-
-
                             </div>
-                            <AdvContainer id={"advContainer"} />
 
                             {(!this.props.isMobile) &&
                                 <Suspense fallback={<div>loading...</div>}>
