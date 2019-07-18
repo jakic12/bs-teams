@@ -52,6 +52,7 @@ class Features extends Component{
                 <Parallax resizeHeightBy={'70vh'}>
                     <FeaturesLandingView
                         logo={Telefon}
+                        subtitle={"Imejte vsa orodja za tekoče delo na enem mestu."}
                         title="Imejte vsa orodja za tekoče delo na enem mestu."/>
                         <div>
                             <div className="btnwrap">
