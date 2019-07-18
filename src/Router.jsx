@@ -54,25 +54,27 @@ class Router extends Component{
                   <CookieConsent
                     location="bottom"
                     buttonText="Razumem"
-                    style={{ background: "#2B373B" }}
+                    style={{ background: "#3a3a3a", zIndex: 5000 }}
                     buttonStyle={{ background: "#c51e2b", color: "#ffffff", fontSize: "13px" }}
                     expires={150}
                   >
                     We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.{" "}
-                          <a style={{color: 'white', fontSize: "15px"}} ><u>Learn more</u></a>
+                          <Button className="btn btn-primary shadow-none" style={{outline: 'none', background: '#3a3a3a', border: 'none', color: 'white', fontSize: "15px", marginTop: '-5px'}} onClick={() => this.setState({showCookiePolicy: true})}><u>Learn more</u></Button>
                 </CookieConsent>
 
-                {/*<CookiePolicy show={true} />*/}
-
-                    <PoseGroup>
-                      <RouteContainer key={'route'}>
+                <CookiePolicy 
+                show={this.state.showCookiePolicy} 
+                setShow={show => this.setState({showCookiePolicy: show})}
+                />
+                
+                    <RouteContainer key={'route'}>
                         <Switch key={'switch'} location={location}>
-                          <Route exact path="/" render={props => <Homepage {...props} isMobile={isMobile}/>} key="home" />
-                          <Route path="/features" render={props => <Features {...props} isMobile={isMobile}/>} key="features" />
-                          <Route path="/contact" render={props => <Contact {...props} isMobile={isMobile}/>} key="contact" />
+                            {console.log(location)}
+                            <Route exact path="/" render={props => <Homepage {...props} isMobile={isMobile}/>} key="home" />
+                            <Route path="/features" render={props => <Features {...props} isMobile={isMobile}/>} key="features" />
+                            <Route path="/contact" render={props => <Contact {...props} isMobile={isMobile}/>} key="contact" />
                         </Switch>
-                      </RouteContainer>
-                    </PoseGroup>
+                    </RouteContainer>
                 </div>
               )}
             />
