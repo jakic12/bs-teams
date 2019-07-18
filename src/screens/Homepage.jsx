@@ -146,7 +146,7 @@ export default class Homepage extends Component {
                                     width={'20vw'}
                                     image={moon}/>
                             </div>
-                            <div data-aos='fade-up' data-aos-anchor-placement="bottom-bottom">
+                            <div data-aos='fade-up' data-aos-anchor-placement="top-center">
                                 <FeatureList
                                     id={"functionsView"}
                                     isMobile={this.props.isMobile}

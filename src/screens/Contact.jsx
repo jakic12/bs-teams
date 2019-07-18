@@ -29,7 +29,7 @@ class Contact extends Component {
     render() {
         return (
             <div className='contactScreenContainer'>
-                <div data-aos='fade-up'>
+                <div className='innerContactContainer' data-aos='fade-up'>
                     <ContactForm onSubmit={console.log}/>
                 </div>
                 <Planets image={topBorder} style={{top: 0, left: 0, width: '30vw'}}/>
