@@ -1,8 +1,10 @@
-
 @import 'shared.scss';
 
 
 @media screen and (max-width:$mobile-width) {
+  .featureListItem {
+    margin: 20px 0;
+  }
     .featureList{
         padding:50px 10px 100px 10px !important;
         .content{
@@ -25,7 +27,7 @@
                         overflow:hidden;
                         .img {
                             display:block !important;
-                            margin: 0 auto !important;
+                            margin: 10px auto !important;
                         }
                         
                         .titleDesc{
@@ -38,7 +40,6 @@
                             
                             .title {
                             }
-                            padding-bottom:50px;
                         }
     
                     }
@@ -57,18 +58,6 @@
 }
 
 .featureList{
-
-    .smallDarkTitle{
-        font-size:30px;
-    }
-
-    .bigDarkTitle{
-        font-size: 60px;
-    }
-
-    .darkParagraph{
-        font-size: 25px;
-    }
 
     padding:50px;
     padding-left:100px;

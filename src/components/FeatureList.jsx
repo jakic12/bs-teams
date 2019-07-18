@@ -17,10 +17,10 @@ export default ({content, title, style, id}) => {
                 <div className="body">
                     <ul>
                         {content.map((feature,i) => 
-                            <li key={i}>
+                            <li className={'featureListItem'} key={i}>
                                 <img className={'img'} src={feature.icon} alt='logo'/>
                                 <div className="titleDesc">
-                                    <div className={'smallDarkTitle'}>{feature.title} </div>
+                                    <div className={'mediumDarkTitle'}>{feature.title} </div>
                                     <div className={'darkParagraph'}>{feature.desc}</div>
                                 </div>
                             </li>

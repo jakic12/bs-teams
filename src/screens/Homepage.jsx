@@ -110,9 +110,9 @@ export default class Homepage extends Component {
                 <Parallax isMobile={this.props.isMobile}>
                     <FirstRow
                         title="Microsoft Teams"
+                        subtitle={<div>Kako upravljati komunikacijo, deljenje in hrambo datotek.</div>}
                         description={<div>Kako upravljati komunikacijo, deljenje in hrambo datotek ter 
-                        splošno organizacijo vaše ekipe vse na enem mestu?<br />
-                        Enostavno.</div>}
+                        splošno organizacijo vaše ekipe vse na enem mestu? Enostavno.</div>}
                         btnTitle="Več informacij"
                         onClick={() => {
                             $('#parallaxer').css(`transition`, `none`);

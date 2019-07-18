@@ -4,6 +4,10 @@ body{
     height: 100%;
 }
 
+.btMargin {
+  margin: 30px 0 30px 0;
+}
+
 .firstRow{
     flex-basis: 90%;
     height: auto;
@@ -52,12 +56,6 @@ body{
     margin-right: 5%;
     align-items: center;
     justify-content: center;
-    h1 {
-      padding: 30px;
-    }
-    p {
-      padding: 30px;
-    }
   }
 
 .right{
