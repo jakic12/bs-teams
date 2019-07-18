@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/featureScroll.scss'
 import '../styles/shared.scss'
 import { Link } from 'react-router-dom';
+import $ from 'jquery'
 
 class FeatureScroll extends Component{
     constructor(props){
@@ -64,14 +65,18 @@ class FeatureScroll extends Component{
                                                 <div className="text">{f.title}</div>
                                             </button>)}
                                         </div>
-                                        <div className="more">
-                                            <Link to={this.props.morePath}>{this.props.moreLinkText}</Link>
-                                        </div>
+                                        <Link to={this.props.morePath} className="more" onClick={() => {
+                                            $([document.documentElement, document.body]).animate({
+                                                scrollTop: 0
+                                            }, 1000)
+                                        }}>
+                                            <div className="moreLink" >{this.props.moreLinkText}</div>
+                                        </Link>
                                     </div>
                                 </React.Fragment>
                             }else{
                                 return (
-                                    <div className="mobileFeatures">
+                                <div className="mobileFeatures">
                                     {this.props.features.map((f,i) => 
                                         <div className="mobileFeature" key={i}>
                                             <div className="title" style={i == 0? {marginTop:0}:{}}>
@@ -83,6 +88,15 @@ class FeatureScroll extends Component{
                                             </div>
                                         </div>
                                     )}
+                                        <div className="moreWrapper">
+                                            <Link to={this.props.morePath} className="more" onClick={() => {
+                                                    $([document.documentElement, document.body]).animate({
+                                                        scrollTop: 0
+                                                    }, 1000)
+                                                }}>
+                                                <div className="moreLink" >{this.props.moreLinkText}</div>
+                                            </Link>
+                                        </div>
                                 </div>
                                 )
                             }
