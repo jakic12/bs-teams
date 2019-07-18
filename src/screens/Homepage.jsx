@@ -60,13 +60,8 @@ export default class Homepage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            comparison: 0,
-            featureScroll: 0,
-            featuresList: 0,
-            functionsView: 0,
-            planetsView: 0
+            comparison: 0
         };
-        this.track = null;
     }
 
     componentWillUnmount() {
@@ -74,7 +69,7 @@ export default class Homepage extends Component {
     }
 
     componentDidMount() {
-        this.track = window.addEventListener('scroll', this.trackScrolling);
+        window.addEventListener('scroll', this.trackScrolling);
         AOS.init({
             duration: 2000
         })
@@ -89,7 +84,7 @@ export default class Homepage extends Component {
     };
 
     isBottom = (el) => {
-        return el.getBoundingClientRect().bottom <= window.innerHeight;
+        return el.getBoundingClientRect().top <= window.innerHeight / 3;
     };
 
     isMiddle = (el) => {
@@ -191,7 +186,7 @@ export default class Homepage extends Component {
                                 "Vse kar potrebujete za celovito komunikacijo."}
                                 animationState={this.state.comparison}
                                 topAnimationTriggerState={0}
-                                bottomAnimationTriggerState={2}
+                                bottomAnimationTriggerState={3}
                                 leftIconsSize={100}
                                 rightIconsSize={200}
                                 teamsLogo={teamsLogo}

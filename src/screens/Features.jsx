@@ -23,6 +23,7 @@ import insTech from "../res/img/spon_logo/ICON_INS_TECH.svg";
 import pronega from "../res/img/spon_logo/ICON_PRONEGA.svg";
 import Contacts from "../components/Contacts";
 import Footer from "../components/Footer";
+import $ from "jquery";
 
 class Features extends Component{
 
@@ -54,15 +55,18 @@ class Features extends Component{
                         title="Imejte vsa orodja za tekoče delo na enem mestu."/>
                         <div>
                             <div className="btnwrap">
-                                <button className="btnMore">Pokaži več</button>
+                                <button className="btnMore"
+                                        onClick={() => {
+                                          $([document.documentElement, document.body]).animate({
+                                            scrollTop: $("#featureViewFirst").offset().top
+                                          }, 1000);
+                                        }}>Pokaži več</button>
                             </div>
-                            <div data-aos='fade-up-left'>
-                                <Planets
-                                    style={{bottom: 0}}
-                                    width={'30vw'}
-                                    id={'planetView'}
-                                    image={redPlanet}/>
-                            </div>
+                          <Planets
+                            style={{bottom: 0}}
+                            width={'30vw'}
+                            id={'planetView'}
+                            image={redPlanet}/>
                             <div style={this.props.isMobile ? {} : {marginTop: 200}} data-aos='fade-up' data-aos-anchor-placement="top-bottom">
                                 <FeatureView
                                     id={"featureViewFirst"}
