@@ -60,13 +60,8 @@ export default class Homepage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            comparison: 0,
-            featureScroll: 0,
-            featuresList: 0,
-            functionsView: 0,
-            planetsView: 0
+            comparison: 0
         };
-        this.track = null;
     }
 
     componentWillUnmount() {
@@ -74,9 +69,9 @@ export default class Homepage extends Component {
     }
 
     componentDidMount() {
-        this.track = window.addEventListener('scroll', this.trackScrolling);
+        window.addEventListener('scroll', this.trackScrolling);
         AOS.init({
-            duration: 2000
+            duration: 1500
         })
     }
 
@@ -89,7 +84,7 @@ export default class Homepage extends Component {
     };
 
     isBottom = (el) => {
-        return el.getBoundingClientRect().bottom <= window.innerHeight;
+        return el.getBoundingClientRect().top <= window.innerHeight / 3;
     };
 
     isMiddle = (el) => {
@@ -115,9 +110,9 @@ export default class Homepage extends Component {
                 <Parallax isMobile={this.props.isMobile}>
                     <FirstRow
                         title="Microsoft Teams"
+                        subtitle={<div>Kako upravljati komunikacijo, deljenje in hrambo datotek.</div>}
                         description={<div>Kako upravljati komunikacijo, deljenje in hrambo datotek ter 
-                        splošno organizacijo vaše ekipe vse na enem mestu?<br />
-                        Enostavno.</div>}
+                        splošno organizacijo vaše ekipe vse na enem mestu? Enostavno.</div>}
                         btnTitle="Več informacij"
                         onClick={() => {
                             $('#parallaxer').css(`transition`, `none`);
@@ -146,7 +141,7 @@ export default class Homepage extends Component {
                                     width={'20vw'}
                                     image={moon}/>
                             </div>
-                            <div data-aos='fade-up' data-aos-anchor-placement="bottom-bottom">
+                            <div data-aos='fade-up' data-aos-anchor-placement="top-center">
                                 <FeatureList
                                     id={"functionsView"}
                                     isMobile={this.props.isMobile}
@@ -191,7 +186,7 @@ export default class Homepage extends Component {
                                 "Vse kar potrebujete za celovito komunikacijo."}
                                 animationState={this.state.comparison}
                                 topAnimationTriggerState={0}
-                                bottomAnimationTriggerState={2}
+                                bottomAnimationTriggerState={3}
                                 leftIconsSize={100}
                                 rightIconsSize={200}
                                 teamsLogo={teamsLogo}
