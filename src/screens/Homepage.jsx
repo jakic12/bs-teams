@@ -118,7 +118,7 @@ export default class Homepage extends Component {
                         description={<div>Kako upravljati komunikacijo, deljenje in hrambo datotek ter 
                         splošno organizacijo vaše ekipe vse na enem mestu?<br />
                         Enostavno.</div>}
-                        btnTitle="Klikni vec"
+                        btnTitle="Več informacij"
                         onClick={() => {
                             $('#parallaxer').css(`transition`, `none`);
                             $([document.documentElement, document.body]).animate({
@@ -176,8 +176,8 @@ export default class Homepage extends Component {
                                     {screenshot:mochFeature4, title:"Sledenje vsem aktivnostim", icon:mochFeature4logo},
                                     {screenshot:mochFeature5, title:"Oblak - deljenje in hramba datotek", icon:mochFeature5logo}
                                 ]}
-                                moreLinkText={"Več lastnosti."}
-                                morePath={`#`}
+                                moreLinkText={"Več lastnosti"}
+                                morePath={`/features`}
                                 isMobile={this.props.isMobile}
                             />
                         </div>
