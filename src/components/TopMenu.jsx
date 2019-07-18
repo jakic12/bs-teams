@@ -13,21 +13,21 @@ class TopMenu extends Component{
         }
     }
     render(){
-        const logo = <div className="topBarBlock">
+        const logo = <div key={`topLogo`} className="topBarBlock">
             <img className="bslogo" src={bslogo} alt="Business Solutions logo"/>
         </div>
-        const blocks = <React.Fragment>
-            <div className="topBarBlock">
+        const blocks = <React.Fragment key={`Fragment`}>
+            <div key={`Domov`}  className="topBarBlock">
                 <div className="topLinkWrapper">
                     <Link onClick={() => {this.setState({menuOpen:false})}} className="topLink" to="/">Domov</Link>
                 </div>
             </div>
-            <div className={`topBarBlock `}>
+            <div key={`Opis`} className={`topBarBlock `}>
                 <div className="topLinkWrapper">
                     <Link onClick={() => {this.setState({menuOpen:false})}} className="topLink" to="/features">Opis {!this.props.isMobile && `produkta`}</Link>
                 </div>
             </div>
-            <div className={`topBarBlock `}>
+            <div key={`Kontakt`} className={`topBarBlock `}>
                 <div className="topLinkWrapper">
                     <Link onClick={() => {this.setState({menuOpen:false})}} className="topLink" to="/contact">Kontakt</Link>
                 </div>
