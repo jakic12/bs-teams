@@ -56,14 +56,14 @@ class Features extends Component{
                             <div className="btnwrap">
                                 <button className="btnMore">Pokaži več</button>
                             </div>
-                            <div data-aos='fade-up-left' data-aos-anchor-placement="top-center">
+                            <div data-aos='fade-up-left'>
                                 <Planets
                                     style={{bottom: 0}}
                                     width={'30vw'}
                                     id={'planetView'}
                                     image={redPlanet}/>
                             </div>
-                            <div data-aos='fade-up' data-aos-anchor-placement="top-bottom">
+                            <div style={this.props.isMobile ? {} : {marginTop: 200}} data-aos='fade-up' data-aos-anchor-placement="top-bottom">
                                 <FeatureView
                                     id={"featureViewFirst"}
                                     animationTriggerState={1}
