@@ -45,55 +45,35 @@ const LeftDiv = posed.div({
 
 export default ({id, config, teamsLogo, animationState, topAnimationTriggerState, bottomAnimationTriggerState, description, title, isMobile, style}) => {
     return (
-        <div
-            id={id}
-            style={isMobile ?
-                {display: "flex", flexDirection: "column", ...style} :
-                {display: "flex", flexDirection: "row", ...style}
-            }>
-            <LeftDiv
-                id="left"
-                pose={isMobile || animationState >= topAnimationTriggerState ? 'visible' : 'hidden'}
-                style={isMobile ?
-                    {width: "100%", marginBottom: 40} :
-                    {width: "30%", marginLeft: 80}}>
+        <div id={id} className={'comparisonView'}
+            style={style}>
+            <LeftDiv id="left"
+                pose={isMobile || animationState >= topAnimationTriggerState ? 'visible' : 'hidden'}>
                 <h2 className={'bigDarkTitle'}>{title}</h2>
                 <p className={'darkParagraph'}>{description}</p>
             </LeftDiv>
-            <div
-                id="right"
-                style={isMobile ?
-                    {width: "100%"} :
-                    {width: "70%"}
-                }>
+            <div id="right">
                 <div id="top">
                     <PoseGroup>
                         {config.map((ele, index) => (
-                            <div key={index} style={{textAlign: "center", width: "20%", margin: "auto", display: "inline-block"}} className={"imageWrapper"}>
+                            <div key={index} className={"imageWrapper"}>
                                 <Image
                                     key={index}
                                     className={"comparisonImg"}
                                     src={ele.img}
                                     alt={ele.name}
-                                    style={{margin: "auto", maxWidth: "60px"}}
                                     pose={isMobile ? 'hidden' : (animationState >= topAnimationTriggerState && animationState < bottomAnimationTriggerState) ? "visibleTop" : "hiddenTop"}
                                 />
                             </div>
                         ))}
                     </PoseGroup>
                 </div>
-                <div
-                    id="down"
-                    style={isMobile ?
-                        {left: 0, right: 0} :
-                        {right: 0}
-                    }>
+                <div id="down">
                     <Image
                         id={"teamsLogo"}
                         src={teamsLogo}
                         alt={"teams"}
                         pose={(isMobile ? 'visible' : (animationState >= bottomAnimationTriggerState ? "visibleBottom" : "hiddenBottom"))}
-                        style={isMobile ? {width: '100%'} : {display: "block", margin: "auto"}}
                     />
                 </div>
             </div>
