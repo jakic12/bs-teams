@@ -10,7 +10,7 @@ export default ({title, style}) => {
                 display: 'flex',
                 flexDirection: 'column'
             }}>
-            <div className="left" style={{textAlign: 'center', margin: 30}}>
+            <div style={{textAlign: 'center', marginTop: 30}}>
                 <h1 className={'bigLightTitle'}>{title}</h1>
             </div>
         </div>
