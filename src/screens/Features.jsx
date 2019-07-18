@@ -79,7 +79,7 @@ class Features extends Component{
                                     isMobile={this.props.isMobile}
                                     animationState={this.state.featureViewFirst}
                                     textItems={[
-                                        "Učinkovita komunikacija",
+                                        "Učinkovita komunikacija z uporabo modernih in agilnih metod v klepetu",
                                         "Hiter klepet s posamezniki ali v skupini",
                                         "Prikaz dosegljivosti osebe",
                                         "Enostavno deljenje datotek"
@@ -99,8 +99,8 @@ class Features extends Component{
                                     animationState={this.state.featureViewSecond}
                                     textItems={[
                                         "Delitev po ekipah, oddelkih in projektih",
-                                        "Vsaka ekipa ima svoje kanale",
-                                        "Jasna delitev skupin",
+                                        "Fleksibilnost skupine glede na potrebe ekip",
+                                        "Optimizacija procesov z aktivacijo drugih aplikacij znotraj skupin",
                                         "Prikaz vseh kanalov v katerih je posameznik prisoten"
                                     ]}
                                     flip={false}
