@@ -8,108 +8,29 @@ body{
   margin: 30px 0 30px 0;
 }
 
-.firstRow{
-    flex-basis: 90%;
-    height: auto;
+  @media screen and (max-width: $mobile-width) {
     display: flex;
-    justify-content: space-around;
-}
-.btnwrap{
-    width:100%;
-    margin:0 auto;
-    .btnMore{
-        margin-left:10%;
-        margin-top:-5%;
-        font: inherit;
-        width: 200px;
-        height: 60px;
-        border-radius: 30px;
-        color:$LIGHT-GREY;
-        font-weight: bold;
-        background: $DARK-GREY;
-        box-shadow: none;
-        font-size:20px;
-        border: none;
-        -webkit-box-shadow: 2px 10px 34px -15px rgba(0,0,0,0.75);
-        -moz-box-shadow: 2px 10px 34px -15px rgba(0,0,0,0.75);
-        box-shadow: 2px 10px 34px -15px rgba(0,0,0,0.75);
-       
-        &:hover{
-            cursor: pointer;
-        }
+    flex-direction: column;
+    margin: 0 100px 0 100px;
+
+    .innerTextContainer {
+      width: 100%;
+      text-align: center;
     }
-    @media screen and (max-width: $mobile-width){
-        display:none;
-    }
-}
-
-
-.btnWraper {
-    margin-left: 30px;
-}
-
-.left {
-    flex-basis: 40%;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 10%;
-    margin-right: 5%;
-    align-items: center;
-    justify-content: center;
-  }
-
-.right{
-    flex-basis: 55%;
-    align-items: center;
-    justify-content: center;
-
-    .telefonLaptop{
-        position: relative;
-        top:50%;
-        transform: translate(0,-50%);
-        width: 100%;
-        height: auto;
-    }
-}
-
-
-@media screen and (max-width: $mobile-width){
-    .firstRow{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-        justify-content: space-around;
-        margin: 0 auto;
-    }
-    
-    .left{
-        width: 100%;
-    }
-
-    .right{
-        margin-top: 100px;
-        width: 50%;
-        justify-content: space-around;
-    }
-
-    .telefonLaptop{
+    .innerImageContainer {
+      width: 100%;
+      margin-top: 50px;
+      .bigLogo {
         display: none;
-    }
-
-    .telefon{
-        width: 100%;
-        height: auto;
-    }
-    .btnWraper {
-        width: 170px;
-        height: 40px;
-        margin: 0 auto;
       }
-}
-
-@media screen and (min-width: $mobile-width+1){
-    .telefon{
-        display: none;
+      .smallLogo {
+        margin: auto;
+        display: block !important;
+        width: 400px;
+      }
     }
+    .btMargin {
+      margin: 30px 0 30px 0;
+    }
+  }
 }
