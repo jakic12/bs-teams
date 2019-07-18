@@ -57,3 +57,7 @@ $LIGHT-GREY: #f6f7f9;
   font-size: 20px;
   line-height: 1.4;
 }
+
+*, ::after, ::before {
+  box-sizing: unset !important;
+}
