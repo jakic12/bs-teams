@@ -71,7 +71,7 @@ export default class Homepage extends Component {
     componentDidMount() {
         window.addEventListener('scroll', this.trackScrolling);
         AOS.init({
-            duration: 2000
+            duration: 1500
         })
     }
 
