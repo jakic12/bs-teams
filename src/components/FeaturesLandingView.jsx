@@ -7,8 +7,8 @@ export default ({title, subtitle, style}) => {
     return (
         <div className={'featuresLandingViewContainer'}>
             <div className={'featuresInnerTopContainer'}>
-                <h1 style={{fontSize: 26}} className={'bigLightTitle'}>{title}</h1>
-                <h3 className={'mediumLightTitle'}>{subtitle}</h3>
+                <h1 style={{fontSize: 33}} className={'bigLightTitle'}>{title}</h1>
+                <h3 style={{fontSize: 25}} className={'mediumLightTitle'}>{subtitle}</h3>
             </div>
         </div>
     )

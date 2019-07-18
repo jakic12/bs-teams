@@ -130,7 +130,7 @@ export default class Homepage extends Component {
                             <div data-aos='fade-up-left' data-aos-anchor-placement="bottom-bottom">
                                 <Planets
                                     id={'planetsView'}
-                                    style={{top: -200}}
+                                    style={{top: -200, right: 0}}
                                     width={'35vw'}
                                     image={redPlanet}/>
                             </div>
@@ -176,7 +176,7 @@ export default class Homepage extends Component {
                                 isMobile={this.props.isMobile}
                             />
                         </div>
-                        <div data-aos='fade-up' data-aos-anchor-placement="bottom-bottom">
+                        <div data-aos='fade-up' data-aos-anchor-placement="top-bottom">
                             <Comparison
                                 id={"comparisonView"}
                                 style={{padding: 20}}

@@ -9,13 +9,13 @@ export default ({style, onSubmit}) => {
 
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
-  const [phone, setPhone] = useState('');
+  const [mail, setMail] = useState('');
   const [message, setMsg] = useState('');
 
   return (
     <div style={style} className='contactContainer'>
       <div className='formTitle'>
-        <h1 className='bigLightTitle'>Kontaktirajte nas</h1>
+        <h1 style={{fontSize: 25}} className='bigLightTitle'>Kontaktirajte nas</h1>
       </div>
       <form>
         <div className='formBlock'>
@@ -25,7 +25,7 @@ export default ({style, onSubmit}) => {
           <input className='fieldLong round' onChange={e => setSurname(e.target.value)} type='text' name='surname' placeholder='PRIIMEK' required/>
         </div>
         <div className='formBlock'>
-          <input className='fieldLong round' onChange={e => setPhone(e.target.value)} type='text' name='phone' placeholder='TELEFON' required/>
+          <input className='fieldLong round' onChange={e => setMail(e.target.value)} type='text' name='mail' placeholder='MAIL' required/>
         </div>
         <div className='formBlock'>
           <textarea className='fieldArea round' onChange={e => setMsg(e.target.value)} name='message' placeholder='SPOROCILO' required/>
@@ -40,7 +40,7 @@ export default ({style, onSubmit}) => {
               onSubmit({
                 name,
                 surname,
-                phone,
+                mail,
                 message,
                 captcha: recaptchaRef.current.getValue()
               })} value='POSLJI'/>

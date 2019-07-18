@@ -7,9 +7,9 @@ export default ({title, subtitle, description, btnTitle, onClick, bigLogo, small
     return (
         <div className="homeLandingViewContainer" style={style}>
             <div className="innerTextContainer">
-                <h1 className={'btMargin bigLightTitle'}>{title}</h1>
-                <h3 className={'btMargin mediumLightTitle'}>{subtitle}</h3>
-                <p className={'btMargin lightParagraph'}>{description}</p>
+                <h1 className={'bigMargin bigLightTitle'}>{title}</h1>
+                <h3 className={'smallMargin mediumLightTitle'}>{subtitle}</h3>
+                <p className={'smallMargin lightParagraph'}>{description}</p>
                 <div className="btnWrapper">
                     <Button
                         title={btnTitle}
