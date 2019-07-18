@@ -145,6 +145,12 @@
                 width:100%; 
                 padding: 10px 0px 10px 0px;
                 display: block;
+                h3{
+                    font-size:16px;
+                }
+                p{
+                    font-size:12px;
+                }
               
                 
             }
@@ -152,6 +158,7 @@
         
     }
     .copyright{
+       
         position: relative;
         background:$DARK-GREY;
         color: white;
@@ -160,14 +167,17 @@
         width:100%;
         .copyWrapper{
             position: relative;
+            display: flex;
             justify-content: space-evenly;
+            flex-direction:row;
             align-items: center;
             flex-wrap: wrap;
             left:50%;
             height:100%;
             line-height: 100%;
             width:50%;
-            display: flex;
+            padding:15px;
+           
 
             .wrapper{
                 width:47%;
@@ -189,8 +199,9 @@
             
             .copyContent{
                 width: 47%;
-                p{
-                   
+                height:100%;
+                .cpy{
+                    margin:auto;
                     font-size:14px; 
                }   
             }
@@ -203,11 +214,12 @@
                 display:flex;
                 flex-direction: row;
                 flex-wrap: wrap;
+                padding:5px;
 
                 .copyContent{
                     width: 47%;
                     height:100%;
-                    p{
+                    .cpy{
                         padding:5px 0px;
                         margin-left:15%;
                         font-size: 10px; 
