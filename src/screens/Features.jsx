@@ -52,7 +52,7 @@ class Features extends Component{
                         <div style={{overflowX:`hidden`}}>
                           <Button
                             style={this.props.isMobile ? {display: 'none'} : {marginLeft: 100}}
-                            title={'Vec informacij'}
+                            title={'Več informacij'}
                             onClick={() => {
                               $([document.documentElement, document.body]).animate({
                                 scrollTop: $("#featureViewFirst").offset().top
