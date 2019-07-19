@@ -49,6 +49,9 @@
         margin: auto;
         display: block !important;
         width: 60%;
+        @media screen and (max-width: $small-mobile-width) {
+          display: none !important;
+        }
       }
     }
     .bigText {
@@ -59,12 +62,6 @@
     }
     .smallText {
       font-size: 15px;
-    }
-  }
-
-  @media screen and (max-width: $small-mobile-width) {
-    .smallLogo {
-      display: none;
     }
   }
 }
