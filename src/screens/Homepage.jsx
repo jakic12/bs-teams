@@ -102,7 +102,7 @@ export default class Homepage extends Component {
                     <FirstRow
                         title="Power BI"
                         description={`Power BI je poslovna analitična storitev, ki omogoča vizualizacijo in analizo podatkov za uspešno vodenje vašega podjetja.`}
-                        btnTitle="Klikni vec"
+                        btnTitle="Več informacij"
                         onClick={() => {
                             $('#parallaxer').css(`transition`, `none`);
                             $([document.documentElement, document.body]).animate({
