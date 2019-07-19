@@ -186,7 +186,7 @@ export default class Homepage extends Component {
                                 "Vse kar potrebujete za celovito komunikacijo."}
                                 animationState={this.state.comparison}
                                 topAnimationTriggerState={0}
-                                bottomAnimationTriggerState={3}
+                                bottomAnimationTriggerState={2}
                                 leftIconsSize={100}
                                 rightIconsSize={200}
                                 teamsLogo={teamsLogo}

@@ -62,7 +62,7 @@ export default ({id, config, teamsLogo, animationState, topAnimationTriggerState
                                     className={"comparisonImg"}
                                     src={ele.img}
                                     alt={ele.name}
-                                    pose={isMobile ? 'hidden' : (animationState >= topAnimationTriggerState && animationState < bottomAnimationTriggerState) ? "visibleTop" : "hiddenTop"}
+                                    pose={isMobile ? 'hiddenTop' : ((animationState >= topAnimationTriggerState && animationState < bottomAnimationTriggerState) ? "visibleTop" : "hiddenTop")}
                                 />
                             </div>
                         ))}
@@ -73,7 +73,7 @@ export default ({id, config, teamsLogo, animationState, topAnimationTriggerState
                         id={"teamsLogo"}
                         src={teamsLogo}
                         alt={"teams"}
-                        pose={(isMobile ? 'visible' : (animationState >= bottomAnimationTriggerState ? "visibleBottom" : "hiddenBottom"))}
+                        pose={(isMobile ? 'visibleBottom' : (animationState >= bottomAnimationTriggerState ? "visibleBottom" : "hiddenBottom"))}
                     />
                 </div>
             </div>

@@ -50,15 +50,15 @@
     }
     #right {
       width: 100%;
+      #teamsLogo {
+        display: block;
+        margin: 0;
+        width: 100%;
+      }
     }
     #down {
       left: 0;
       right: 0
-    }
-    #teamsLogo {
-      display: block;
-      margin: auto;
-      width: 80%;
     }
   }
 }
