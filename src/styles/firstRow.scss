@@ -6,14 +6,17 @@
   margin: 20px 100px 0 100px;
 
   .innerTextContainer {
-    width: 50%;
+    width: 40%;
     margin: auto;
   }
   .innerImageContainer {
-    width: 50%;
+    display: flex;
+    align-items: center;
+    width: 60%;
     margin: auto;
     .bigLogo {
-      width: 700px;
+      width: 60%;
+      margin: auto;
     }
     .smallLogo {
       display: none;
