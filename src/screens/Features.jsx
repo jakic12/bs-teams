@@ -49,7 +49,7 @@ class Features extends Component{
                         logo={Telefon}
                         subtitle={"Imejte vsa orodja za tekoče delo na enem mestu."}
                         title="Imejte vsa orodja za tekoče delo na enem mestu."/>
-                        <div>
+                        <div style={{overflowX:`hidden`}}>
                           <Button
                             style={this.props.isMobile ? {display: 'none'} : {marginLeft: 100}}
                             title={'Vec informacij'}
