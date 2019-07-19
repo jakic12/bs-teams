@@ -65,6 +65,12 @@
         .listInnerRight {
           display: inline-block;
           width: 80%;
+          @media screen and (max-width: $mobile-width) {
+            p {
+              font-size: 15px;
+              line-height: 1.2;
+            }
+          }
         }
         p {
           display: inline;
