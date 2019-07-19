@@ -19,8 +19,9 @@ export default class Footer extends Component{
                             <a className="linkIm" href = "https://www.linkedin.com/company/business-solutions-d-o-o---bs-power-your-business"><img src={ SocLogoIn } className="logoSoc"/></a>
                         </div>
                         <div className="contentColumn">
-                            <h3>PRODUKT</h3>
-                            <a className='linkIm' href='https://powerbi.microsoft.com/en-us/'>Power BI</a>
+                            <h3>PRODUKTI</h3>
+                            <a className='linkIm' href='https://bs-powerbi.ddns.net/'>Power BI</a>
+                            <a className='linkIm' href='https://bs-teams.ddns.net/'>Teams</a>
                         </div>
                     </div>
                     <div className="copyright">
