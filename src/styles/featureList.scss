@@ -11,6 +11,7 @@
             .title{
                 font-size:30px;
                 padding:20px;
+                padding-bottom:0;
             }
             .subtitle{
                 font-size:20px;
@@ -22,7 +23,7 @@
                 list-style-type: none;
                 padding-left:0;
                 li{
-                    padding:30px 10px;
+                    padding:9px 10px;
                     display:flex;
                     .imgWrapper{
                         float:left;

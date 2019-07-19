@@ -42,8 +42,7 @@ class Parallax extends Component{
                 <div className="topWrapper">
                     <div
                         className={`topParallaxWrapper`}
-                        id={`blackCover`}    
-                    >
+                        id={`blackCover`}>
                     </div>
                     <div id={'topParallax'} className={`${this.props.resizeHeightBy ? 'shortParallax' : 'topParallax'}`}>
                         {!this.props.isMobile &&

@@ -4,22 +4,22 @@ import '../styles/shared.scss'
 import Button from '../components/Button'
 
 
-export default ({title, description, btnTitle, onClick, bigLogo, smallLogo, style}) => {
+export default ({title, subtitle, description, btnTitle, onClick, bigLogo, smallLogo, style}) => {
     return (
-        <div className="firstRow" style={style}>
-            <div className="left">
-                <div className="leftInner">
-                    <h1 className={'bigLightTitle'}>{title}</h1>
-                    <p className={'lightParagraph'}>{description}</p>
-                    <div className="btnWraper">
-                        <Button
-                            title={btnTitle}
-                            onClick={onClick}/>
-                    </div>
+        <div className="homeLandingViewContainer" style={style}>
+            <div className="innerTextContainer">
+                <h1 className={'bigText bigLightTitle'}>{title}</h1>
+                <h3 className={'mediumText mediumLightTitle'}>{subtitle}</h3>
+                <p className={'smallText lightParagraph'}>{description}</p>
+                <div className="btnWrapper">
+                    <Button
+                        title={btnTitle}
+                        onClick={onClick}/>
                 </div>
             </div>
-            <div className="right">
-                <img src={bigLogo} className="telefonLaptop" />
+            <div className="innerImageContainer">
+              <img src={bigLogo} className="bigLogo"/>
+              <img src={smallLogo} className="smallLogo"/>
             </div>
         </div>
     )

@@ -22,7 +22,6 @@ import "../styles/home.scss";
 import coffeImage from '../res/img/camera-coffe.jpg'
 import PowerBiShema from "../res/img/svg/POWER_BI_SHEMA.svg"
 import mobileScreenshot from "../res/img/phone.png"
-import Telefon from "../res/img/telefon.png"
 
 import PieChart from "../res/img/svg/graf_rdec.svg"
 
@@ -111,9 +110,8 @@ export default class Homepage extends Component {
                                 $('#parallaxer').css(`transition`, `transform 0.1s ease-out`);
                             });
                         }}
-                        bigLogo={
-                            this.props.isMobile? mobileScreenshot : PowerBiShema}
-                        smallLogo={Telefon}
+                        bigLogo={PowerBiShema}
+                        smallLogo={mobileScreenshot}
                         style={{height:`100%`}}/>
                     <div>
                         <div style={{position:`relative`}}>

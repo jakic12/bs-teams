@@ -1,99 +1,68 @@
 @import "shared.scss";
 
-body{
-    height: 100%;
-}
+.homeLandingViewContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 100px 0 100px;
 
-.firstRow{
-    flex-basis: 90%;
-    height: auto;
+  .innerTextContainer {
+    width: 40%;
+    margin: auto;
+  }
+  .innerImageContainer {
     display: flex;
-    justify-content: space-around;
-}
-
-.btnWraper {
-    margin-left: 30px;
-}
-
-.left {
-    flex-basis: 50%;
-    .leftInner{
-        position:relative;
-        top:50%;
-        left:50%;
-        transform: translate(-50%, -50%);
-        max-width: 700px;
-        h1 {
-          padding-left: 30px;
-          margin-top:70px;
-        }
-        p {
-          padding: 30px;
-        }
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    .bigLogo {
+      width: 60%;
+      margin: auto;
+    }
+    .smallLogo {
+      display: none;
     }
   }
+  .bigText {
+    font-size: 50px;
+  }
+  .mediumText {
+    color:white;
+    font-size: 22px;
+    margin: 30px 0 30px 0;
+  }
+  .smallText {
+    margin: 0px 0 50px 0;
+  }
 
-.right{
-    flex-basis: 50%;
-    align-items: center;
-    justify-content: center;
+  @media screen and (max-width: $mobile-width) {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 10px 0 10px;
 
-    .telefonLaptop{
-        position: relative;
-        top:calc(50% + 70px);
-        left:50%;
-        transform: translate(-50%,-50%);
-        width: 80%;
-        height: auto;
+    .innerTextContainer {
+      width: 100%;
+      text-align: center;
     }
-}
-
-
-@media screen and (max-width: $mobile-width){
-    .firstRow{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-        justify-content: space-around;
-        margin: 0 auto;
-    }
-    
-    .left{
-        width: 100%;
-    }
-
-    .right{
-        height:50vh;
-        width: 70%;
-        justify-content: space-around;
-
-        .telefonLaptop{
-            margin-top:30%;
-            @media screen and (max-height: 700px) {
-                margin-top:40%;
-            }
-        }
-    }
-
-    .telefon{
-        width: 100%;
-        height: auto;
-    }
-    .btnWraper {
-        width: 170px;
-        height: 40px;
-        margin: 0 auto;
+    .innerImageContainer {
+      width: 100%;
+      margin-top: 50px;
+      .bigLogo {
+        display: none;
       }
-}
-
-@media screen and (max-width: $mobile-width - 100px){
-    .right{
-        height:50vh;
-        width: 80%;
-
-        .telefonLaptop{
-            margin-top:10%;
-        }
+      .smallLogo {
+        margin: auto;
+        display: block !important;
+        width: 60%;
+      }
     }
+    .bigText {
+      font-size: 40px;
+    }
+    .mediumText {
+      font-size: 20px;
+    }
+    .smallText {
+      font-size: 15px;
+    }
+  }
 }
