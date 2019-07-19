@@ -43,7 +43,7 @@ export default ({style, onSubmit}) => {
                 mail,
                 message,
                 captcha: recaptchaRef.current.getValue()
-              })} value='POSLJI'/>
+              })} value='POŠLJI'/>
         </div>
       </form>
     </div>
