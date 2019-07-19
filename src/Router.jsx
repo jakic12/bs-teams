@@ -4,7 +4,8 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import TopMenu from './components/TopMenu'
 
 import Homepage from './screens/Homepage';
-import Features from './screens/Features';
+import Contact from './screens/Contact';
+
 
 /**
  * hiest level - routes pages
@@ -42,6 +43,7 @@ class Router extends Component{
                         <TopMenu isMobile={isMobile}/>
                         <div className="main-content">
                             <Route exact={true} path="/" render={props => <Homepage {...props} isMobile={isMobile} />} />
+                            <Route exact={true} path="/contact" render={props => <Contact {...props} isMobile={isMobile} />} />
                         </div>
                     </BrowserRouter>
                 }
