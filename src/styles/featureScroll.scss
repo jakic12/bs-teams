@@ -8,6 +8,7 @@
     .featureWrapper{
         margin: 0 auto;
         display:flex;
+      flex-direction: row;
         width:calc(60vw + 200px);
         .screenshot{
             display:inline-block;
@@ -22,13 +23,15 @@
             }
         }
         .featureList{
-            padding:20px;
+          height: 100%;
+          padding:20px;
+          margin: auto;
 
             .features{
                 .featureCard{
                     margin-bottom:5px;
                     width:200px;
-                    height:80px;
+                    height:20%;
                     display:flex;
                     padding:15px;
                     box-sizing: border-box;
@@ -81,7 +84,7 @@
             .more{
                 margin-bottom:5px;
                 width:200px;
-                height:80px;
+                height:10%;
                 display:flex;
                 padding:15px;
                 box-sizing: border-box;

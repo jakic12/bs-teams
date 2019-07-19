@@ -69,7 +69,6 @@ class Router extends Component{
                 
                     <RouteContainer key={'route'}>
                         <Switch key={'switch'} location={location}>
-                            {console.log(location)}
                             <Route exact path="/" render={props => <Homepage {...props} isMobile={isMobile}/>} key="home" />
                             <Route path="/features" render={props => <Features {...props} isMobile={isMobile}/>} key="features" />
                             <Route path="/contact" render={props => <Contact {...props} isMobile={isMobile}/>} key="contact" />

@@ -18,11 +18,11 @@ import wordLogo from "../res/img/word-logo.png";
 import teamsLogo from "../res/img/teams-logo.png";
 import "../styles/home.scss";
 
-import mochFeature1 from '../res/img/features_img/1_screenshot-CHAT1on1.png'
-import mochFeature2 from '../res/img/features_img/2_screenshot-CHANNEL.png'
-import mochFeature3 from '../res/img/features_img/3_screenshot-SESTANEK.png'
-import mochFeature4 from '../res/img/features_img/4_screenshot-AKTIVNOSTI.png'
-import mochFeature5 from '../res/img/features_img/5_screenshot-DATOTEKE.png'
+import mochFeature1 from '../res/img/features_img/CHAT.jpg'
+import mochFeature2 from '../res/img/features_img/KANALI_V2.jpg'
+import mochFeature3 from '../res/img/features_img/SESTANEK.jpg'
+import mochFeature4 from '../res/img/features_img/DEJAVNOST_v2.jpg'
+import mochFeature5 from '../res/img/features_img/DATOTEKE.jpg'
 
 import mochFeature1logo from '../res/img/features_logo/icon_chat.svg'
 import mochFeature2logo from '../res/img/features_logo/icon_call.svg'
@@ -186,7 +186,7 @@ export default class Homepage extends Component {
                                 "Vse kar potrebujete za celovito komunikacijo."}
                                 animationState={this.state.comparison}
                                 topAnimationTriggerState={0}
-                                bottomAnimationTriggerState={3}
+                                bottomAnimationTriggerState={2}
                                 leftIconsSize={100}
                                 rightIconsSize={200}
                                 teamsLogo={teamsLogo}

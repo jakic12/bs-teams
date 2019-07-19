@@ -20,8 +20,8 @@ export default class Footer extends Component{
                         </div>
                         <div className="contentColumn">
                             <h3>PRODUKTI</h3>
-                            <p>Microsoft Teams</p>
-                            <p>PowerBI</p>
+                            <a className='linkIm' href='https://products.office.com/en-us/microsoft-teams/group-chat-software'>Microsoft Teams</a>
+                            <a className='linkIm' href='https://powerbi.microsoft.com/en-us/'>PowerBI</a>
                         </div>
                     </div>
                     <div className="copyright">

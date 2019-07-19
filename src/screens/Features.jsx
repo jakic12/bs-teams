@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import FeatureView from "../components/FeatureView";
 import FeaturesLandingView from '../components/FeaturesLandingView';
-import teamsImg from "../res/img/test-moch-image.png";
 import demoVideo from "../res/video/CHAT_DEMO_FINAL.mov";
 import demoVideo2 from "../res/video/GROUPCHAT_DEMO_FINAL.mov";
 import demoVideo3 from "../res/video/MEETINGS_DEMO_FINAL.mov";
@@ -12,15 +11,10 @@ import redPlanet from '../res/img/planets/planet_small_red.svg'
 
 import checkboxIcon from "../res/img/checkbox-icon.png";
 import Parallax from "../components/Parallax";
-import FirstRow from "../components/FirstRow";
 import Planets from "../components/Planets";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import TopBottomWave from "../components/TopBottomWave";
-import Sponzors from "../components/Sponzors";
-import Ebs from "../res/img/spon_logo/ICON_EBS.svg";
-import insTech from "../res/img/spon_logo/ICON_INS_TECH.svg";
-import pronega from "../res/img/spon_logo/ICON_PRONEGA.svg";
 import Contacts from "../components/Contacts";
 import Footer from "../components/Footer";
 import Button from '../components/Button';
@@ -55,10 +49,10 @@ class Features extends Component{
                         logo={Telefon}
                         subtitle={"Imejte vsa orodja za tekoče delo na enem mestu."}
                         title="Imejte vsa orodja za tekoče delo na enem mestu."/>
-                        <div>
+                        <div style={{overflowX:`hidden`}}>
                           <Button
                             style={this.props.isMobile ? {display: 'none'} : {marginLeft: 100}}
-                            title={'Pokazi vec'}
+                            title={'Vec informacij'}
                             onClick={() => {
                               $([document.documentElement, document.body]).animate({
                                 scrollTop: $("#featureViewFirst").offset().top
@@ -128,7 +122,7 @@ class Features extends Component{
                                 <FeatureView
                                     id={"featureViewFourth"}
                                     title={"Datoteke"}
-                                    style={{backgroundColor: 'f6f7f9'}}
+                                    style={{backgroundColor: '#f6f7f9'}}
                                     icon={checkboxIcon}
                                     video={demoVideo4}
                                     isMobile={this.props.isMobile}
