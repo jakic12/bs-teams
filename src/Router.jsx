@@ -46,16 +46,21 @@ class Router extends Component{
                 {!isIE && 
                     <BrowserRouter>
                         <TopMenu isMobile={isMobile}/>
-                  <CookieConsent
+                        <CookieConsent
                     location="bottom"
                     buttonText="Razumem"
-                    style={{ background: "#2B373B" }}
+                    style={{ background: "#3a3a3a", zIndex: 5000 }}
                     buttonStyle={{ background: "#c51e2b", color: "#ffffff", fontSize: "13px" }}
                     expires={150}
                   >
                     We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.{" "}
-                          <a style={{color: 'white', fontSize: "15px"}} ><u>Learn more</u></a>
+                          <Button className="btn btn-primary shadow-none" style={{outline: 'none', background: '#3a3a3a', border: 'none', color: 'white', fontSize: "15px", marginTop: '-5px'}} onClick={() => this.setState({showCookiePolicy: true})}><u>Learn more</u></Button>
                 </CookieConsent>
+
+                <CookiePolicy 
+                show={this.state.showCookiePolicy} 
+                setShow={show => this.setState({showCookiePolicy: show})}
+                />
                         <div className="main-content">
                             <Route exact={true} path="/" render={props => <Homepage {...props} isMobile={isMobile} />} />
                             <Route exact={true} path="/contact" render={props => <Contact {...props} isMobile={isMobile} />} />
