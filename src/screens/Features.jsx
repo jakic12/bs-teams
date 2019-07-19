@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import FeatureView from "../components/FeatureView";
 import FeaturesLandingView from '../components/FeaturesLandingView';
-import teamsImg from "../res/img/test-moch-image.png";
 import demoVideo from "../res/video/CHAT_DEMO_FINAL.mov";
 import demoVideo2 from "../res/video/GROUPCHAT_DEMO_FINAL.mov";
 import demoVideo3 from "../res/video/MEETINGS_DEMO_FINAL.mov";
@@ -12,15 +11,10 @@ import redPlanet from '../res/img/planets/planet_small_red.svg'
 
 import checkboxIcon from "../res/img/checkbox-icon.png";
 import Parallax from "../components/Parallax";
-import FirstRow from "../components/FirstRow";
 import Planets from "../components/Planets";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import TopBottomWave from "../components/TopBottomWave";
-import Sponzors from "../components/Sponzors";
-import Ebs from "../res/img/spon_logo/ICON_EBS.svg";
-import insTech from "../res/img/spon_logo/ICON_INS_TECH.svg";
-import pronega from "../res/img/spon_logo/ICON_PRONEGA.svg";
 import Contacts from "../components/Contacts";
 import Footer from "../components/Footer";
 import Button from '../components/Button';
@@ -57,8 +51,8 @@ class Features extends Component{
                         title="Imejte vsa orodja za tekoče delo na enem mestu."/>
                         <div>
                           <Button
-                            style={{marginLeft: 100}}
-                            title={'Pokazi vec'}
+                            style={this.props.isMobile ? {display: 'none'} : {marginLeft: 100}}
+                            title={'Vec informacij'}
                             onClick={() => {
                               $([document.documentElement, document.body]).animate({
                                 scrollTop: $("#featureViewFirst").offset().top
@@ -79,7 +73,7 @@ class Features extends Component{
                                     isMobile={this.props.isMobile}
                                     animationState={this.state.featureViewFirst}
                                     textItems={[
-                                        "Učinkovita komunikacija",
+                                        "Učinkovita komunikacija z uporabo modernih in agilnih metod v klepetu",
                                         "Hiter klepet s posamezniki ali v skupini",
                                         "Prikaz dosegljivosti osebe",
                                         "Enostavno deljenje datotek"
@@ -99,8 +93,8 @@ class Features extends Component{
                                     animationState={this.state.featureViewSecond}
                                     textItems={[
                                         "Delitev po ekipah, oddelkih in projektih",
-                                        "Vsaka ekipa ima svoje kanale",
-                                        "Jasna delitev skupin",
+                                        "Fleksibilnost skupine glede na potrebe ekip",
+                                        "Optimizacija procesov z aktivacijo drugih aplikacij znotraj skupin",
                                         "Prikaz vseh kanalov v katerih je posameznik prisoten"
                                     ]}
                                     flip={false}
@@ -128,7 +122,7 @@ class Features extends Component{
                                 <FeatureView
                                     id={"featureViewFourth"}
                                     title={"Datoteke"}
-                                    style={{backgroundColor: 'f6f7f9'}}
+                                    style={{backgroundColor: '#f6f7f9'}}
                                     icon={checkboxIcon}
                                     video={demoVideo4}
                                     isMobile={this.props.isMobile}

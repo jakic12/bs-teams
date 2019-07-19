@@ -4,6 +4,7 @@ import '../styles/shared.scss'
 import { Link } from 'react-router-dom';
 import $ from 'jquery'
 
+
 class FeatureScroll extends Component{
     constructor(props){
         super(props);
@@ -107,31 +108,5 @@ class FeatureScroll extends Component{
         )
     }
 }
-
-/*example
-
-import mochFeature1 from '../res/img/moch-feature-1.png'
-import mochFeature1logo from '../res/img/moch-feature-1-logo.png'
-import mochFeature2 from '../res/img/moch-feature-2.png'
-import mochFeature2logo from '../res/img/moch-feature-2-logo.png'
-
-<FeatureScroll 
-    features={[
-        {screenshot:mochFeature1, title:"Amazing callssdsd", icon:mochFeature1logo},
-        {screenshot:mochFeature2, title:"Cool groups", icon:mochFeature2logo},
-        {screenshot:mochFeature1, title:"I have no idea", icon:mochFeature1logo},
-        {screenshot:mochFeature2, title:"Works like a charm and a half", icon:mochFeature2logo},
-        {screenshot:mochFeature1, title:"I have no idea", icon:mochFeature1logo}
-    ]}
-    moreLinkText={
-        "view more features"
-    }
-    morePath={
-        `#`
-    }
-
-    isMobile={this.props.isMobile}
-/>
-*/
 
 export default FeatureScroll;

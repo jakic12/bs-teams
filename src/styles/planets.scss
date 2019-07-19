@@ -1,7 +1,6 @@
 @import "shared.scss";
 
 .planets {
-  z-index: 4000;
   position: absolute;
 
   @media screen and (max-width:$mobile-width +100px){

@@ -20,5 +20,8 @@
   margin: auto;
   @media screen and (max-width: $mobile-width) {
     margin: 0;
+    h3 {
+      display: none;
+    }
   }
 }
