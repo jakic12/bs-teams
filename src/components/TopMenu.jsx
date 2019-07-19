@@ -24,6 +24,11 @@ class TopMenu extends Component{
                     <Link onClick={() => {this.setState({menuOpen:false})}} className="topLink" to="/">Domov</Link>
                 </div>
             </div>
+            <div className="topBarBlock">
+                <div className="topLinkWrapper">
+                    <Link onClick={() => {this.setState({menuOpen:false})}} className="topLink" to="/contact">Kontakt</Link>
+                </div>
+            </div>
         </React.Fragment>
 
         return (
