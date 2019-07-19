@@ -20,7 +20,7 @@ export default class Footer extends Component{
                         </div>
                         <div className="contentColumn">
                             <h3>PRODUKTI</h3>
-                            <a className='linkIm' href='https://bs-powerbi.ddns.net/'>Power BI</a>
+                            <a style={{padding:`0 10px`}} className='linkIm' href='https://bs-powerbi.ddns.net/'>Power BI</a>
                             <a className='linkIm' href='https://bs-teams.ddns.net/'>Teams</a>
                         </div>
                     </div>
