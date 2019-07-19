@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
+import pose, {PoseGroup} from 'react-pose';
+import CookieConsent from "react-cookie-consent";
+import Button from 'react-bootstrap/Button';
+
 import TopMenu from './components/TopMenu'
 
 import Homepage from './screens/Homepage';
 import Contact from './screens/Contact';
+import CookiePolicy from './components/CookiePolicy';
 
 
 /**
@@ -41,6 +46,16 @@ class Router extends Component{
                 {!isIE && 
                     <BrowserRouter>
                         <TopMenu isMobile={isMobile}/>
+                  <CookieConsent
+                    location="bottom"
+                    buttonText="Razumem"
+                    style={{ background: "#2B373B" }}
+                    buttonStyle={{ background: "#c51e2b", color: "#ffffff", fontSize: "13px" }}
+                    expires={150}
+                  >
+                    We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.{" "}
+                          <a style={{color: 'white', fontSize: "15px"}} ><u>Learn more</u></a>
+                </CookieConsent>
                         <div className="main-content">
                             <Route exact={true} path="/" render={props => <Homepage {...props} isMobile={isMobile} />} />
                             <Route exact={true} path="/contact" render={props => <Contact {...props} isMobile={isMobile} />} />
