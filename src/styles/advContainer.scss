@@ -52,11 +52,11 @@
                 font-size:28px;
                 margin: -10px 0px;
                 color: $DARK-GREY;
-                line-height: 1.6;
+                padding-bottom:25px;
             }
             .text{
                 font-size:24px;
-                line-height: 1.6;
+                line-height: 1.2;
             }
             @media screen and (max-width: $mobile-width) {
                 width:100%; 
