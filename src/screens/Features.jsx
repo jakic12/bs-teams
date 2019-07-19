@@ -47,8 +47,8 @@ class Features extends Component{
                 <Parallax resizeHeightBy={'70vh'}>
                     <FeaturesLandingView
                         logo={Telefon}
-                        subtitle={"Imejte vsa orodja za tekoče delo na enem mestu."}
-                        title="Imejte vsa orodja za tekoče delo na enem mestu."/>
+                        subtitle={"Spoznajte orodje, ki ga po svetu uporablja že več kot 500.000 organizacij."}
+                        title="Vsa orodja za tekoče delo na enem mestu."/>
                         <div style={{overflowX:`hidden`}}>
                           <Button
                             style={this.props.isMobile ? {display: 'none'} : {marginLeft: 100}}
