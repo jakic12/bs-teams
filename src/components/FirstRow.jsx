@@ -4,7 +4,7 @@ import '../styles/shared.scss'
 import Button from '../components/Button'
 
 
-export default ({title, description, btnTitle, onClick, bigLogo, smallLogo, style}) => {
+export default ({title, subtitle, description, btnTitle, onClick, bigLogo, smallLogo, style}) => {
     return (
         <div className="homeLandingViewContainer" style={style}>
             <div className="innerTextContainer">
