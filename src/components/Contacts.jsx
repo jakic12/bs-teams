@@ -15,7 +15,7 @@ export default class Contacts extends Component{
                             <Link to={`/contact`}>
                                 <Button 
                                     onClick={this.props.onButtonClick}
-                                    title={"KONTAKTI"}
+                                    title={"KONTAKT"}
                                 />
                             </Link>
                         </div>
