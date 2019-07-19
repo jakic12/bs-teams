@@ -1,15 +1,27 @@
 @import "shared.scss";
 
-body{
-    height: 100%;
-}
+.homeLandingViewContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 0 100px 0 100px;
 
-.firstRow{
-    flex-basis: 90%;
-    height: auto;
-    display: flex;
-    justify-content: space-around;
-}
+  .innerTextContainer {
+    width: 50%;
+    margin: auto;
+  }
+  .innerImageContainer {
+    width: 50%;
+    margin: auto;
+    .bigLogo {
+      width: 700px;
+    }
+    .smallLogo {
+      display: none;
+    }
+  }
+  .btMargin {
+    margin: 30px 0 30px 0;
+  }
 
 .btnWraper {
     margin-left: 30px;
