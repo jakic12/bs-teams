@@ -100,6 +100,7 @@ export default class Homepage extends Component {
                 <Parallax isMobile={this.props.isMobile}>
                     <FirstRow
                         title="Power BI"
+                        subtitle={"Nov način prikaza podatkov"}
                         description={`Power BI je poslovna analitična storitev, ki omogoča vizualizacijo in analizo podatkov za uspešno vodenje vašega podjetja.`}
                         btnTitle="Več informacij"
                         onClick={() => {
