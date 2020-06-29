@@ -2,7 +2,6 @@
   "name": "bs-teams",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jakic12.github.io/bs-teams",
   "dependencies": {
     "@elsdoerfer/react-arrow": "^1.0.3",
     "aos": "^2.3.4",

@@ -27,3 +27,5 @@ yarn-error.log*
 /.vscode
 
 # test for dev branch
+# Local Netlify folder
+.netlify

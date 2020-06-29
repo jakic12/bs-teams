@@ -1,4 +1,4 @@
-<img align="center" src="https://i.ibb.co/svPfxh1/60795345-284436088969251-5216148346887995392-o.jpg"></img>
+<img align="center" src="./public/banner.jpg"></img>
 
 # Bs Teams and Power Bi websites
 
